@@ -31,9 +31,11 @@
   --ink-soft: #3d556d;
   --ink-muted: #6c8093;
   --line: #e3edf5;
-  --bg: #ffffff;
+  --bg: #faf6ec;           /* warm off-white, biased toward maize (never cold) */
   --bg-tint: #f3f9fe;       /* faint blue wash */
   --bg-maize: #fdf8ec;      /* faint maize wash */
+  /* faint desaturated water-caustic noise, tiled, blended soft-light over the base */
+  --caustic: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='480'%3E%3Cfilter%20id='c'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.006%200.011'%20numOctaves='2'%20seed='9'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23c)'%20opacity='0.5'/%3E%3C/svg%3E");
 
   /* Effects */
   --shadow-sm: 0 2px 12px rgba(22, 39, 58, 0.06);
@@ -69,13 +71,66 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--caustic);
+  background-size: 460px 460px;
+  background-repeat: repeat;
+  background-blend-mode: soft-light;
   color: var(--ink);
   line-height: 1.65;
   font-size: 17px;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* ---------- Global background layers (sit BEHIND all content) ---------- */
+/* Soft gradient mesh: maize + sky-blue glows over the warm base. Fixed/ambient. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 720px at 12% 6%, rgba(236,180,49,0.20), transparent 60%),
+    radial-gradient(840px 700px at 90% 16%, rgba(56,176,232,0.16), transparent 62%),
+    radial-gradient(900px 780px at 84% 92%, rgba(236,180,49,0.16), transparent 60%),
+    radial-gradient(760px 720px at 4% 72%, rgba(56,176,232,0.13), transparent 62%);
+}
+/* Slow diagonal light sheen: low opacity, long pauses, transform/opacity only. */
+body::after {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 44%,
+    rgba(255,253,244,0.45) 49%,
+    rgba(255,255,250,0.6) 50%,
+    rgba(255,253,244,0.45) 51%,
+    transparent 56%
+  );
+  opacity: 0;
+  transform: translate(-32%, -32%);
+  will-change: transform, opacity;
+  animation: bgSheen 32s cubic-bezier(.45,.05,.55,.95) infinite;
+}
+@keyframes bgSheen {
+  0%   { transform: translate(-32%, -32%); opacity: 0; }
+  5%   { opacity: 0.55; }
+  17%  { opacity: 0.55; }
+  22%  { transform: translate(32%, 32%); opacity: 0; }
+  100% { transform: translate(32%, 32%); opacity: 0; }
+}
+/* Mobile: drop the motion, keep the static gradient + texture. */
+@media (max-width: 760px) {
+  body::after, .hero-bg::after { animation: none; opacity: 0; }
 }
 
 h1, h2, h3, h4, h5 {
@@ -100,8 +155,8 @@ ul { list-style: none; }
 
 /* ---------- Section rhythm (tighter / more compact) ---------- */
 .section { padding: clamp(22px, 3.4vw, 44px) 0; position: relative; }
-.section-tint { background: var(--bg-tint); }
-.section-maize { background: var(--bg-maize); }
+.section-tint { background: transparent; }
+.section-maize { background: transparent; }
 
 .eyebrow {
   display: inline-flex;

@@ -137,7 +137,7 @@ export default function HomePage() {
           </div>
         </div>
         <style>{`
-          .cta-merge { position: relative; padding: clamp(40px,5vw,68px) 0; background: var(--bg-maize); overflow: hidden; }
+          .cta-merge { position: relative; padding: clamp(40px,5vw,68px) 0; background: transparent; overflow: hidden; }
           .cta-merge-blob { width: 420px; height: 420px; top: -160px; left: -120px; }
           .cta-merge-grid {
             position: relative; z-index: 1;

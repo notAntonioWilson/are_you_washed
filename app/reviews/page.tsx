@@ -79,7 +79,7 @@ export default function ReviewsPage() {
       </section>
 
       <style>{`
-        .rev-summary { padding: clamp(28px,4vw,44px) 0; background: var(--bg-maize); }
+        .rev-summary { padding: clamp(28px,4vw,44px) 0; background: transparent; }
         .rev-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
         .rev-stat {
           background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg);

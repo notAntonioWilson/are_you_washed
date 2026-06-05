@@ -79,8 +79,32 @@ export default function Hero() {
         }
         .hero-bg {
           position: absolute; inset: 0; z-index: 0;
-          background:
-            linear-gradient(162deg, #f4fbff 0%, #d6eefc 38%, #aaddf7 72%, #cce8f6 100%);
+          background-color: var(--bg);
+          background-image:
+            linear-gradient(160deg, rgba(250,246,236,0.72) 0%, rgba(245,238,223,0.40) 42%, rgba(234,243,251,0.82) 100%),
+            var(--caustic);
+          background-size: cover, 460px 460px;
+          background-repeat: no-repeat, repeat;
+          background-blend-mode: normal, soft-light;
+        }
+        .hero-bg::after {
+          content: "";
+          position: absolute;
+          top: -50%; left: -50%;
+          width: 200%; height: 200%;
+          pointer-events: none;
+          background: linear-gradient(
+            115deg,
+            transparent 44%,
+            rgba(255,253,244,0.45) 49%,
+            rgba(255,255,250,0.6) 50%,
+            rgba(255,253,244,0.45) 51%,
+            transparent 56%
+          );
+          opacity: 0;
+          transform: translate(-32%, -32%);
+          will-change: transform, opacity;
+          animation: bgSheen 32s cubic-bezier(.45,.05,.55,.95) infinite;
         }
         .hero-video {
           width: 100%; height: 100%;
@@ -91,9 +115,10 @@ export default function Hero() {
         .hero-mesh {
           position: absolute; inset: 0;
           background:
-            radial-gradient(820px 480px at 12% 22%, rgba(56,176,232,0.30), transparent 60%),
-            radial-gradient(720px 460px at 90% 82%, rgba(236,180,49,0.28), transparent 62%),
-            radial-gradient(600px 360px at 70% 8%, rgba(255,255,255,0.55), transparent 60%);
+            radial-gradient(780px 520px at 14% 16%, rgba(236,180,49,0.22), transparent 60%),
+            radial-gradient(820px 560px at 90% 22%, rgba(56,176,232,0.18), transparent 62%),
+            radial-gradient(760px 560px at 82% 90%, rgba(236,180,49,0.15), transparent 60%),
+            radial-gradient(640px 520px at 6% 82%, rgba(56,176,232,0.13), transparent 62%);
         }
         .hero-proof {
           position: absolute;

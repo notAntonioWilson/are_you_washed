@@ -77,7 +77,7 @@ export function CTABand() {
         </div>
       </div>
       <style>{`
-        .ctaband { padding: clamp(30px,4.4vw,50px) 0; background: var(--bg-maize); }
+        .ctaband { padding: clamp(30px,4.4vw,50px) 0; background: transparent; }
         .ctaband-inner {
           position: relative;
           text-align: center;

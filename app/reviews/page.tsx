@@ -9,7 +9,7 @@ import { reviews, trust, site, externalLinks } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Reviews",
   description:
-    "See what Metro Detroit homeowners say about Are You Washed Pressure Washing — a perfect 5.0★ rating across 75+ reviews on Google and Angi.",
+    "See what Metro Detroit homeowners say about Are You Washed Pressure Washing, a perfect 5.0★ rating across 75+ reviews on Google and Angi.",
   alternates: { canonical: `${site.url}/reviews` },
 };
 
@@ -27,7 +27,7 @@ export default function ReviewsPage() {
         eyebrow="⭐ 75+ Five-Star Reviews"
         title="Loved By"
         accent="Metro Detroit"
-        sub="Don't just take our word for it. A perfect 5.0 rating on both Google and Angi — earned one spotless home at a time."
+        sub="Don't just take our word for it. A perfect 5.0 rating on both Google and Angi, earned one spotless home at a time."
       />
 
       {/* Rating summary band */}
@@ -62,7 +62,7 @@ export default function ReviewsPage() {
       <section className="rev-marquees">
         <div className="rev-hint container">
           <Icons.arrow className="rev-hint-ic rev-hint-ic-flip" />
-          <span>Drag to explore — or just watch them roll by</span>
+          <span>Drag to explore, or just watch them roll by</span>
           <Icons.arrow className="rev-hint-ic" />
         </div>
         <div className="rev-rows">

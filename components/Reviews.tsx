@@ -12,7 +12,7 @@ export default function Reviews() {
           <span className="eyebrow">⭐ {trust.angiReviewCount}+ Five-Star Reviews</span>
           <h2 className="section-title">What Our <span className="accent">Neighbors Say</span></h2>
           <p className="section-sub">
-            A perfect 5.0 rating on both Google and Angi — earned one happy home at a time.
+            A perfect 5.0 rating on both Google and Angi, earned one happy home at a time.
           </p>
         </div>
       </div>

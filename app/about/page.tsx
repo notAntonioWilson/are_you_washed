@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container about-grid">
           <div className="about-media reveal">
-            <Image src="/images/house-after.jpg" alt="A freshly washed home exterior" width={620} height={720} className="about-img" />
+            <Image src="/images/juan-owner.jpg" alt="Juan, the owner of Are You Washed Pressure Washing" width={620} height={720} sizes="(max-width: 900px) 100vw, 520px" className="about-img" />
           </div>
           <div className="about-content reveal d1">
             <span className="eyebrow">Why We Do This</span>

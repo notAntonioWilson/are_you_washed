@@ -29,6 +29,7 @@ export const trust = {
   googleRating: "5.0",
   angiRating: "5.0",
   angiReviewCount: 75,
+  googleReviewCount: 35,
   bbbRating: "A+",
   bbbAccredited: true,
   angiAwards: 3, // "Super Service" / approved wins

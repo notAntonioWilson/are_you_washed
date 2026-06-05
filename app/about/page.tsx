@@ -21,7 +21,7 @@ export default function AboutPage() {
         eyebrow="Our Story"
         title="Family Owned."
         accent="Locally Trusted."
-        sub="Four years, over a thousand properties, and a perfect 5.0 rating, built on one belief: every home deserves to look its best."
+        sub="Four years, over a thousand properties, and a perfect 5.0 rating, all from one local family in Macomb."
       />
 
       {/* Story split */}
@@ -43,7 +43,7 @@ export default function AboutPage() {
             </p>
             <p className="about-text">
               Four years and over a thousand homes later, that pride shows in every wash, from a full house
-              soft-wash to windows and gutters before the season turns. We would love to make yours the next one.
+              soft-wash to windows and gutters before the season turns. We&apos;d be glad to make yours the next one. Reach out and we&apos;ll send over a free quote.
             </p>
             <div className="about-sign">Juan &amp; the Are You Washed Family</div>
             <div className="about-actions">

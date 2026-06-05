@@ -26,7 +26,7 @@ export default function ContactPage() {
         eyebrow="Free · No Obligation"
         title="Submit a"
         accent="Quote"
-        sub="Tell us a little about your property and what needs cleaning. We'll send your free quote back fast, usually within hours, never any pressure."
+        sub="Tell us about your property and what needs cleaning, and a real member of our family will send a free quote back fast. No pressure."
       />
 
       <section className="section contact-section">

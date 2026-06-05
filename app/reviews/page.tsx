@@ -35,7 +35,7 @@ export default function ReviewsPage() {
         eyebrow="⭐ 100+ Five-Star Reviews"
         title="Loved By"
         accent="Metro Detroit"
-        sub="Don't just take our word for it. A perfect 5.0 rating across Google and Angi, earned one spotless home at a time."
+        sub="Plenty of local families have trusted us with their homes and left us a perfect 5.0 on Google and Angi. When you want the same, just ask for a free quote."
       />
 
       {/* Stat row */}

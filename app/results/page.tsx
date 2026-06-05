@@ -21,7 +21,7 @@ export default function ResultsPage() {
         eyebrow="Our Work"
         title="Finished"
         accent="Results"
-        sub="A look at homes and properties we've transformed across Metro Detroit. More added all the time."
+        sub="Every one of these is a real home we cleaned here in Metro Detroit. Get a free quote and we'll get you on the schedule too."
       />
 
       <section className="section results-section">
@@ -48,7 +48,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      <CTABand />
+      <CTABand sub="The quote is free and there's no pressure. Send us a few details and we'll get right back to you." />
 
       <style>{`
         .results-section { padding-top: clamp(28px,4vw,48px); }

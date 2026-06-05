@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { reviews, trust } from "@/lib/site";
+import { featuredReviews, trust } from "@/lib/site";
 import { Icons } from "./Icons";
 import ReviewMarquee from "./ReviewMarquee";
 
@@ -19,7 +19,7 @@ export default function Reviews() {
 
       {/* Live, draggable review row */}
       <div className="reviews-marquee-wrap">
-        <ReviewMarquee reviews={reviews} direction="left" speed={45} />
+        <ReviewMarquee reviews={featuredReviews} direction="left" speed={45} />
       </div>
 
       <div className="container reviews-cta">

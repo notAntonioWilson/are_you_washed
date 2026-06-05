@@ -7,11 +7,9 @@ import { site } from "@/lib/site";
 import { Icons } from "./Icons";
 
 const links = [
-  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/reviews", label: "Reviews" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -69,7 +67,7 @@ export default function Nav() {
               <span>{site.phone}</span>
             </a>
             <Link href="/contact" className="btn btn-primary nav-cta">
-              Free Quote
+              Submit a Quote
             </Link>
             <button className="nav-toggle" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
               {open ? <Icons.close /> : <Icons.menu />}
@@ -97,7 +95,7 @@ export default function Nav() {
             <Phone /> Call {site.phone}
           </a>
           <Link href="/contact" onClick={() => setOpen(false)} className="btn btn-primary btn-block btn-lg">
-            Get Free Quote
+            Submit a Quote
           </Link>
         </div>
       </div>

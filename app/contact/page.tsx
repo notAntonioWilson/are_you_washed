@@ -6,9 +6,9 @@ import { Icons } from "@/components/Icons";
 import { site, serviceAreas } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact & Free Quote",
+  title: "Submit a Quote",
   description:
-    "Request your free pressure washing quote from Are You Washed. Call or text 586-238-0784, or fill out our quick form. Serving Macomb & Metro Detroit, 8am–8pm daily.",
+    "Submit a free, no-obligation quote request to Are You Washed Pressure Washing. Tell us about your property and we'll respond fast — usually within hours. Call or text 586-238-0784. Serving Macomb & Metro Detroit, 8am–8pm daily.",
   alternates: { canonical: `${site.url}/contact` },
 };
 
@@ -23,19 +23,20 @@ export default function ContactPage() {
     <>
       <Reveal />
       <PageHero
-        eyebrow="Get In Touch"
-        title="Request Your"
-        accent="Free Quote"
-        sub="Tell us about your project and we'll get back to you fast — usually within hours. No obligation, ever."
+        eyebrow="Free · No Obligation"
+        title="Submit a"
+        accent="Quote"
+        sub="Tell us a little about your property and what needs cleaning. We'll send your free quote back fast — usually within hours, never any pressure."
       />
 
       <section className="section contact-section">
         <div className="container contact-grid">
           {/* Info side */}
           <div className="contact-info reveal">
-            <h2 className="contact-h">Let&apos;s make your property shine.</h2>
+            <h2 className="contact-h">Two minutes is all it takes.</h2>
             <p className="contact-lead">
-              Prefer to talk? Call or text us directly — we&apos;re happy to answer questions and give you an honest estimate.
+              Fill out the form and we&apos;ll get right back to you with an honest, no-obligation quote. Prefer to talk it
+              through? Call or text — a real member of our family team will pick up.
             </p>
 
             <div className="contact-cards">

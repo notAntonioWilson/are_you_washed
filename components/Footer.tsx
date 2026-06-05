@@ -7,7 +7,6 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/reviews", label: "Reviews" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Footer() {
@@ -38,7 +37,7 @@ export default function Footer() {
           <a href={site.phoneHref}><Icons.phone className="fc-ic" /> {site.phone}</a>
           <a href={site.emailHref}><Icons.mail className="fc-ic" /> {site.email}</a>
           <span><Icons.clock className="fc-ic" /> {site.hoursShort}</span>
-          <Link href="/contact" className="btn btn-primary footer-cta">Free Quote <Icons.arrow /></Link>
+          <Link href="/contact" className="btn btn-primary footer-cta">Submit a Quote <Icons.arrow /></Link>
         </div>
       </div>
 

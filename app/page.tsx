@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
-import { StatsBar, TrustStrip, CTABand } from "@/components/Sections";
+import { StatsBar, CTABand } from "@/components/Sections";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import BeforeAfter from "@/components/BeforeAfter";
 import Reviews from "@/components/Reviews";
@@ -23,14 +23,13 @@ export default function HomePage() {
             <span className="eyebrow">What We Do</span>
             <h2 className="section-title">Exterior Cleaning, <span className="accent">Done Right</span></h2>
             <p className="section-sub">
-              From full house washes to crystal-clear windows — one trusted team for every surface of your property.
+              From full house washes to crystal-clear windows, one trusted team for every surface of your property.
             </p>
           </div>
           <ServicesGrid />
         </div>
       </section>
 
-      <TrustStrip />
       <BeforeAfter />
 
       {/* Why Us split */}
@@ -47,12 +46,12 @@ export default function HomePage() {
             <span className="eyebrow">Why Are You Washed</span>
             <h2 className="section-title">A family business that <span className="accent">treats your home like ours</span></h2>
             <p className="whyus-text">
-              We started Are You Washed out of a simple desire — to help homeowners fall back in love with their property.
+              We started Are You Washed out of a simple desire: to help homeowners fall back in love with their property.
               There&apos;s nothing like watching years of grime wash away to reveal the home underneath.
             </p>
             <ul className="whyus-list">
               {[
-                "Family owned & operated — every job is personal",
+                "Family owned & operated, every job is personal",
                 "Safe soft-wash methods that protect your surfaces",
                 "Prompt, professional, and communicative from quote to clean",
                 "Fully licensed & insured for total peace of mind",

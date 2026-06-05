@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title">
-            Award-Winning Pressure Washing<br />
+            3X Award-Winning Pressure Washing<br />
             <span className="hero-title-accent">in Macomb &amp; Washington Township</span>
           </h1>
 

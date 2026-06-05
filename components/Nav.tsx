@@ -125,9 +125,9 @@ export default function Nav() {
         }
         .nav-scrolled::before { opacity: 0; }
         .nav-scrolled {
-          background: rgba(255, 255, 255, 0.72);
-          backdrop-filter: blur(20px) saturate(1.6);
-          -webkit-backdrop-filter: blur(20px) saturate(1.6);
+          background: rgba(255, 255, 255, 0.6);
+          backdrop-filter: blur(22px) saturate(1.7);
+          -webkit-backdrop-filter: blur(22px) saturate(1.7);
           box-shadow: 0 2px 20px rgba(22, 39, 58, 0.06);
         }
         .nav-inner {
@@ -151,7 +151,7 @@ export default function Nav() {
         .nav-logo-accent { color: var(--maize); }
         .nav-scrolled .nav-logo-accent { color: var(--maize-deep); }
 
-        /* Right group — links + phone + CTA, like a standard nav */
+        /* Right group: links + phone + CTA, like a standard nav */
         .nav-right {
           display: flex;
           align-items: center;
@@ -188,7 +188,7 @@ export default function Nav() {
         .nav-link:hover::after { transform: scaleX(1); }
         .nav-link.active { color: var(--maize-light); }
         .nav-link.active::after { transform: scaleX(1); }
-        .nav-scrolled .nav-link { color: var(--ink); }
+        .nav-scrolled .nav-link { color: #000; }
         .nav-scrolled .nav-link:hover { color: #000; }
         .nav-scrolled .nav-link.active { color: var(--maize-deep); }
         .nav-scrolled .nav-link.active::after,

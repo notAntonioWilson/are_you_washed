@@ -48,20 +48,20 @@ export default function Nav() {
             </span>
           </Link>
 
-          {/* Tabbed navigation */}
-          <nav className="nav-tabs">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`nav-tab ${isActive(l.href) ? "active" : ""}`}
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Right group: links + phone + CTA */}
+          <div className="nav-right">
+            <nav className="nav-links">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`nav-link ${isActive(l.href) ? "active" : ""}`}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
 
-          <div className="nav-actions">
             <a href={site.phoneHref} className="nav-phone">
               <Phone className="nav-phone-icon" />
               <span>{site.phone}</span>
@@ -145,47 +145,55 @@ export default function Nav() {
         .nav-logo-accent { color: var(--maize); }
         .nav-scrolled .nav-logo-accent { color: var(--maize-deep); }
 
-        /* Tabbed nav — pill container */
-        .nav-tabs {
+        /* Right group — links + phone + CTA, like a standard nav */
+        .nav-right {
           display: flex;
-          gap: 2px;
+          align-items: center;
+          gap: clamp(20px, 2.6vw, 40px);
           position: relative; z-index: 1;
-          padding: 4px;
-          border-radius: var(--r-pill);
-          background: rgba(255,255,255,0.12);
-          border: 1px solid rgba(255,255,255,0.16);
-          backdrop-filter: blur(6px);
-          transition: background 0.3s, border-color 0.3s;
         }
-        .nav-scrolled .nav-tabs {
-          background: var(--bg-tint);
-          border-color: var(--line);
+        .nav-links {
+          display: flex;
+          align-items: center;
+          gap: clamp(18px, 2.2vw, 36px);
         }
-        .nav-tab {
+        .nav-link {
           font-family: var(--font-display);
           font-weight: 600;
-          font-size: 14.5px;
-          color: rgba(255,255,255,0.88);
-          padding: 8px 17px;
-          border-radius: var(--r-pill);
-          transition: color 0.2s, background 0.2s;
+          font-size: 15.5px;
+          color: rgba(255,255,255,0.92);
+          white-space: nowrap;
+          position: relative;
+          padding: 4px 0;
+          transition: color 0.2s;
         }
-        .nav-tab:hover { color: #fff; background: rgba(255,255,255,0.16); }
-        .nav-tab.active {
-          background: linear-gradient(120deg, var(--maize-deep), var(--maize));
-          color: #2a1c00;
-          box-shadow: 0 4px 14px rgba(236,180,49,0.4);
+        .nav-link::after {
+          content: "";
+          position: absolute;
+          left: 0; right: 0; bottom: -3px;
+          height: 2px;
+          border-radius: 2px;
+          background: var(--maize);
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.25s cubic-bezier(.16,1,.3,1);
         }
-        .nav-scrolled .nav-tab { color: var(--ink-soft); }
-        .nav-scrolled .nav-tab:hover { color: var(--ink); background: rgba(56,176,232,0.12); }
-        .nav-scrolled .nav-tab.active { color: #2a1c00; }
+        .nav-link:hover { color: #fff; }
+        .nav-link:hover::after { transform: scaleX(1); }
+        .nav-link.active { color: var(--maize); }
+        .nav-link.active::after { transform: scaleX(1); }
+        .nav-scrolled .nav-link { color: var(--ink-soft); }
+        .nav-scrolled .nav-link:hover { color: var(--ink); }
+        .nav-scrolled .nav-link.active { color: var(--maize-deep); }
+        .nav-scrolled .nav-link.active::after,
+        .nav-scrolled .nav-link:hover::after { background: var(--maize-deep); }
 
-        .nav-actions { display: flex; align-items: center; gap: 14px; position: relative; z-index: 1; }
         .nav-phone {
           display: flex; align-items: center; gap: 7px;
           font-family: var(--font-display);
-          font-weight: 600; font-size: 14.5px;
+          font-weight: 600; font-size: 15px;
           color: #fff;
+          white-space: nowrap;
           transition: color 0.3s;
         }
         .nav-phone-icon { width: 17px; height: 17px; color: var(--maize); }
@@ -193,7 +201,7 @@ export default function Nav() {
         .nav-scrolled .nav-phone-icon { color: var(--maize-deep); }
         .nav-phone:hover { color: var(--maize); }
         .nav-scrolled .nav-phone:hover { color: var(--maize-deep); }
-        .nav-cta { padding: 11px 22px; font-size: 14.5px; }
+        .nav-cta { padding: 11px 24px; font-size: 15px; }
         .nav-toggle { display: none; color: #fff; padding: 6px; }
         .nav-scrolled .nav-toggle { color: var(--ink); }
 
@@ -223,8 +231,15 @@ export default function Nav() {
         .mobile-link.active { color: var(--maize-deep); }
         .mobile-cta { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
 
+        .nav-overdark .nav-link,
+        .nav-overdark .nav-phone,
+        .nav-overdark .nav-logo-text { text-shadow: 0 1px 8px rgba(8,22,38,0.45); }
+        .nav-scrolled .nav-link,
+        .nav-scrolled .nav-phone,
+        .nav-scrolled .nav-logo-text { text-shadow: none; }
+
         @media (max-width: 1040px) {
-          .nav-tabs { display: none; }
+          .nav-links { display: none; }
           .nav-phone span { display: none; }
           .nav-cta { display: none; }
           .nav-toggle { display: flex; }

@@ -1,4 +1,5 @@
 import PageHero from "./PageHero";
+import Reveal from "./Reveal";
 import { site } from "@/lib/site";
 
 export default function LegalLayout({
@@ -12,6 +13,7 @@ export default function LegalLayout({
 }) {
   return (
     <>
+      <Reveal />
       <PageHero title={title} sub={`Last updated: ${updated}`} />
       <section className="section legal">
         <div className="container legal-inner">

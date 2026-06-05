@@ -5,26 +5,33 @@ import { useEffect } from "react";
  * Scroll reveal (motion only).
  * - Above-the-fold blocks paint instantly (never hidden), so no blank flash.
  * - Below-the-fold blocks fade up once (~12% before entering view), then stay.
+ * - Applies to every <section> on the page, plus any element tagged .reveal.
  * - IntersectionObserver only (no scroll listeners). Respects reduced motion.
  */
 export default function Reveal() {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal:not(.in)"));
-    if (!els.length) return;
-
-    // Reduced motion or no observer support: leave everything visible, no motion.
     if (reduceMotion || !("IntersectionObserver" in window)) return;
 
     const vh = window.innerHeight;
     const pending: HTMLElement[] = [];
-    els.forEach((el) => {
-      // Only hide blocks that start fully below the fold; anything visible stays as-is.
+
+    // Inner blocks explicitly tagged with .reveal
+    document.querySelectorAll<HTMLElement>(".reveal:not(.in)").forEach((el) => {
       if (el.getBoundingClientRect().top >= vh) {
         el.classList.add("reveal-pending");
         pending.push(el);
       }
     });
+
+    // Every section on the page
+    document.querySelectorAll<HTMLElement>("section:not(.in)").forEach((el) => {
+      if (el.getBoundingClientRect().top >= vh) {
+        el.classList.add("reveal-section");
+        pending.push(el);
+      }
+    });
+
     if (!pending.length) return;
 
     const obs = new IntersectionObserver(

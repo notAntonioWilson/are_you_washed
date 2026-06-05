@@ -131,7 +131,7 @@ export default function BeforeAfter() {
         <div className="section-head center">
           <span className="eyebrow">See The Difference</span>
           <h2 className="section-title">Real <span className="accent">Before &amp; After</span></h2>
-          <p className="section-sub">Drag the slider to reveal the transformation. A real job from a real Metro Detroit home.</p>
+          <p className="section-sub">Drag the slider to see the before and after. This is a real house we washed here in Metro Detroit, and we&apos;ll give you a free quote for yours.</p>
         </div>
 
         <div className="ba-stage reveal">

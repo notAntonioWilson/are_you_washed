@@ -22,9 +22,9 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head center">
             <span className="eyebrow">What We Do</span>
-            <h2 className="section-title">Exterior Cleaning, <span className="accent">Done Right</span></h2>
+            <h2 className="section-title">One local family, <span className="accent">every surface outside your home</span></h2>
             <p className="section-sub">
-              From full house washes to crystal-clear windows, one trusted team for every surface of your property.
+              We handle it all ourselves: house washing, concrete, driveways, decks, patios, roofs, windows, and gutters. Tell us what your home needs and we&apos;ll send a free quote.
             </p>
           </div>
           <ServicesGrid />
@@ -65,7 +65,8 @@ export default function HomePage() {
             </p>
             <p className="whyus-text">
               Four years, over a thousand properties, a perfect 5.0 rating, and three Angi Super Service Awards later,
-              that same care still shows in every wash.
+              that same care still shows in every wash. When you call or text, you get Juan and the family directly,
+              not a call center, so ask for a free quote whenever you&apos;re ready.
             </p>
             <div className="whyus-actions">
               <Link href="/about" className="btn btn-primary btn-lg">Read Our Full Story <Icons.arrow /></Link>
@@ -109,15 +110,14 @@ export default function HomePage() {
         <div className="container cta-merge-grid">
           <div className="cta-merge-left reveal">
             <span className="eyebrow"><Icons.pin className="eyebrow-ic" /> Serving Metro Detroit</span>
-            <h2 className="section-title">Ready for a home that <span className="accent">turns heads?</span></h2>
+            <h2 className="section-title">Get a free quote from a <span className="accent">local family</span></h2>
             <p className="cta-merge-text">
-              We are based in Macomb and travel up to {site.serviceRadiusMiles} miles to bring spotless,
-              safe soft-wash results to Washington Township, Shelby Township, Sterling Heights, Chesterfield,
-              and homes all across Metro Detroit.
+              We&apos;re a family based in Macomb, and we travel up to {site.serviceRadiusMiles} miles to homes in
+              Washington Township, Shelby Township, Sterling Heights, Chesterfield, and across Metro Detroit.
             </p>
             <p className="cta-merge-text">
-              Your quote is free, there is no obligation, and we respond within hours. Tell us about your
-              property and we will get you on the schedule fast, before the busy season fills up.
+              The quote is free and there is no pressure to book. We usually get back to you within a few hours,
+              so it helps to reach out before the busy season fills up.
             </p>
             <div className="cta-merge-actions">
               <a href={site.phoneHref} className="btn btn-primary btn-lg">

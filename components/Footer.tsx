@@ -16,14 +16,25 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-brand">
           <Link href="/" className="footer-logo">
-            <Image src="/logo-web.png" alt={site.name} width={42} height={42} />
+            <Image src="/logo-web.png" alt={site.name} width={40} height={40} />
             <span>Are You <span className="footer-logo-accent">Washed</span></span>
           </Link>
           <p className="footer-tagline">&ldquo;{site.tagline}&rdquo;</p>
-          <div className="footer-badges">
-            <span className="footer-badge">5.0★ Google</span>
-            <span className="footer-badge">5.0★ Angi</span>
-            <span className="footer-badge">{trust.bbbRating} BBB</span>
+          <div className="footer-social-row">
+            <div className="footer-badges">
+              <span className="footer-badge">5.0★ Google</span>
+              <span className="footer-badge">5.0★ Angi</span>
+              <span className="footer-badge">{trust.bbbRating} BBB</span>
+            </div>
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-ig"
+              aria-label="Follow Are You Washed on Instagram"
+            >
+              <Icons.instagram className="footer-ig-ic" />
+            </a>
           </div>
         </div>
 
@@ -69,25 +80,27 @@ export default function Footer() {
         .footer-inner {
           position: relative; z-index: 1;
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           justify-content: space-between;
           gap: 28px;
           flex-wrap: wrap;
-          padding: 34px clamp(20px,5vw,48px) 28px;
+          padding: 30px clamp(20px,5vw,48px) 24px;
         }
+        .footer-brand { display: flex; flex-direction: column; align-items: flex-start; }
         .footer-logo {
           display: flex; align-items: center; gap: 10px;
           font-family: var(--font-display);
-          font-weight: 800; font-size: 1.18rem;
-          color: #fff; margin-bottom: 8px;
+          font-weight: 800; font-size: 1.14rem;
+          color: #fff; margin-bottom: 7px;
         }
         .footer-logo-accent { color: var(--maize); }
         .footer-tagline {
           font-family: var(--font-display);
-          font-style: italic; font-weight: 600; font-size: 0.92rem;
+          font-style: italic; font-weight: 600; font-size: 0.9rem;
           color: var(--maize-light);
           margin-bottom: 12px;
         }
+        .footer-social-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .footer-badges { display: flex; gap: 7px; flex-wrap: wrap; }
         .footer-badge {
           font-family: var(--font-display);
@@ -98,8 +111,20 @@ export default function Footer() {
           padding: 5px 11px;
           border-radius: var(--r-pill);
         }
+        .footer-ig {
+          display: grid; place-items: center;
+          width: 34px; height: 34px;
+          border-radius: 10px;
+          color: #fff;
+          background: rgba(255,255,255,0.12);
+          border: 1px solid rgba(255,255,255,0.18);
+          transition: background 0.2s, transform 0.2s, color 0.2s;
+        }
+        .footer-ig:hover { background: linear-gradient(120deg, var(--maize-deep), var(--maize)); color: #2a1c00; transform: translateY(-2px); }
+        .footer-ig-ic { width: 18px; height: 18px; }
         .footer-nav {
           display: flex; gap: 22px; flex-wrap: wrap;
+          padding-top: 4px;
         }
         .footer-nav a {
           font-family: var(--font-display);

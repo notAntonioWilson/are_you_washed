@@ -41,8 +41,13 @@ export default function Nav() {
     <>
       <header className={`nav ${solid ? "nav-scrolled" : ""} ${overDark ? "nav-overdark" : ""}`}>
         <div className="container nav-inner">
-          <Link href="/" className="nav-logo" onClick={() => setOpen(false)}>
-            <Image src="/logo-web.png" alt={site.name} width={44} height={44} priority />
+          <Link
+            href="/"
+            className="nav-logo"
+            onClick={() => setOpen(false)}
+            style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "11px", flexWrap: "nowrap" }}
+          >
+            <Image src="/logo-web.png" alt={site.name} width={42} height={42} priority style={{ flexShrink: 0 }} />
             <span className="nav-logo-text">
               Are You <span className="nav-logo-accent">Washed</span>
             </span>
@@ -120,10 +125,10 @@ export default function Nav() {
         }
         .nav-scrolled::before { opacity: 0; }
         .nav-scrolled {
-          background: rgba(255, 255, 255, 0.86);
-          backdrop-filter: blur(16px) saturate(1.5);
-          -webkit-backdrop-filter: blur(16px) saturate(1.5);
-          box-shadow: 0 4px 30px rgba(22, 39, 58, 0.08);
+          background: rgba(255, 255, 255, 0.72);
+          backdrop-filter: blur(20px) saturate(1.6);
+          -webkit-backdrop-filter: blur(20px) saturate(1.6);
+          box-shadow: 0 2px 20px rgba(22, 39, 58, 0.06);
         }
         .nav-inner {
           display: flex;
@@ -131,7 +136,8 @@ export default function Nav() {
           justify-content: space-between;
           width: 100%;
         }
-        .nav-logo { display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+        .nav-logo { display: flex; flex-direction: row; align-items: center; gap: 11px; position: relative; z-index: 1; flex-wrap: nowrap; }
+        .nav-logo :global(img) { flex-shrink: 0; }
         .nav-logo-text {
           font-family: var(--font-display);
           font-weight: 800;
@@ -160,8 +166,8 @@ export default function Nav() {
         .nav-link {
           font-family: var(--font-display);
           font-weight: 600;
-          font-size: 15.5px;
-          color: rgba(255,255,255,0.92);
+          font-size: 15px;
+          color: #ffffff;
           white-space: nowrap;
           position: relative;
           padding: 4px 0;
@@ -180,10 +186,10 @@ export default function Nav() {
         }
         .nav-link:hover { color: #fff; }
         .nav-link:hover::after { transform: scaleX(1); }
-        .nav-link.active { color: var(--maize); }
+        .nav-link.active { color: var(--maize-light); }
         .nav-link.active::after { transform: scaleX(1); }
-        .nav-scrolled .nav-link { color: var(--ink-soft); }
-        .nav-scrolled .nav-link:hover { color: var(--ink); }
+        .nav-scrolled .nav-link { color: var(--ink); }
+        .nav-scrolled .nav-link:hover { color: #000; }
         .nav-scrolled .nav-link.active { color: var(--maize-deep); }
         .nav-scrolled .nav-link.active::after,
         .nav-scrolled .nav-link:hover::after { background: var(--maize-deep); }
@@ -201,7 +207,7 @@ export default function Nav() {
         .nav-scrolled .nav-phone-icon { color: var(--maize-deep); }
         .nav-phone:hover { color: var(--maize); }
         .nav-scrolled .nav-phone:hover { color: var(--maize-deep); }
-        .nav-cta { padding: 11px 24px; font-size: 15px; }
+        .nav-cta { padding: 9px 18px; font-size: 14px; border-radius: 11px; }
         .nav-toggle { display: none; color: #fff; padding: 6px; }
         .nav-scrolled .nav-toggle { color: var(--ink); }
 

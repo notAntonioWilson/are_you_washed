@@ -24,4 +24,5 @@ export const Icons: Record<string, (p: P) => React.JSX.Element> = {
   spray: (p) => (<svg {...base} {...p}><path d="M9 11h6v9a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1Z"/><path d="M9 11V7h6M15 7l4-3M15 9l4 0M15 5l4-2"/></svg>),
   menu: (p) => (<svg {...base} {...p}><path d="M4 7h16M4 12h16M4 17h16"/></svg>),
   close: (p) => (<svg {...base} {...p}><path d="M6 6l12 12M18 6 6 18"/></svg>),
+  instagram: (p) => (<svg {...base} {...p}><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>),
 };

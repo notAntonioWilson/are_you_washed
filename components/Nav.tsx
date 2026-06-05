@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 import { Icons } from "./Icons";
 
 const links = [
+  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/results", label: "Results" },
   { href: "/reviews", label: "Reviews" },

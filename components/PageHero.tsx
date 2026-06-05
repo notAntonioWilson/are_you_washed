@@ -26,7 +26,7 @@ export default function PageHero({
         .pagehero {
           position: relative;
           overflow: hidden;
-          padding: calc(var(--nav-h) + clamp(36px,6vw,68px)) 0 clamp(36px,5vw,60px);
+          padding: calc(var(--nav-h) + clamp(16px,2.4vw,30px)) 0 clamp(18px,2.6vw,34px);
           background: linear-gradient(180deg, var(--aqua-soft) 0%, var(--bg-maize) 70%, var(--white) 100%);
           text-align: center;
         }
@@ -35,7 +35,7 @@ export default function PageHero({
         .pagehero-inner { position: relative; z-index: 1; }
         .pagehero-title {
           font-size: clamp(2.3rem, 5.5vw, 4rem);
-          margin-bottom: 16px;
+          margin-bottom: 10px;
         }
         .pagehero-title .accent {
           background: linear-gradient(120deg, var(--maize-deep), var(--maize));
@@ -44,7 +44,7 @@ export default function PageHero({
         .pagehero-sub {
           font-size: clamp(1rem, 2vw, 1.2rem);
           color: var(--ink-muted);
-          max-width: 640px;
+          max-width: 720px;
           margin: 0 auto;
         }
       `}</style>

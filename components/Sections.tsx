@@ -31,7 +31,7 @@ export function StatsBar() {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 24px;
-          padding: clamp(32px, 4.5vw, 52px) clamp(20px,5vw,48px);
+          padding: clamp(22px, 3.4vw, 40px) clamp(20px,5vw,48px);
         }
         .stat { text-align: center; }
         .stat-value {
@@ -77,14 +77,14 @@ export function CTABand() {
         </div>
       </div>
       <style>{`
-        .ctaband { padding: clamp(44px,6vw,72px) 0; background: var(--bg-maize); }
+        .ctaband { padding: clamp(30px,4.4vw,50px) 0; background: var(--bg-maize); }
         .ctaband-inner {
           position: relative;
           text-align: center;
           background: var(--white);
           border: 1px solid var(--line);
           border-radius: var(--r-xl);
-          padding: clamp(36px, 5.5vw, 64px) clamp(24px,5vw,48px);
+          padding: clamp(28px, 4.4vw, 46px) clamp(24px,5vw,48px);
           box-shadow: var(--shadow-md);
           overflow: hidden;
         }

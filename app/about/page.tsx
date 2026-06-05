@@ -3,9 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { CTABand } from "@/components/Sections";
 import { Icons } from "@/components/Icons";
-import { site, trust, stats } from "@/lib/site";
+import { site, stats } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -80,7 +79,6 @@ export default function AboutPage() {
           </div>
           <div className="about-creds reveal">
             <div className="cred"><Icons.shield className="cred-ic" /> Licensed &amp; Insured</div>
-            <div className="cred"><Icons.check className="cred-ic" /> BBB Accredited, {trust.bbbRating} Rating</div>
             <div className="cred"><Icons.star className="cred-ic" /> 3x Angi Super Service Award Winner</div>
           </div>
         </div>
@@ -108,8 +106,6 @@ export default function AboutPage() {
           @media (max-width: 760px) { .about-stats { grid-template-columns: 1fr 1fr; } }
         `}</style>
       </section>
-
-      <CTABand />
     </>
   );
 }

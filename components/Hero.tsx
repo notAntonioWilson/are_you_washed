@@ -69,11 +69,11 @@ export default function Hero() {
       <style>{`
         .hero {
           position: relative;
-          min-height: 100svh;
+          min-height: 88svh;
           display: flex;
           align-items: center;
-          padding-top: calc(var(--nav-h) + 32px);
-          padding-bottom: 52px;
+          padding-top: calc(var(--nav-h) + 20px);
+          padding-bottom: 36px;
           overflow: hidden;
           --hero-video-opacity: 0.14;
         }

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Icons } from "./Icons";
@@ -27,19 +26,15 @@ export default function Hero() {
       <div className="container hero-grid">
         {/* LEFT */}
         <div className="hero-left">
-          <div className="hero-logo">
-            <Image src="/logo-web.png" alt={site.name} width={84} height={84} priority />
-          </div>
-
           <h1 className="hero-title">
-            3X Angi Super Service Award Winner<br />
+            Pressure Washing<br />
             <span className="hero-title-accent">in Macomb &amp; Washington Township</span>
           </h1>
 
           <p className="hero-sub">
-            We&apos;re a family-owned, family-run crew that treats your home like our own.
-            Families across Macomb and Metro Detroit trust us for siding, concrete, windows,
-            gutters and more, done right the first time.
+            Award-winning, 3x Angi Super Service Award winners in the top 5% of home service pros.
+            We&apos;re a family-owned crew that treats your home like our own. Families across Macomb
+            and Metro Detroit trust us for siding, concrete, windows, gutters and more, done right the first time.
           </p>
 
           <p className="hero-tag">&ldquo;{site.tagline}&rdquo;</p>
@@ -165,7 +160,7 @@ export default function Hero() {
         }
         @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .hero-title {
-          font-size: clamp(2.3rem, 5.2vw, 4rem);
+          font-size: clamp(2rem, 4.2vw, 3.1rem);
           color: var(--ink);
           line-height: 1.05;
           margin-bottom: 18px;

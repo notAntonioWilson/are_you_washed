@@ -2,10 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
-import { StatsBar, CTABand } from "@/components/Sections";
+import { StatsBar } from "@/components/Sections";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import BeforeAfter from "@/components/BeforeAfter";
 import Reviews from "@/components/Reviews";
+import QuoteForm from "@/components/QuoteForm";
 import { Icons } from "@/components/Icons";
 import { site, serviceAreas } from "@/lib/site";
 
@@ -101,36 +102,58 @@ export default function HomePage() {
 
       <Reviews />
 
-      {/* Service areas */}
-      <section className="section section-tint">
-        <div className="container">
-          <div className="section-head center">
-            <span className="eyebrow"><Icons.pin className="eyebrow-ic" /> Where We Work</span>
-            <h2 className="section-title">Proudly Serving <span className="accent">Metro Detroit</span></h2>
-            <p className="section-sub">Based in Macomb ({site.homeBaseZip}) and traveling up to {site.serviceRadiusMiles} miles to reach your home.</p>
+      {/* Combined quote CTA with service-area coverage merged in */}
+      <section className="cta-merge">
+        <div className="cta-merge-blob blob blob-maize" />
+        <div className="container cta-merge-grid">
+          <div className="cta-merge-left reveal">
+            <span className="eyebrow"><Icons.pin className="eyebrow-ic" /> Serving Metro Detroit</span>
+            <h2 className="section-title">Ready for a home that <span className="accent">turns heads?</span></h2>
+            <p className="cta-merge-text">
+              We are based in Macomb and travel up to {site.serviceRadiusMiles} miles to bring spotless,
+              safe soft-wash results to Washington Township, Shelby Township, Sterling Heights, Chesterfield,
+              and homes all across Metro Detroit.
+            </p>
+            <p className="cta-merge-text">
+              Your quote is free, there is no obligation, and we respond within hours. Tell us about your
+              property and we will get you on the schedule fast, before the busy season fills up.
+            </p>
+            <div className="cta-merge-actions">
+              <a href={site.phoneHref} className="btn btn-primary btn-lg">
+                <Icons.phone /> Call {site.phone}
+              </a>
+              <Link href="/reviews" className="btn btn-ghost btn-lg">
+                Read Reviews <Icons.arrow />
+              </Link>
+            </div>
+            <p className="cta-merge-areas">
+              <span className="cta-merge-areas-label">Proudly serving:</span> {serviceAreas.join(", ")}
+            </p>
           </div>
-          <div className="areas-cloud reveal">
-            {serviceAreas.map((a) => (<span key={a} className="area-chip">{a}</span>))}
+
+          <div className="cta-merge-form reveal d1">
+            <QuoteForm variant="hero" />
           </div>
         </div>
         <style>{`
-          .eyebrow-ic { width: 15px; height: 15px; }
-          .areas-cloud { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 900px; margin: 0 auto; }
-          .area-chip {
-            font-family: var(--font-display);
-            font-weight: 600; font-size: 15px;
-            color: var(--ink-soft);
-            background: var(--white);
-            border: 1.5px solid var(--line);
-            padding: 12px 22px;
-            border-radius: var(--r-pill);
-            transition: all 0.25s;
+          .cta-merge { position: relative; padding: clamp(46px,6vw,84px) 0; background: var(--bg-maize); overflow: hidden; }
+          .cta-merge-blob { width: 440px; height: 440px; top: -170px; left: -130px; }
+          .cta-merge-grid {
+            position: relative; z-index: 1;
+            display: grid; grid-template-columns: 1.04fr 0.96fr;
+            gap: clamp(32px,5vw,64px); align-items: center;
           }
-          .area-chip:hover { border-color: var(--maize); color: var(--ink); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+          .eyebrow-ic { width: 15px; height: 15px; }
+          .cta-merge-text { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin: 8px 0 0; }
+          .cta-merge-text + .cta-merge-text { margin-top: 16px; }
+          .cta-merge-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+          .cta-merge-areas { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.6; margin-top: 26px; }
+          .cta-merge-areas-label { font-family: var(--font-display); font-weight: 700; color: var(--ink-soft); }
+          @media (max-width: 900px) {
+            .cta-merge-grid { grid-template-columns: 1fr; }
+          }
         `}</style>
       </section>
-
-      <CTABand />
     </>
   );
 }

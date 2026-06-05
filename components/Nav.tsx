@@ -18,9 +18,9 @@ export default function Nav() {
   const pathname = usePathname();
   const Phone = Icons.phone;
 
-  // Home has a dark video hero → nav starts "over-dark" (light text).
-  // Interior pages have light heroes → nav starts solid from the top.
-  const overDark = pathname === "/";
+  // All pages now have light heroes (home hero is bright sky-blue), so the nav
+  // uses the solid frosted bar with dark links everywhere, from the top.
+  const overDark = false;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);

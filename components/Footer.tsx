@@ -5,6 +5,7 @@ import { Icons } from "./Icons";
 
 const navLinks = [
   { href: "/services", label: "Services" },
+  { href: "/results", label: "Results" },
   { href: "/reviews", label: "Reviews" },
   { href: "/about", label: "About" },
 ];

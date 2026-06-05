@@ -65,7 +65,7 @@ export function CTABand() {
         <div className="ctaband-blob blob blob-maize" />
         <h2 className="ctaband-title">Ready to see the transformation?</h2>
         <p className="ctaband-sub">
-          Get a free, no-obligation quote today. We respond fast — usually within hours.
+          Get a free, no-obligation quote today. We respond fast, usually within hours.
         </p>
         <div className="ctaband-actions">
           <Link href="/contact" className="btn btn-primary btn-lg">

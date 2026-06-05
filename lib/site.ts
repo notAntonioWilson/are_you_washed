@@ -1,5 +1,5 @@
 // ============================================================
-//  ARE YOU WASHED PRESSURE WASHING — SITE DATA
+//  ARE YOU WASHED PRESSURE WASHING, SITE DATA
 //  Single source of truth. Edit here to update across the site.
 // ============================================================
 
@@ -24,7 +24,7 @@ export const site = {
   founded: 2021,
 };
 
-// Trust signals — verified
+// Trust signals, verified
 export const trust = {
   googleRating: "5.0",
   angiRating: "5.0",
@@ -63,7 +63,7 @@ export const services: Service[] = [
     name: "House Washing",
     short: "Restore your home's exterior to like-new.",
     description:
-      "Years of dirt, mildew, and organic growth get safely lifted from siding, brick, and stone — leaving your home looking freshly built. Our soft wash method protects your surfaces while delivering a deep, lasting clean.",
+      "Years of dirt, mildew, and organic growth get safely lifted from siding, brick, and stone, leaving your home looking freshly built. Our soft wash method protects your surfaces while delivering a deep, lasting clean.",
     features: [
       "Safe for vinyl, brick, stone & aluminum siding",
       "Removes mold, mildew & algae at the root",
@@ -79,7 +79,7 @@ export const services: Service[] = [
     name: "Window Cleaning",
     short: "Streak-free glass, inside and out.",
     description:
-      "Crystal-clear, streak-free windows that let the light back in. We clean interior and exterior glass, frames, and sills with care — so every pane sparkles.",
+      "Crystal-clear, streak-free windows that let the light back in. We clean interior and exterior glass, frames, and sills with care, so every pane sparkles.",
     features: [
       "Interior & exterior glass",
       "Streak-free, spot-free finish",
@@ -95,7 +95,7 @@ export const services: Service[] = [
     name: "Soft Washing",
     short: "Low-pressure cleaning for delicate surfaces.",
     description:
-      "A specialized low-pressure technique that uses cleaning solutions instead of brute force — ideal for roofs, painted surfaces, and any area where high pressure could cause damage.",
+      "A specialized low-pressure technique that uses cleaning solutions instead of brute force, ideal for roofs, painted surfaces, and any area where high pressure could cause damage.",
     features: [
       "Low-pressure, high-result method",
       "Kills bacteria, algae & moss",
@@ -103,13 +103,14 @@ export const services: Service[] = [
       "Longer-lasting than pressure alone",
     ],
     icon: "droplet",
+    image: "/images/balustrade-after.jpg",
   },
   {
     slug: "concrete-cleaning",
     name: "Concrete Cleaning",
     short: "Lift years of grime from hard surfaces.",
     description:
-      "Driveways, walkways, and concrete surfaces stripped of dirt, oil stains, rust, and organic buildup — revealing clean, even concrete underneath.",
+      "Driveways, walkways, and concrete surfaces stripped of dirt, oil stains, rust, and organic buildup, revealing clean, even concrete underneath.",
     features: [
       "Removes oil, rust & stains",
       "Even, streak-free results",
@@ -139,7 +140,7 @@ export const services: Service[] = [
     name: "Patio & Deck Cleaning",
     short: "Bring outdoor living spaces back to life.",
     description:
-      "Pavers, stamped concrete, wood, and composite decking cleaned and revived — so your outdoor space is ready for entertaining all season long.",
+      "Pavers, stamped concrete, wood, and composite decking cleaned and revived, so your outdoor space is ready for entertaining all season long.",
     features: [
       "Pavers, stamped concrete & wood",
       "Restores original color",
@@ -154,14 +155,15 @@ export const services: Service[] = [
     name: "Roof Washing",
     short: "Remove black streaks & extend roof life.",
     description:
-      "Those black streaks are living algae eating away at your shingles. Our soft wash roof treatment kills it safely — improving curb appeal and protecting your investment.",
+      "Those black streaks are living algae eating away at your shingles. Our soft wash roof treatment kills it safely, improving curb appeal and protecting your investment.",
     features: [
       "Kills algae, moss & lichen",
-      "Soft wash — no shingle damage",
+      "Soft wash, no shingle damage",
       "Removes black streaks",
       "Extends roof lifespan",
     ],
     icon: "roof",
+    image: "/images/commercial-2.jpg",
   },
   {
     slug: "gutter-cleaning",
@@ -176,12 +178,13 @@ export const services: Service[] = [
       "1 & 2 story homes",
     ],
     icon: "gutter",
+    image: "/images/walkway-after.jpg",
   },
 ];
 
 export const featuredServices = services.filter((s) => s.featured);
 
-// Service areas — ranked by priority
+// Service areas, ranked by priority
 export const serviceAreas = [
   "Macomb Township",
   "Washington Township",
@@ -200,7 +203,7 @@ export const serviceAreas = [
 ];
 
 // ============================================================
-//  REVIEWS — pulled from Google & Angi (verified)
+//  REVIEWS, pulled from Google & Angi (verified)
 // ============================================================
 export type Review = {
   name: string;
@@ -241,7 +244,7 @@ export const reviews: Review[] = [
   },
   {
     name: "Steve P.",
-    text: "These guys did a fantastic job. This composite deck has not been cleaned in 12 years — full of mildew and growth. It's like brand new again. They did more than what they said, and were on time!",
+    text: "These guys did a fantastic job. This composite deck has not been cleaned in 12 years, full of mildew and growth. It's like brand new again. They did more than what they said, and were on time!",
     service: "Patio & Deck Cleaning",
     source: "Angi",
     rating: 5,
@@ -291,3 +294,17 @@ export const externalLinks = {
   angi: "https://www.angi.com/companylist/us/mi/macomb/are-you-washed-pressure-washing-llc-reviews-1.htm",
   homeadvisor: "https://www.homeadvisor.com/rated.AreYouWashedPressure.136540417.html",
 };
+
+// Finished results gallery (afters only). Add more by appending here.
+export type Result = { image: string; label: string };
+export const results: Result[] = [
+  { image: "/images/house-after.jpg", label: "House Washing" },
+  { image: "/images/driveway-clean.jpg", label: "Driveway Cleaning" },
+  { image: "/images/patio-after.jpg", label: "Patio & Deck" },
+  { image: "/images/walkway-after.jpg", label: "Paver Walkway" },
+  { image: "/images/balustrade-after.jpg", label: "Porch & Balustrade" },
+  { image: "/images/driveway-house.jpg", label: "Driveway & Entry" },
+  { image: "/images/commercial-1.jpg", label: "Commercial Exterior" },
+  { image: "/images/commercial-door.jpg", label: "Storefront" },
+  { image: "/images/commercial-2.jpg", label: "Commercial" },
+];

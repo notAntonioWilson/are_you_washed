@@ -22,7 +22,7 @@ export default function AboutPage() {
         eyebrow="Our Story"
         title="Family Owned."
         accent="Locally Trusted."
-        sub="Four years, over a thousand properties, and a perfect 5.0 rating — built on one belief: every home deserves to look its best."
+        sub="Four years, over a thousand properties, and a perfect 5.0 rating, built on one belief: every home deserves to look its best."
       />
 
       {/* Story split */}
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <span className="eyebrow">Why We Do This</span>
             <h2 className="section-title">It started with a love for <span className="accent">curb appeal</span></h2>
             <p className="about-text">
-              Are You Washed Pressure Washing began with a strong desire to enhance the curb appeal of every home we touch —
+              Are You Washed Pressure Washing began with a strong desire to enhance the curb appeal of every home we touch , 
               and a drive to help homeowners perfect the place they love most.
             </p>
             <p className="about-text">
@@ -43,10 +43,10 @@ export default function AboutPage() {
               That moment when a homeowner sees their clean home for the first time is exactly why we keep doing this.
             </p>
             <p className="about-text">
-              As a family-owned and family-run business, we bring that personal pride to every single job — whether it&apos;s a
+              As a family-owned and family-run business, we bring that personal pride to every single job, whether it&apos;s a
               full house wash, a window cleaning, or clearing out your gutters before the season turns.
             </p>
-            <div className="about-sign">— Juan &amp; the Are You Washed Family</div>
+            <div className="about-sign">Juan &amp; the Are You Washed Family</div>
           </div>
         </div>
         <style>{`
@@ -75,8 +75,8 @@ export default function AboutPage() {
           </div>
           <div className="about-creds reveal">
             <div className="cred"><Icons.shield className="cred-ic" /> Licensed &amp; Insured</div>
-            <div className="cred"><Icons.check className="cred-ic" /> BBB Accredited — {trust.bbbRating} Rating</div>
-            <div className="cred"><Icons.star className="cred-ic" /> 3× Angi Award Recognized</div>
+            <div className="cred"><Icons.check className="cred-ic" /> BBB Accredited, {trust.bbbRating} Rating</div>
+            <div className="cred"><Icons.star className="cred-ic" /> 3× Angi Super Service Award Winner</div>
           </div>
         </div>
         <style>{`

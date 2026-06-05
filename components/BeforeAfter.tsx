@@ -1,15 +1,16 @@
 "use client";
 import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Icons } from "./Icons";
 
 type Pair = { before: string; after: string; label: string };
 
-const pairs: Pair[] = [
-  { before: "/images/house-before.jpg", after: "/images/house-after.jpg", label: "House Wash — Siding" },
-  { before: "/images/walkway-before.jpg", after: "/images/walkway-after.jpg", label: "Paver Walkway Restoration" },
-  { before: "/images/patio-before.jpg", after: "/images/patio-after.jpg", label: "Stamped Concrete Patio" },
-  { before: "/images/balustrade-before.jpg", after: "/images/balustrade-after.jpg", label: "Porch & Balustrade" },
-];
+const housePair: Pair = {
+  before: "/images/house-before.jpg",
+  after: "/images/house-after.jpg",
+  label: "House Wash - Siding",
+};
 
 function Slider({ pair }: { pair: Pair }) {
   const [pos, setPos] = useState(50);
@@ -124,54 +125,28 @@ function Slider({ pair }: { pair: Pair }) {
 }
 
 export default function BeforeAfter() {
-  const [active, setActive] = useState(0);
   return (
     <section className="section section-tint ba-section">
       <div className="container">
         <div className="section-head center">
           <span className="eyebrow">See The Difference</span>
-          <h2 className="section-title">Real <span className="accent">Before &amp; Afters</span></h2>
-          <p className="section-sub">Drag the slider to reveal the transformation. These are real jobs from real Metro Detroit homes.</p>
-        </div>
-
-        <div className="ba-tabs">
-          {pairs.map((p, i) => (
-            <button
-              key={p.label}
-              className={`ba-tab ${active === i ? "active" : ""}`}
-              onClick={() => setActive(i)}
-            >
-              {p.label}
-            </button>
-          ))}
+          <h2 className="section-title">Real <span className="accent">Before &amp; After</span></h2>
+          <p className="section-sub">Drag the slider to reveal the transformation. A real job from a real Metro Detroit home.</p>
         </div>
 
         <div className="ba-stage reveal">
-          <Slider key={active} pair={pairs[active]} />
+          <Slider pair={housePair} />
+        </div>
+
+        <div className="ba-cta">
+          <Link href="/results" className="btn btn-primary btn-lg">
+            See All Results <Icons.arrow />
+          </Link>
         </div>
       </div>
       <style>{`
-        .ba-tabs {
-          display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
-          margin-bottom: 32px;
-        }
-        .ba-tab {
-          font-family: var(--font-display);
-          font-weight: 600; font-size: 14px;
-          color: var(--ink-soft);
-          background: var(--white);
-          border: 1.5px solid var(--line);
-          padding: 11px 20px;
-          border-radius: var(--r-pill);
-          transition: all 0.25s;
-        }
-        .ba-tab:hover { border-color: var(--maize); color: var(--ink); }
-        .ba-tab.active {
-          background: var(--ink);
-          color: #fff;
-          border-color: var(--ink);
-        }
         .ba-stage { max-width: 820px; margin: 0 auto; }
+        .ba-cta { display: flex; justify-content: center; margin-top: 30px; }
       `}</style>
     </section>
   );

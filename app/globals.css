@@ -67,6 +67,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -80,6 +82,8 @@ body {
   line-height: 1.65;
   font-size: 17px;
   overflow-x: hidden;
+  max-width: 100%;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

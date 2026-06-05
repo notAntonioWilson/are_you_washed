@@ -198,6 +198,7 @@ export default function ReviewMarquee({
         .marquee {
           overflow: hidden;
           cursor: grab;
+          touch-action: pan-y;
           -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
           mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
         }

@@ -73,16 +73,19 @@ export default function ContactPage() {
           </div>
         </div>
         <style>{`
-          .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,64px); align-items: start; }
-          .contact-h { font-size: clamp(1.6rem,3.5vw,2.4rem); margin-bottom: 14px; }
-          .contact-lead { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.65; margin-bottom: 30px; }
-          .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 34px; }
+          /* contact-only: trim header + section spacing for a compact page */
+          .pagehero { padding-top: calc(var(--nav-h) + 8px); padding-bottom: 14px; }
+          .contact-section { padding-top: clamp(10px,1.6vw,20px); padding-bottom: clamp(22px,3vw,40px); }
+          .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px,4vw,52px); align-items: start; }
+          .contact-h { font-size: clamp(1.6rem,3.5vw,2.4rem); margin-bottom: 10px; }
+          .contact-lead { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.65; margin-bottom: 20px; }
+          .contact-cards { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 22px; }
           .contact-card {
             display: flex; align-items: center; gap: 14px;
             background: var(--white);
             border: 1px solid var(--line);
             border-radius: var(--r-md);
-            padding: 18px 20px;
+            padding: 15px 20px;
             box-shadow: var(--shadow-sm);
             transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
           }
@@ -96,7 +99,7 @@ export default function ContactPage() {
           .cc-ic-svg { width: 22px; height: 22px; }
           .cc-label { font-family: var(--font-display); font-weight: 500; font-size: 0.78rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; }
           .cc-value { font-family: var(--font-display); font-weight: 700; font-size: 0.98rem; color: var(--ink); margin-top: 2px; }
-          .contact-areas { background: var(--bg-tint); border-radius: var(--r-lg); padding: 24px 26px; }
+          .contact-areas { background: var(--bg-tint); border-radius: var(--r-lg); padding: 18px 22px; }
           .contact-areas-h { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; margin-bottom: 10px; }
           .ca-ic { width: 18px; height: 18px; color: var(--maize-deep); }
           .contact-areas-list { color: var(--ink-muted); font-size: 0.92rem; line-height: 1.6; }

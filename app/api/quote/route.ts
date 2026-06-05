@@ -11,7 +11,7 @@ import { NextRequest, NextResponse } from "next/server";
 //     MAKE_WEBHOOK_URL). It forwards the full payload to:
 //        - Email (you + Juan)
 //        - Airtable CRM (Create Record module)
-//  2. That's it — this route POSTs the JSON straight through.
+//  2. That's it, this route POSTs the JSON straight through.
 //
 //  Payload shape sent to webhook:
 //   { name, phone, email, service, address, windows?, stories?,
@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
         body: JSON.stringify(data),
       });
     } else {
-      // Dev fallback — visible in server logs until webhook is set
+      // Dev fallback, visible in server logs until webhook is set
       console.log("[QUOTE REQUEST]", JSON.stringify(data, null, 2));
     }
 

@@ -26,13 +26,16 @@ export default function Reviews() {
         <Link href="/reviews" className="btn btn-primary">
           See All Reviews <Icons.arrow />
         </Link>
+        <Link href="/contact" className="btn btn-ghost">
+          Get a Free Quote
+        </Link>
       </div>
 
       <style>{`
         .reviews { position: relative; overflow: hidden; }
         .reviews-blob { width: 460px; height: 460px; top: 6%; right: -180px; }
         .reviews-marquee-wrap { position: relative; z-index: 1; }
-        .reviews-cta { display: flex; justify-content: center; margin-top: 36px; }
+        .reviews-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
       `}</style>
     </section>
   );

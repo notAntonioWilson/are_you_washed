@@ -95,6 +95,7 @@ export default function Footer() {
           color: #fff; margin-bottom: 7px;
         }
         .footer-logo-accent { color: var(--maize); }
+        .footer-logo img { display: block; }
         .footer-tagline {
           font-family: var(--font-display);
           font-style: italic; font-weight: 600; font-size: 0.9rem;

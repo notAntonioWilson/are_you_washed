@@ -28,12 +28,18 @@ export default function HomePage() {
             </p>
           </div>
           <ServicesGrid />
+          <div className="section-actions">
+            <Link href="/contact" className="btn btn-primary btn-lg">Get a Free Quote <Icons.arrow /></Link>
+            <Link href="/services" className="btn btn-ghost btn-lg">All Services</Link>
+          </div>
         </div>
       </section>
 
       <BeforeAfter />
 
-      {/* Why Us split */}
+      <Reviews />
+
+      {/* Meet the Owner (About teaser) */}
       <section className="section whyus">
         <div className="container whyus-grid">
           <div className="whyus-media reveal">
@@ -68,39 +74,34 @@ export default function HomePage() {
           </div>
         </div>
         <style>{`
-          .whyus-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(36px,6vw,80px); align-items: center; }
+          .whyus-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px,5vw,68px); align-items: center; }
           .whyus-media { position: relative; }
           .whyus-img { width: 100%; height: auto; border-radius: var(--r-xl); box-shadow: var(--shadow-lg); object-fit: cover; }
           .whyus-float {
-            position: absolute; bottom: -24px; right: -16px;
+            position: absolute; bottom: -20px; right: -14px;
             background: var(--white);
             border-radius: var(--r-lg);
-            padding: 22px 28px;
+            padding: 18px 24px;
             box-shadow: var(--shadow-lg);
             text-align: center;
             border: 1px solid var(--line);
           }
           .whyus-float-num {
             font-family: var(--font-display); font-weight: 800;
-            font-size: 2rem;
+            font-size: 1.85rem;
             background: linear-gradient(120deg, var(--maize-deep), var(--maize));
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
             line-height: 1;
           }
-          .whyus-float-label { font-family: var(--font-display); font-weight: 500; font-size: 0.82rem; color: var(--ink-muted); margin-top: 4px; }
-          .whyus-text { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin: 8px 0 24px; }
-          .whyus-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
-          .whyus-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--ink-soft); }
-          .whyus-check { width: 22px; height: 22px; color: #fff; background: var(--maize); border-radius: 50%; padding: 4px; flex-shrink: 0; margin-top: 2px; }
-          .whyus-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+          .whyus-float-label { font-family: var(--font-display); font-weight: 500; font-size: 0.8rem; color: var(--ink-muted); margin-top: 4px; }
+          .whyus-text { color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; margin: 8px 0 20px; }
+          .whyus-actions { display: flex; gap: 12px; flex-wrap: wrap; }
           @media (max-width: 900px) {
             .whyus-grid { grid-template-columns: 1fr; }
             .whyus-float { right: 16px; }
           }
         `}</style>
       </section>
-
-      <Reviews />
 
       {/* Combined quote CTA with service-area coverage merged in */}
       <section className="cta-merge">
@@ -136,18 +137,18 @@ export default function HomePage() {
           </div>
         </div>
         <style>{`
-          .cta-merge { position: relative; padding: clamp(46px,6vw,84px) 0; background: var(--bg-maize); overflow: hidden; }
-          .cta-merge-blob { width: 440px; height: 440px; top: -170px; left: -130px; }
+          .cta-merge { position: relative; padding: clamp(40px,5vw,68px) 0; background: var(--bg-maize); overflow: hidden; }
+          .cta-merge-blob { width: 420px; height: 420px; top: -160px; left: -120px; }
           .cta-merge-grid {
             position: relative; z-index: 1;
             display: grid; grid-template-columns: 1.04fr 0.96fr;
-            gap: clamp(32px,5vw,64px); align-items: center;
+            gap: clamp(30px,4.5vw,56px); align-items: center;
           }
           .eyebrow-ic { width: 15px; height: 15px; }
-          .cta-merge-text { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin: 8px 0 0; }
-          .cta-merge-text + .cta-merge-text { margin-top: 16px; }
-          .cta-merge-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-          .cta-merge-areas { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.6; margin-top: 26px; }
+          .cta-merge-text { color: var(--ink-soft); font-size: 1.02rem; line-height: 1.65; margin: 8px 0 0; }
+          .cta-merge-text + .cta-merge-text { margin-top: 14px; }
+          .cta-merge-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+          .cta-merge-areas { font-size: 0.84rem; color: var(--ink-muted); line-height: 1.6; margin-top: 24px; }
           .cta-merge-areas-label { font-family: var(--font-display); font-weight: 700; color: var(--ink-soft); }
           @media (max-width: 900px) {
             .cta-merge-grid { grid-template-columns: 1fr; }

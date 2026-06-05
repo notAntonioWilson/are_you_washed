@@ -37,7 +37,7 @@ export default function QuoteForm({ variant = "page" }: { variant?: Variant }) {
       <div className={`qf qf-${variant} qf-success`}>
         <div className="qf-success-icon"><Icons.check /></div>
         <h3>Request received!</h3>
-        <p>Thanks — we&apos;ll reach out shortly with your free quote. Need us fast? Call or text {site.phone}.</p>
+        <p>Thanks, we&apos;ll reach out shortly with your free quote. Need us fast? Call or text {site.phone}.</p>
         <button className="btn btn-ghost" onClick={() => setStatus("idle")}>Send another</button>
         <style jsx>{successStyles}</style>
       </div>

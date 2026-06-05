@@ -142,11 +142,14 @@ export default function BeforeAfter() {
           <Link href="/results" className="btn btn-primary btn-lg">
             See All Results <Icons.arrow />
           </Link>
+          <Link href="/contact" className="btn btn-ghost btn-lg">
+            Get a Free Quote
+          </Link>
         </div>
       </div>
       <style>{`
         .ba-stage { max-width: 820px; margin: 0 auto; }
-        .ba-cta { display: flex; justify-content: center; margin-top: 30px; }
+        .ba-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
       `}</style>
     </section>
   );

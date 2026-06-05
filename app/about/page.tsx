@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { CTABand, TrustStrip } from "@/components/Sections";
+import { CTABand } from "@/components/Sections";
 import { Icons } from "@/components/Icons";
 import { site, trust, stats } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Are You Washed Pressure Washing is a family-owned, locally operated business serving Metro Detroit for 4 years with 1,000+ properties transformed. 5.0★ rated, A+ BBB accredited.",
+    "Are You Washed Pressure Washing is a family-owned business serving Metro Detroit since 2021, with 1,000+ properties transformed, a 5.0 rating, and three Angi Super Service Awards.",
   alternates: { canonical: `${site.url}/about` },
 };
 
@@ -33,32 +33,37 @@ export default function AboutPage() {
           </div>
           <div className="about-content reveal d1">
             <span className="eyebrow">Why We Do This</span>
-            <h2 className="section-title">It started with a love for <span className="accent">curb appeal</span></h2>
+            <h2 className="section-title">Your home, treated like <span className="accent">our own</span></h2>
             <p className="about-text">
-              Are You Washed Pressure Washing began with a strong desire to enhance the curb appeal of every home we touch , 
-              and a drive to help homeowners perfect the place they love most.
+              Are You Washed is a family-owned, family-run business based in Macomb, started by Juan in 2021.
+              The goal from day one was simple: help homeowners fall back in love with the place they live.
             </p>
             <p className="about-text">
-              There&apos;s a real satisfaction in the work we do: watching a tired, weathered surface transform back to like-new.
-              That moment when a homeowner sees their clean home for the first time is exactly why we keep doing this.
+              There is real satisfaction in this work. Watching a tired, weathered exterior come back to life,
+              and seeing a homeowner take it in for the first time, is exactly why Juan still runs every job himself.
             </p>
             <p className="about-text">
-              As a family-owned and family-run business, we bring that personal pride to every single job, whether it&apos;s a
-              full house wash, a window cleaning, or clearing out your gutters before the season turns.
+              Four years and over a thousand homes later, that pride shows in every wash, from a full house
+              soft-wash to windows and gutters before the season turns. We would love to make yours the next one.
             </p>
             <div className="about-sign">Juan &amp; the Are You Washed Family</div>
+            <div className="about-actions">
+              <Link href="/contact" className="btn btn-primary btn-lg">Get a Free Quote <Icons.arrow /></Link>
+              <Link href="/reviews" className="btn btn-ghost btn-lg">Read Reviews</Link>
+            </div>
           </div>
         </div>
         <style>{`
-          .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(36px,6vw,80px); align-items: center; }
+          .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px,4.5vw,60px); align-items: center; }
           .about-img { width: 100%; height: auto; border-radius: var(--r-xl); box-shadow: var(--shadow-lg); object-fit: cover; }
-          .about-text { color: var(--ink-soft); font-size: 1.06rem; line-height: 1.75; margin-bottom: 18px; }
-          .about-sign { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.1rem; color: var(--maize-deep); margin-top: 8px; }
+          .about-text { color: var(--ink-soft); font-size: 1.0rem; line-height: 1.6; margin-bottom: 15px; }
+          .about-sign { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.05rem; color: var(--maize-deep); margin-top: 6px; }
+          .about-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
           @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
         `}</style>
       </section>
 
-      {/* Numbers */}
+      {/* Numbers + credentials */}
       <section className="section section-tint">
         <div className="container">
           <div className="section-head center">
@@ -76,35 +81,34 @@ export default function AboutPage() {
           <div className="about-creds reveal">
             <div className="cred"><Icons.shield className="cred-ic" /> Licensed &amp; Insured</div>
             <div className="cred"><Icons.check className="cred-ic" /> BBB Accredited, {trust.bbbRating} Rating</div>
-            <div className="cred"><Icons.star className="cred-ic" /> 3× Angi Super Service Award Winner</div>
+            <div className="cred"><Icons.star className="cred-ic" /> 3x Angi Super Service Award Winner</div>
           </div>
         </div>
         <style>{`
-          .about-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-bottom: 40px; }
-          .about-stat { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px 20px; text-align: center; box-shadow: var(--shadow-sm); }
+          .about-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-bottom: 30px; }
+          .about-stat { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px 18px; text-align: center; box-shadow: var(--shadow-sm); }
           .about-stat-val {
-            font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem,3.5vw,2.6rem);
+            font-family: var(--font-display); font-weight: 800; font-size: clamp(1.7rem,3.3vw,2.4rem);
             background: linear-gradient(120deg, var(--maize-deep), var(--maize));
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-            line-height: 1; margin-bottom: 8px;
+            line-height: 1; margin-bottom: 6px;
           }
-          .about-stat-label { font-family: var(--font-display); font-weight: 500; font-size: 0.85rem; color: var(--ink-muted); }
-          .about-creds { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+          .about-stat-label { font-family: var(--font-display); font-weight: 500; font-size: 0.84rem; color: var(--ink-muted); }
+          .about-creds { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
           .cred {
-            display: inline-flex; align-items: center; gap: 10px;
-            font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 9px;
+            font-family: var(--font-display); font-weight: 600; font-size: 0.92rem;
             color: var(--ink);
             background: var(--white);
             border: 1.5px solid var(--line);
-            padding: 12px 22px;
+            padding: 11px 20px;
             border-radius: var(--r-pill);
           }
-          .cred-ic { width: 20px; height: 20px; color: var(--maize-deep); }
+          .cred-ic { width: 19px; height: 19px; color: var(--maize-deep); }
           @media (max-width: 760px) { .about-stats { grid-template-columns: 1fr 1fr; } }
         `}</style>
       </section>
 
-      <TrustStrip />
       <CTABand />
     </>
   );

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.shortName}`,
   },
   description:
-    "Family-owned pressure washing in Macomb Township & Metro Detroit. House washing, soft washing, window & gutter cleaning, concrete, roofs & more. 5.0★ on Google & Angi, A+ BBB. Free quotes — call 586-238-0784.",
+    "Family-owned pressure washing in Macomb Township & Metro Detroit. House washing, soft washing, window & gutter cleaning, concrete, roofs & more. 5.0★ on Google & Angi, A+ BBB. Free quotes, call 586-238-0784.",
   keywords: [
     "pressure washing Macomb MI",
     "power washing Metro Detroit",

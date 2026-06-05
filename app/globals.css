@@ -1,17 +1,17 @@
 /* ============================================================
-   ARE YOU WASHED — DESIGN SYSTEM
+   ARE YOU WASHED - DESIGN SYSTEM
    Watery · Light · Maize · Rounded · Futuristic
    ============================================================ */
 
 :root {
-  /* Brand palette — MAIZE is the primary color */
+  /* Brand palette - MAIZE is the primary color */
   --maize: #ecb431;
   --maize-deep: #d89a18;
   --maize-light: #f7d684;
   --maize-pale: #fdf3da;
   --maize-glow: rgba(236, 180, 49, 0.4);
 
-  /* Blues — brighter, lighter, "watery" (not murky navy) */
+  /* Blues - brighter, lighter, "watery" (not murky navy) */
   --sky: #38b0e8;          /* bright azure */
   --sky-deep: #1f8fd0;
   --blue: #2a9fd6;
@@ -21,11 +21,11 @@
   --aqua-soft: #e4f4fd;
   --aqua-mist: #f1f9fe;
 
-  /* A luminous blue for dark fills — replaces the murky #14202c */
+  /* A luminous blue for dark fills - replaces the murky #14202c */
   --blue-night: #133a5e;   /* deep but clearly blue, not black */
   --blue-night-2: #1c5285;
 
-  /* Neutrals — light theme */
+  /* Neutrals - light theme */
   --white: #ffffff;
   --ink: #16273a;          /* text: bluer, still high-contrast */
   --ink-soft: #3d556d;
@@ -41,14 +41,14 @@
   --shadow-lg: 0 20px 58px rgba(22, 39, 58, 0.14);
   --shadow-maize: 0 10px 32px rgba(236, 180, 49, 0.34);
 
-  /* Radii — rounded, no hard angles */
+  /* Radii - rounded, no hard angles */
   --r-sm: 12px;
   --r-md: 18px;
   --r-lg: 26px;
   --r-xl: 36px;
   --r-pill: 999px;
 
-  --maxw: 1180px;
+  --maxw: 1100px;
   --nav-h: 72px;
 
   --font-display: var(--font-sora), -apple-system, BlinkMacSystemFont, sans-serif;
@@ -99,7 +99,7 @@ ul { list-style: none; }
 }
 
 /* ---------- Section rhythm (tighter / more compact) ---------- */
-.section { padding: clamp(40px, 5.5vw, 76px) 0; position: relative; }
+.section { padding: clamp(30px, 4.4vw, 58px) 0; position: relative; }
 .section-tint { background: var(--bg-tint); }
 .section-maize { background: var(--bg-maize); }
 
@@ -134,7 +134,7 @@ ul { list-style: none; }
   color: var(--ink-muted);
   max-width: 600px;
 }
-.section-head { margin-bottom: clamp(28px, 3.5vw, 44px); }
+.section-head { margin-bottom: clamp(20px, 2.8vw, 34px); }
 .section-head.center { text-align: center; }
 .section-head.center .section-sub { margin: 0 auto; }
 
@@ -143,12 +143,12 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 14.5px;
-  padding: 11px 22px;
-  border-radius: 12px;
+  font-size: 13.5px;
+  padding: 9px 19px;
+  border-radius: var(--r-pill);
   transition: transform 0.2s ease, box-shadow 0.2s, background 0.2s;
   white-space: nowrap;
   cursor: pointer;
@@ -172,7 +172,13 @@ ul { list-style: none; }
 }
 .btn-ghost:hover { transform: translateY(-2px); border-color: var(--maize); box-shadow: var(--shadow-sm); }
 .btn-block { width: 100%; }
-.btn-lg { padding: 13px 26px; font-size: 15px; }
+.btn-lg { padding: 11px 23px; font-size: 14px; }
+
+/* Centered button row placed after a section's content */
+.section-actions {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  margin-top: clamp(26px, 3.5vw, 40px);
+}
 
 /* ---------- Cards ---------- */
 .card {

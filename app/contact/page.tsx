@@ -8,7 +8,7 @@ import { site, serviceAreas } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Submit a Quote",
   description:
-    "Submit a free, no-obligation quote request to Are You Washed Pressure Washing. Tell us about your property and we'll respond fast — usually within hours. Call or text 586-238-0784. Serving Macomb & Metro Detroit, 8am–8pm daily.",
+    "Submit a free, no-obligation quote request to Are You Washed Pressure Washing. Tell us about your property and we'll respond fast, usually within hours. Call or text 586-238-0784. Serving Macomb & Metro Detroit, 8am-8pm daily.",
   alternates: { canonical: `${site.url}/contact` },
 };
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
         eyebrow="Free · No Obligation"
         title="Submit a"
         accent="Quote"
-        sub="Tell us a little about your property and what needs cleaning. We'll send your free quote back fast — usually within hours, never any pressure."
+        sub="Tell us a little about your property and what needs cleaning. We'll send your free quote back fast, usually within hours, never any pressure."
       />
 
       <section className="section contact-section">
@@ -36,7 +36,7 @@ export default function ContactPage() {
             <h2 className="contact-h">Two minutes is all it takes.</h2>
             <p className="contact-lead">
               Fill out the form and we&apos;ll get right back to you with an honest, no-obligation quote. Prefer to talk it
-              through? Call or text — a real member of our family team will pick up.
+              through? Call or text, a real member of our family team will pick up.
             </p>
 
             <div className="contact-cards">
@@ -62,7 +62,7 @@ export default function ContactPage() {
             <div className="contact-areas">
               <h3 className="contact-areas-h"><Icons.pin className="ca-ic" /> Service Areas</h3>
               <p className="contact-areas-list">
-                {serviceAreas.join(" · ")} — and everywhere within {site.serviceRadiusMiles} miles of {site.homeBaseZip}.
+                {serviceAreas.join(" · ")}, and everywhere within {site.serviceRadiusMiles} miles of {site.homeBaseZip}.
               </p>
             </div>
           </div>

@@ -92,17 +92,17 @@ export default function Hero() {
           object-fit: cover;
           position: absolute; inset: 0;
         }
-        /* Dim layer so text + form stay readable */
+        /* Dim layer so text + form stay readable — bluer, not murky black */
         .hero-overlay {
           position: absolute; inset: 0;
           background:
-            linear-gradient(105deg, rgba(11,28,44,0.86) 0%, rgba(11,28,44,0.64) 45%, rgba(11,28,44,0.42) 100%);
+            linear-gradient(105deg, rgba(15,46,76,0.88) 0%, rgba(18,58,94,0.66) 45%, rgba(28,82,133,0.44) 100%);
         }
         .hero-mesh {
           position: absolute; inset: 0;
           background:
-            radial-gradient(900px 500px at 12% 30%, rgba(42,159,214,0.30), transparent 60%),
-            radial-gradient(700px 460px at 85% 75%, rgba(231,177,59,0.20), transparent 60%);
+            radial-gradient(900px 520px at 10% 28%, rgba(56,176,232,0.40), transparent 60%),
+            radial-gradient(760px 480px at 88% 78%, rgba(236,180,49,0.34), transparent 60%);
           mix-blend-mode: screen;
         }
         .hero-grid {

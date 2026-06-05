@@ -4,42 +4,52 @@
    ============================================================ */
 
 :root {
-  /* Brand palette */
-  --maize: #e7b13b;
-  --maize-deep: #d49a1f;
-  --maize-light: #f5d488;
-  --maize-glow: rgba(231, 177, 59, 0.35);
+  /* Brand palette — MAIZE is the primary color */
+  --maize: #ecb431;
+  --maize-deep: #d89a18;
+  --maize-light: #f7d684;
+  --maize-pale: #fdf3da;
+  --maize-glow: rgba(236, 180, 49, 0.4);
 
-  /* Watery blues */
-  --aqua: #2a9fd6;
-  --aqua-deep: #1b6fa8;
-  --aqua-soft: #e3f2fb;
-  --aqua-mist: #f0f8fd;
+  /* Blues — brighter, lighter, "watery" (not murky navy) */
+  --sky: #38b0e8;          /* bright azure */
+  --sky-deep: #1f8fd0;
+  --blue: #2a9fd6;
+  --blue-deep: #2079b8;
+  --aqua: #38b0e8;
+  --aqua-deep: #1f8fd0;
+  --aqua-soft: #e4f4fd;
+  --aqua-mist: #f1f9fe;
+
+  /* A luminous blue for dark fills — replaces the murky #14202c */
+  --blue-night: #133a5e;   /* deep but clearly blue, not black */
+  --blue-night-2: #1c5285;
 
   /* Neutrals — light theme */
   --white: #ffffff;
-  --ink: #14202c;
-  --ink-soft: #3a4a59;
-  --ink-muted: #6b7c8c;
-  --line: #e4ecf3;
+  --ink: #16273a;          /* text: bluer, still high-contrast */
+  --ink-soft: #3d556d;
+  --ink-muted: #6c8093;
+  --line: #e3edf5;
   --bg: #ffffff;
-  --bg-tint: #f5fafe;
+  --bg-tint: #f3f9fe;       /* faint blue wash */
+  --bg-maize: #fdf8ec;      /* faint maize wash */
 
   /* Effects */
-  --shadow-sm: 0 2px 12px rgba(20, 32, 44, 0.06);
-  --shadow-md: 0 12px 40px rgba(20, 32, 44, 0.10);
-  --shadow-lg: 0 24px 70px rgba(20, 32, 44, 0.14);
-  --shadow-maize: 0 12px 40px rgba(231, 177, 59, 0.28);
+  --shadow-sm: 0 2px 12px rgba(22, 39, 58, 0.06);
+  --shadow-md: 0 10px 34px rgba(22, 39, 58, 0.10);
+  --shadow-lg: 0 20px 58px rgba(22, 39, 58, 0.14);
+  --shadow-maize: 0 10px 32px rgba(236, 180, 49, 0.34);
 
   /* Radii — rounded, no hard angles */
   --r-sm: 12px;
   --r-md: 18px;
-  --r-lg: 28px;
-  --r-xl: 40px;
+  --r-lg: 26px;
+  --r-xl: 36px;
   --r-pill: 999px;
 
   --maxw: 1240px;
-  --nav-h: 76px;
+  --nav-h: 72px;
 
   --font-display: var(--font-sora), -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: var(--font-jakarta), -apple-system, BlinkMacSystemFont, sans-serif;
@@ -88,42 +98,43 @@ ul { list-style: none; }
   padding: 0 clamp(20px, 5vw, 48px);
 }
 
-/* ---------- Section rhythm ---------- */
-.section { padding: clamp(64px, 10vw, 130px) 0; position: relative; }
+/* ---------- Section rhythm (tighter / more compact) ---------- */
+.section { padding: clamp(48px, 7vw, 92px) 0; position: relative; }
 .section-tint { background: var(--bg-tint); }
+.section-maize { background: var(--bg-maize); }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 12.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--aqua-deep);
-  padding: 8px 16px;
-  background: var(--aqua-soft);
+  color: var(--maize-deep);
+  padding: 7px 15px;
+  background: var(--maize-pale);
   border-radius: var(--r-pill);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  margin-bottom: 18px;
+  font-size: clamp(1.9rem, 4.6vw, 3.1rem);
+  margin-bottom: 14px;
 }
 .section-title .accent {
-  background: linear-gradient(120deg, var(--maize-deep), var(--maize));
+  background: linear-gradient(115deg, var(--maize-deep), var(--maize));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .section-sub {
-  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-size: clamp(1rem, 1.7vw, 1.12rem);
   color: var(--ink-muted);
-  max-width: 620px;
+  max-width: 600px;
 }
-.section-head { margin-bottom: clamp(40px, 6vw, 72px); }
+.section-head { margin-bottom: clamp(32px, 4.5vw, 52px); }
 .section-head.center { text-align: center; }
 .section-head.center .section-sub { margin: 0 auto; }
 
@@ -161,7 +172,7 @@ ul { list-style: none; }
 }
 .btn-ghost:hover { transform: translateY(-3px); border-color: var(--maize); box-shadow: var(--shadow-sm); }
 .btn-block { width: 100%; }
-.btn-lg { padding: 19px 38px; font-size: 17px; }
+.btn-lg { padding: 17px 34px; font-size: 16.5px; }
 
 /* ---------- Cards ---------- */
 .card {
@@ -177,12 +188,12 @@ ul { list-style: none; }
   position: absolute;
   border-radius: 50%;
   filter: blur(70px);
-  opacity: 0.5;
+  opacity: 0.6;
   pointer-events: none;
   z-index: 0;
 }
 .blob-maize { background: radial-gradient(circle, var(--maize-glow), transparent 70%); }
-.blob-aqua { background: radial-gradient(circle, rgba(42,159,214,0.22), transparent 70%); }
+.blob-aqua { background: radial-gradient(circle, rgba(56,176,232,0.28), transparent 70%); }
 
 /* ---------- Reveal animation ---------- */
 .reveal {

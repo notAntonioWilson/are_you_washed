@@ -15,7 +15,7 @@ export function StatsBar() {
       </div>
       <style>{`
         .statsbar {
-          background: linear-gradient(120deg, var(--ink) 0%, #1a2f42 100%);
+          background: linear-gradient(120deg, var(--blue-night) 0%, var(--blue-night-2) 55%, var(--sky-deep) 130%);
           position: relative;
           overflow: hidden;
         }
@@ -23,35 +23,35 @@ export function StatsBar() {
           content: "";
           position: absolute; inset: 0;
           background:
-            radial-gradient(600px 300px at 80% 50%, rgba(231,177,59,0.16), transparent 60%),
-            radial-gradient(500px 280px at 10% 50%, rgba(42,159,214,0.18), transparent 60%);
+            radial-gradient(620px 320px at 82% 50%, rgba(236,180,49,0.30), transparent 60%),
+            radial-gradient(520px 300px at 8% 40%, rgba(56,176,232,0.34), transparent 60%);
         }
         .statsbar-grid {
           position: relative; z-index: 1;
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 24px;
-          padding: clamp(40px, 6vw, 64px) clamp(20px,5vw,48px);
+          padding: clamp(32px, 4.5vw, 52px) clamp(20px,5vw,48px);
         }
         .stat { text-align: center; }
         .stat-value {
           font-family: var(--font-display);
           font-weight: 800;
-          font-size: clamp(2rem, 4vw, 3rem);
-          background: linear-gradient(120deg, var(--maize-light), var(--maize));
+          font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+          background: linear-gradient(120deg, #fff 0%, var(--maize-light) 60%, var(--maize) 100%);
           -webkit-background-clip: text; background-clip: text;
           -webkit-text-fill-color: transparent;
           line-height: 1;
-          margin-bottom: 8px;
+          margin-bottom: 7px;
         }
         .stat-label {
           font-family: var(--font-display);
           font-weight: 500;
-          font-size: clamp(0.8rem, 1.4vw, 0.95rem);
-          color: rgba(255,255,255,0.78);
+          font-size: clamp(0.8rem, 1.4vw, 0.94rem);
+          color: rgba(255,255,255,0.82);
         }
         @media (max-width: 680px) {
-          .statsbar-grid { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
+          .statsbar-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
         }
       `}</style>
     </section>
@@ -77,18 +77,18 @@ export function CTABand() {
         </div>
       </div>
       <style>{`
-        .ctaband { padding: clamp(56px,8vw,96px) 0; background: var(--bg-tint); }
+        .ctaband { padding: clamp(44px,6vw,72px) 0; background: var(--bg-maize); }
         .ctaband-inner {
           position: relative;
           text-align: center;
           background: var(--white);
           border: 1px solid var(--line);
           border-radius: var(--r-xl);
-          padding: clamp(40px, 7vw, 80px) clamp(24px,5vw,48px);
+          padding: clamp(36px, 5.5vw, 64px) clamp(24px,5vw,48px);
           box-shadow: var(--shadow-md);
           overflow: hidden;
         }
-        .ctaband-blob { width: 400px; height: 400px; top: -150px; right: -100px; }
+        .ctaband-blob { width: 380px; height: 380px; top: -150px; right: -100px; }
         .ctaband-title {
           position: relative; z-index: 1;
           font-size: clamp(1.8rem, 4.5vw, 3rem);
@@ -125,7 +125,7 @@ export function TrustStrip() {
             const Ic = Icons[it.icon];
             return (
               <div key={it.title} className={`trust-item reveal d${i + 1}`}>
-                <div className="trust-ic"><Ic className="trust-ic-svg" /></div>
+                <div className={`trust-ic ${i % 2 === 0 ? "trust-ic-maize" : "trust-ic-blue"}`}><Ic className="trust-ic-svg" /></div>
                 <h3 className="trust-title">{it.title}</h3>
                 <p className="trust-text">{it.text}</p>
               </div>
@@ -134,32 +134,32 @@ export function TrustStrip() {
         </div>
       </div>
       <style>{`
-        .truststrip { padding: clamp(48px,7vw,80px) 0; }
+        .truststrip { padding: clamp(40px,5.5vw,64px) 0; }
         .truststrip-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
+          gap: 18px;
         }
         .trust-item {
           background: var(--white);
           border: 1px solid var(--line);
           border-radius: var(--r-lg);
-          padding: 30px 26px;
+          padding: 26px 24px;
           box-shadow: var(--shadow-sm);
           transition: transform 0.3s, box-shadow 0.3s;
         }
         .trust-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
         .trust-ic {
-          width: 54px; height: 54px;
+          width: 52px; height: 52px;
           display: grid; place-items: center;
-          background: var(--aqua-soft);
-          color: var(--aqua-deep);
           border-radius: var(--r-md);
-          margin-bottom: 16px;
+          margin-bottom: 14px;
         }
-        .trust-ic-svg { width: 26px; height: 26px; }
-        .trust-title { font-size: 1.12rem; margin-bottom: 6px; }
-        .trust-text { color: var(--ink-muted); font-size: 0.95rem; line-height: 1.55; }
+        .trust-ic-maize { background: var(--maize-pale); color: var(--maize-deep); }
+        .trust-ic-blue { background: var(--aqua-soft); color: var(--aqua-deep); }
+        .trust-ic-svg { width: 25px; height: 25px; }
+        .trust-title { font-size: 1.08rem; margin-bottom: 5px; }
+        .trust-text { color: var(--ink-muted); font-size: 0.93rem; line-height: 1.5; }
         @media (max-width: 900px) { .truststrip-grid { grid-template-columns: 1fr 1fr; } }
       `}</style>
     </section>

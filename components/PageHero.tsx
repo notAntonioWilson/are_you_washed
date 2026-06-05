@@ -26,8 +26,8 @@ export default function PageHero({
         .pagehero {
           position: relative;
           overflow: hidden;
-          padding: calc(var(--nav-h) + clamp(48px,8vw,90px)) 0 clamp(48px,7vw,80px);
-          background: linear-gradient(180deg, var(--aqua-mist) 0%, var(--white) 100%);
+          padding: calc(var(--nav-h) + clamp(36px,6vw,68px)) 0 clamp(36px,5vw,60px);
+          background: linear-gradient(180deg, var(--aqua-soft) 0%, var(--bg-maize) 70%, var(--white) 100%);
           text-align: center;
         }
         .pagehero-blob { width: 460px; height: 460px; top: -180px; left: -120px; }

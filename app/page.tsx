@@ -36,31 +36,32 @@ export default function HomePage() {
       <section className="section whyus">
         <div className="container whyus-grid">
           <div className="whyus-media reveal">
-            <Image src="/images/driveway-house.jpg" alt="Freshly cleaned brick home and driveway" width={640} height={760} className="whyus-img" />
+            {/* Founder photo placeholder: swap src with Juan's photo when ready */}
+            <Image src="/images/driveway-house.jpg" alt="Are You Washed family business work" width={640} height={760} className="whyus-img" />
             <div className="whyus-float">
               <div className="whyus-float-num">{site.propertiesServed}</div>
               <div className="whyus-float-label">Properties Transformed</div>
             </div>
           </div>
           <div className="whyus-content reveal d1">
-            <span className="eyebrow">Why Are You Washed</span>
-            <h2 className="section-title">A family business that <span className="accent">treats your home like ours</span></h2>
+            <span className="eyebrow">Meet the Owner</span>
+            <h2 className="section-title">Meet Juan and the family behind <span className="accent">every clean</span></h2>
             <p className="whyus-text">
-              We started Are You Washed out of a simple desire: to help homeowners fall back in love with their property.
-              There&apos;s nothing like watching years of grime wash away to reveal the home underneath.
+              Are You Washed is a family-owned business based in Macomb, and Juan has run it since day one in 2021.
+              What started as a local pressure washing service has grown into one of Metro Detroit&apos;s most trusted
+              names for exterior cleaning.
             </p>
-            <ul className="whyus-list">
-              {[
-                "Family owned & operated, every job is personal",
-                "Safe soft-wash methods that protect your surfaces",
-                "Prompt, professional, and communicative from quote to clean",
-                "Fully licensed & insured for total peace of mind",
-              ].map((t) => (
-                <li key={t}><Icons.check className="whyus-check" /> {t}</li>
-              ))}
-            </ul>
+            <p className="whyus-text">
+              The work has stayed personal the whole way. Juan is on the jobs himself, walking each property,
+              explaining the plan, and making sure every homeowner is happy before he packs up. Call Are You Washed
+              and you get a real family that treats your home like their own.
+            </p>
+            <p className="whyus-text">
+              Four years, over a thousand properties, a perfect 5.0 rating, and three Angi Super Service Awards later,
+              that same care still shows in every wash.
+            </p>
             <div className="whyus-actions">
-              <Link href="/about" className="btn btn-dark btn-lg">Our Story <Icons.arrow /></Link>
+              <Link href="/about" className="btn btn-primary btn-lg">Read Our Full Story <Icons.arrow /></Link>
               <Link href="/contact" className="btn btn-ghost btn-lg">Get a Quote</Link>
             </div>
           </div>

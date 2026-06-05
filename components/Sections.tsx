@@ -58,14 +58,17 @@ export function StatsBar() {
   );
 }
 
-export function CTABand() {
+export function CTABand({
+  title = "Ready to see the transformation?",
+  sub = "Get a free, no-obligation quote today. We respond fast, usually within hours.",
+}: { title?: string; sub?: string } = {}) {
   return (
     <section className="ctaband">
       <div className="container ctaband-inner">
         <div className="ctaband-blob blob blob-maize" />
-        <h2 className="ctaband-title">Ready to see the transformation?</h2>
+        <h2 className="ctaband-title">{title}</h2>
         <p className="ctaband-sub">
-          Get a free, no-obligation quote today. We respond fast, usually within hours.
+          {sub}
         </p>
         <div className="ctaband-actions">
           <Link href="/contact" className="btn btn-primary btn-lg">

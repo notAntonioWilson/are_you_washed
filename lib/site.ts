@@ -64,7 +64,7 @@ export const services: Service[] = [
     name: "House Washing",
     short: "Restore your home's exterior to like-new.",
     description:
-      "Years of dirt, mildew, and organic growth get safely lifted from siding, brick, and stone, leaving your home looking freshly built. Our soft wash method protects your surfaces while delivering a deep, lasting clean.",
+      "We use a low-pressure soft wash to take dirt, mold, and mildew off your siding, brick, and stone without damaging anything. Send us a photo of your place and we'll quote it for free.",
     features: [
       "Safe for vinyl, brick, stone & aluminum siding",
       "Removes mold, mildew & algae at the root",
@@ -80,7 +80,7 @@ export const services: Service[] = [
     name: "Window Cleaning",
     short: "Streak-free glass, inside and out.",
     description:
-      "Crystal-clear, streak-free windows that let the light back in. We clean interior and exterior glass, frames, and sills with care, so every pane sparkles.",
+      "We clean the glass inside and out, along with the frames, sills, and tracks, so nothing is left streaky. Tell us how many windows you have and we'll send a free quote.",
     features: [
       "Interior & exterior glass",
       "Streak-free, spot-free finish",
@@ -96,7 +96,7 @@ export const services: Service[] = [
     name: "Soft Washing",
     short: "Low-pressure cleaning for delicate surfaces.",
     description:
-      "A specialized low-pressure technique that uses cleaning solutions instead of brute force, ideal for roofs, painted surfaces, and any area where high pressure could cause damage.",
+      "This is a low-pressure method that uses a cleaning solution instead of force, so it's safe for roofs, painted surfaces, and anything high pressure could damage. Not sure if it's what you need? Ask us and we'll quote it free.",
     features: [
       "Low-pressure, high-result method",
       "Kills bacteria, algae & moss",
@@ -111,7 +111,7 @@ export const services: Service[] = [
     name: "Concrete Cleaning",
     short: "Lift years of grime from hard surfaces.",
     description:
-      "Driveways, walkways, and concrete surfaces stripped of dirt, oil stains, rust, and organic buildup, revealing clean, even concrete underneath.",
+      "We lift oil, rust, dirt, and buildup off driveways, walkways, and concrete for an even, clean finish. Send us the square footage and we'll get you a free quote.",
     features: [
       "Removes oil, rust & stains",
       "Even, streak-free results",
@@ -126,7 +126,7 @@ export const services: Service[] = [
     name: "Driveway Cleaning",
     short: "A clean entrance makes the whole home shine.",
     description:
-      "Your driveway is the first thing guests see. We blast away tire marks, oil, algae, and ground-in dirt for a driveway that looks freshly poured.",
+      "We clear tire marks, oil, algae, and ground-in dirt so your driveway looks clean again. Reach out and we'll price your driveway fast, for free.",
     features: [
       "Tire marks & oil removal",
       "Algae & moss treatment",
@@ -141,7 +141,7 @@ export const services: Service[] = [
     name: "Patio & Deck Cleaning",
     short: "Bring outdoor living spaces back to life.",
     description:
-      "Pavers, stamped concrete, wood, and composite decking cleaned and revived, so your outdoor space is ready for entertaining all season long.",
+      "We clean pavers, stamped concrete, wood, and composite decks and bring the color back so the space is ready to use. Let us know the size and we'll put together a free quote.",
     features: [
       "Pavers, stamped concrete & wood",
       "Restores original color",
@@ -156,7 +156,7 @@ export const services: Service[] = [
     name: "Roof Washing",
     short: "Remove black streaks & extend roof life.",
     description:
-      "Those black streaks are living algae eating away at your shingles. Our soft wash roof treatment kills it safely, improving curb appeal and protecting your investment.",
+      "Those black streaks are algae growing on your shingles, and our soft wash kills it safely without harming the roof. Ask us for a free quote before it spreads further.",
     features: [
       "Kills algae, moss & lichen",
       "Soft wash, no shingle damage",
@@ -171,7 +171,7 @@ export const services: Service[] = [
     name: "Gutter Cleaning",
     short: "Protect your home from water damage.",
     description:
-      "Clogged gutters lead to costly water damage. We clear debris, flush downspouts, and brighten gutter exteriors so water flows where it should.",
+      "Clogged gutters can cause water damage, so we clear the debris, flush the downspouts, and brighten the outside. Give us a call and we'll quote your home for free.",
     features: [
       "Full debris removal",
       "Downspout flushing",

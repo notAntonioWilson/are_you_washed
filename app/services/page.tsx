@@ -22,7 +22,7 @@ export default function ServicesPage() {
         eyebrow="What We Offer"
         title="Complete Exterior"
         accent="Cleaning Services"
-        sub="Residential and commercial. Whatever surface needs to shine, we have the method and the experience to deliver."
+        sub="We clean homes and businesses, and it's the same local Macomb family on every job. Tell us what needs cleaning and we'll get you a free quote."
       />
 
       <section className="section">
@@ -104,7 +104,7 @@ export default function ServicesPage() {
         `}</style>
       </section>
 
-      <CTABand />
+      <CTABand title="Want a free quote?" sub="Fill out the quick form and a real member of our family gets back to you fast. No pressure." />
     </>
   );
 }

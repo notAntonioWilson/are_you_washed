@@ -3,8 +3,9 @@ import LegalLayout from "@/components/LegalLayout";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `Privacy Policy for ${site.name}.`,
+  title: { absolute: "Privacy Policy | Are You Washed" },
+  description:
+    "How Are You Washed Pressure Washing collects, uses, and protects your information. Macomb, MI.",
   alternates: { canonical: `${site.url}/privacy-policy` },
   robots: { index: true, follow: true },
 };

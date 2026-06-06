@@ -3,8 +3,9 @@ import LegalLayout from "@/components/LegalLayout";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: `Terms of Service for ${site.name}.`,
+  title: { absolute: "Terms of Service | Are You Washed" },
+  description:
+    "The terms that govern use of the Are You Washed Pressure Washing website and services. Macomb, MI.",
   alternates: { canonical: `${site.url}/terms-of-service` },
   robots: { index: true, follow: true },
 };

@@ -7,9 +7,9 @@ import { Icons } from "@/components/Icons";
 import { results, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Results",
+  title: { absolute: "Our Work | Pressure Washing Results in Macomb, MI" },
   description:
-    "See finished pressure washing and soft washing results from Are You Washed across Macomb and Metro Detroit. Real homes, real transformations.",
+    "See real pressure washing results from homes across Macomb and Metro Detroit. Family-owned, 5.0★ rated. Get your free quote today.",
   alternates: { canonical: `${site.url}/results` },
 };
 

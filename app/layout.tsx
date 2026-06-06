@@ -32,11 +32,11 @@ const jakarta = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Power Washing in Macomb & Metro Detroit`,
+    default: "Pressure Washing in Macomb, MI | Are You Washed",
     template: `%s | ${site.shortName}`,
   },
   description:
-    "Family-owned pressure washing in Macomb Township & Metro Detroit. House washing, soft washing, window & gutter cleaning, concrete, roofs & more. 5.0★ on Google & Angi, A+ BBB. Free quotes, call 586-238-0784.",
+    "Family-owned pressure washing in Macomb & Washington Township. House washing, windows, gutters, concrete & more. 5.0★ rated. Free quotes, call 586-238-0784.",
   keywords: [
     "pressure washing Macomb MI",
     "power washing Metro Detroit",
@@ -56,14 +56,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} | Power Washing in Macomb & Metro Detroit`,
+    title: `Pressure Washing in Macomb, MI | Are You Washed`,
     description:
       "5.0★ family-owned pressure washing. House & soft washing, windows, gutters, concrete, roofs. Free quotes.",
     images: [{ url: "/logo-web.png", width: 600, height: 600, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | Power Washing in Macomb & Metro Detroit`,
+    title: `Pressure Washing in Macomb, MI | Are You Washed`,
     description: "5.0★ family-owned pressure washing across Metro Detroit. Free quotes.",
     images: ["/logo-web.png"],
   },

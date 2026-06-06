@@ -3,8 +3,9 @@ import LegalLayout from "@/components/LegalLayout";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Disclaimer",
-  description: `Disclaimer for ${site.name}.`,
+  title: { absolute: "Disclaimer | Are You Washed" },
+  description:
+    "Important disclaimers regarding the Are You Washed Pressure Washing website and services. Macomb, MI.",
   alternates: { canonical: `${site.url}/disclaimer` },
   robots: { index: true, follow: true },
 };

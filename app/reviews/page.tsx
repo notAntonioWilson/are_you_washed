@@ -7,9 +7,9 @@ import { Icons } from "@/components/Icons";
 import { reviews, trust, site, externalLinks } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Reviews",
+  title: { absolute: "Reviews | 5.0★ Pressure Washing in Macomb, MI" },
   description:
-    "Read verified 5-star reviews for Are You Washed Pressure Washing from Google and Angi. Real Metro Detroit homeowners, real results.",
+    "Read verified 5-star reviews from Macomb and Metro Detroit homeowners. Family-owned pressure washing you can trust. Free quotes, 586-238-0784.",
   alternates: { canonical: `${site.url}/reviews` },
 };
 

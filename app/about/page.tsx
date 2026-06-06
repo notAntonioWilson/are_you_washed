@@ -7,9 +7,9 @@ import { Icons } from "@/components/Icons";
 import { site, stats } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: { absolute: "About Us | Family-Owned Pressure Washing in Macomb" },
   description:
-    "Are You Washed Pressure Washing is a family-owned business serving Metro Detroit since 2021, with 1,000+ properties transformed, a 5.0 rating, and three Angi Super Service Awards.",
+    "Are You Washed is a family-owned pressure washing business in Macomb, MI. Local, trusted, 5.0★ rated. Meet the family and get your free quote.",
   alternates: { canonical: `${site.url}/about` },
 };
 

@@ -8,9 +8,9 @@ import { Icons } from "@/components/Icons";
 import { services, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: { absolute: "Pressure Washing Services in Macomb, MI | Are You Washed" },
   description:
-    "House washing, soft washing, window cleaning, gutter cleaning, concrete & driveway cleaning, roof washing, and patio/deck cleaning across Macomb & Metro Detroit. Free quotes.",
+    "House washing, soft washing, window & gutter cleaning, concrete & roof washing in Macomb and Metro Detroit. Free quotes from a trusted local family. 586-238-0784.",
   alternates: { canonical: `${site.url}/services` },
 };
 

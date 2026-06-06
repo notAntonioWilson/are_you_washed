@@ -44,7 +44,7 @@ export default function HomePage() {
         <div className="container whyus-grid">
           <div className="whyus-media reveal">
             {/* Founder photo placeholder: swap src with Juan's photo when ready */}
-            <Image src="/images/juan-owner.jpg" alt="Juan, the owner of Are You Washed Pressure Washing" width={640} height={760} sizes="(max-width: 900px) 100vw, 520px" className="whyus-img" />
+            <Image src="/images/juan-owner.jpg" alt="Juan, the owner of Are You Washed Pressure Washing" width={640} height={800} sizes="(max-width: 900px) 100vw, 520px" className="whyus-img" />
             <div className="whyus-float">
               <div className="whyus-float-num">{site.propertiesServed}</div>
               <div className="whyus-float-label">Properties Transformed</div>

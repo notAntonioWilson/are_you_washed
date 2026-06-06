@@ -76,15 +76,30 @@ export default function Nav() {
             <Link href="/contact" className="btn btn-primary nav-cta">
               Submit a Quote
             </Link>
-            <button className="nav-toggle" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
-              {open ? <Icons.close /> : <Icons.menu />}
+            <button className="nav-toggle" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)}>
+              <Icons.menu />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile drawer */}
-      <div className={`mobile-menu ${open ? "open" : ""}`}>
+      {/* Mobile: dim overlay + slide-in side panel */}
+      <div
+        className={`mobile-scrim ${open ? "open" : ""}`}
+        onClick={() => setOpen(false)}
+        aria-hidden="true"
+      />
+      <aside className={`mobile-panel ${open ? "open" : ""}`} role="dialog" aria-modal="true" aria-label="Menu">
+        <div className="mobile-panel-head">
+          <Link href="/" className="mobile-panel-logo" onClick={() => setOpen(false)}>
+            <Image src="/logo-web.png" alt="Are You Washed Pressure Washing logo" width={36} height={36} />
+            <span>Are You <span className="mp-accent">Washed</span></span>
+          </Link>
+          <button className="mobile-panel-close" aria-label="Close menu" onClick={() => setOpen(false)}>
+            <Icons.close />
+          </button>
+        </div>
+
         <nav className="mobile-links">
           {links.map((l) => (
             <Link
@@ -97,15 +112,16 @@ export default function Nav() {
             </Link>
           ))}
         </nav>
+
         <div className="mobile-cta">
-          <a href={site.phoneHref} className="btn btn-dark btn-block btn-lg">
-            <Phone /> Call {site.phone}
-          </a>
-          <Link href="/contact" onClick={() => setOpen(false)} className="btn btn-primary btn-block btn-lg">
+          <Link href="/contact" onClick={() => setOpen(false)} className="btn btn-primary btn-block mobile-cta-btn">
             Submit a Quote
           </Link>
+          <a href={site.phoneHref} className="btn btn-dark btn-block mobile-cta-btn">
+            <Phone /> Call {site.phone}
+          </a>
         </div>
-      </div>
+      </aside>
 
       <style jsx>{`
         .nav {
@@ -213,31 +229,106 @@ export default function Nav() {
         .nav-toggle { display: none; color: #fff; padding: 6px; }
         .nav-scrolled .nav-toggle { color: var(--ink); }
 
-        .mobile-menu {
+        /* ---- Mobile: dim scrim behind the panel ---- */
+        .mobile-scrim {
           position: fixed;
-          top: var(--nav-h); left: 0; right: 0; bottom: 0;
-          background: rgba(255,255,255,0.98);
-          backdrop-filter: blur(20px);
-          z-index: 99;
-          padding: 28px clamp(20px,5vw,48px);
+          inset: 0;
+          z-index: 110;
+          background: rgba(11, 22, 34, 0.5);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .mobile-scrim.open { opacity: 1; visibility: visible; }
+
+        /* ---- Mobile: slide-in side panel (68% width) ---- */
+        .mobile-panel {
+          position: fixed;
+          top: 0; right: 0; bottom: 0;
+          width: 68%;
+          max-width: 360px;
+          min-width: 260px;
+          z-index: 111;
+          background: var(--bg);
+          box-shadow: -18px 0 50px rgba(22, 39, 58, 0.18);
           display: flex;
           flex-direction: column;
-          gap: 24px;
+          padding: 16px 22px calc(22px + env(safe-area-inset-bottom, 0px));
           transform: translateX(100%);
-          transition: transform 0.4s cubic-bezier(.16,1,.3,1);
+          transition: transform 0.3s ease-out;
+          will-change: transform;
+          overscroll-behavior: contain;
         }
-        .mobile-menu.open { transform: translateX(0); }
-        .mobile-links { display: flex; flex-direction: column; gap: 4px; }
+        .mobile-panel.open { transform: translateX(0); }
+
+        .mobile-panel-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: var(--nav-h);
+          margin: 0 -22px 8px;
+          padding: 0 18px 0 22px;
+          border-bottom: 1px solid var(--line);
+          flex-shrink: 0;
+        }
+        .mobile-panel-logo {
+          display: flex; align-items: center; gap: 9px;
+          font-family: var(--font-display);
+          font-weight: 800;
+          font-size: 1.02rem;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+        .mobile-panel-logo :global(img) { flex-shrink: 0; border-radius: 8px; }
+        .mp-accent { color: var(--maize-deep); }
+        .mobile-panel-close {
+          display: flex; align-items: center; justify-content: center;
+          width: 40px; height: 40px;
+          border-radius: 50%;
+          color: var(--ink);
+          background: rgba(22, 39, 58, 0.05);
+          transition: background 0.2s, color 0.2s;
+        }
+        .mobile-panel-close:hover { background: rgba(22, 39, 58, 0.1); }
+        .mobile-panel-close :global(svg) { width: 20px; height: 20px; }
+
+        .mobile-links {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          padding-top: 6px;
+          overflow-y: auto;
+        }
         .mobile-link {
           font-family: var(--font-display);
           font-weight: 600;
-          font-size: 1.4rem;
+          font-size: 1.12rem;
           color: var(--ink);
-          padding: 13px 0;
+          padding: 14px 6px;
           border-bottom: 1px solid var(--line);
+          transition: color 0.2s, padding-left 0.2s;
         }
+        .mobile-link:hover, .mobile-link:active { padding-left: 12px; }
         .mobile-link.active { color: var(--maize-deep); }
-        .mobile-cta { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
+
+        .mobile-cta {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: auto;
+          padding-top: 20px;
+        }
+        .mobile-cta-btn {
+          padding: 12px 18px;
+          font-size: 14.5px;
+          border-radius: var(--r-pill);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .mobile-panel { transition: none; }
+          .mobile-scrim { transition: none; }
+        }
 
         .nav-overdark .nav-link,
         .nav-overdark .nav-phone,

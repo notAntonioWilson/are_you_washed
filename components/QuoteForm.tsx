@@ -21,7 +21,7 @@ export default function QuoteForm({ variant = "page" }: { variant?: Variant }) {
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, submittedAt: new Date().toISOString() }),
+        body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error();
       setStatus("ok");
@@ -36,8 +36,8 @@ export default function QuoteForm({ variant = "page" }: { variant?: Variant }) {
     return (
       <div className={`qf qf-${variant} qf-success`}>
         <div className="qf-success-icon"><Icons.check /></div>
-        <h3>Request received!</h3>
-        <p>Thanks, we&apos;ll reach out shortly with your free quote. Need us fast? Call or text {site.phone}.</p>
+        <h3>Thanks, we&apos;ll be in touch fast!</h3>
+        <p>We&apos;ll get back to you fast with your free quote. Need us right away? Call or text {site.phone}.</p>
         <button className="btn btn-ghost" onClick={() => setStatus("idle")}>Send another</button>
         <style jsx>{successStyles}</style>
       </div>

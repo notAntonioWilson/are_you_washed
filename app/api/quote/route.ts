@@ -36,6 +36,8 @@ export async function POST(req: NextRequest) {
       Service: service,
       Address: (data?.address ?? "").toString().trim(),
       Notes: (data?.details ?? "").toString().trim(),
+      "Approx. Number of Windows": (data?.windows ?? "").toString().trim(),
+      Stories: (data?.stories ?? "").toString().trim(),
       Status: "new",
     };
 

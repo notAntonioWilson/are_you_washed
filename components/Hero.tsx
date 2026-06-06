@@ -9,7 +9,8 @@ export default function Hero() {
     <section className="hero">
       {/* ---- Photo background, dimmed so it sits behind the content ---- */}
       <div className="hero-bg">
-        <Image src="/images/hero-bg.jpg" alt="" fill priority sizes="100vw" className="hero-photo" />
+        <Image src="/images/hero-bg.jpg" alt="" fill priority sizes="100vw" className="hero-photo hero-photo-desktop" />
+        <Image src="/images/hero-bg-mobile.jpg" alt="" fill priority sizes="100vw" className="hero-photo hero-photo-mobile" />
         <div className="hero-dim" />
       </div>
 
@@ -67,6 +68,7 @@ export default function Hero() {
           background-color: var(--blue-night);
         }
         .hero-photo { object-fit: cover; object-position: 50% 50%; }
+        .hero-photo-mobile { display: none; }
         /* Dim the photo so it does not pull attention: heavier on the left behind the
            headline, lighter toward Juan on the right, with a soft top/bottom falloff. */
         .hero-dim {
@@ -128,9 +130,11 @@ export default function Hero() {
           .hero-left { text-align: center; }
           .hero-actions, .hero-trust-row { justify-content: center; }
           .hero-sub { margin-left: auto; margin-right: auto; }
-          .hero-photo { object-position: 68% 42%; }
+          .hero-photo-desktop { display: none; }
+          .hero-photo-mobile { display: block; object-position: 50% 35%; }
           .hero-dim {
-            background: linear-gradient(180deg, rgba(11,22,34,0.66) 0%, rgba(11,22,34,0.52) 45%, rgba(11,22,34,0.48) 100%);
+            background:
+              linear-gradient(180deg, rgba(11,22,34,0.72) 0%, rgba(11,22,34,0.5) 40%, rgba(11,22,34,0.62) 100%);
           }
         }
       `}</style>

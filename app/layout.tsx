@@ -4,6 +4,7 @@ import "./globals.css";
 import { site, trust, serviceAreas } from "@/lib/site";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 // Self-hosted fonts (no external Google dependency = faster + privacy-friendly)
 const sora = localFont({
@@ -116,6 +117,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-B5GDXTPTXW"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-B5GDXTPTXW');
+          `}
+        </Script>
         <Nav />
         <main>{children}</main>
         <Footer />

@@ -69,6 +69,16 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: site.url },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/manifest.webmanifest",
 };
 
 const jsonLd = {
@@ -77,6 +87,7 @@ const jsonLd = {
   "@id": `${site.url}/#business`,
   name: site.name,
   image: `${site.url}/logo-web.png`,
+  logo: `${site.url}/logo-web.png`,
   url: site.url,
   telephone: site.phone,
   email: site.email,

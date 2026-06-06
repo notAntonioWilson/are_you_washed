@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { site, trust, serviceAreas } from "@/lib/site";
+import { site, serviceAreas } from "@/lib/site";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Script from "next/script";
@@ -83,13 +83,15 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "HomeAndConstructionBusiness",
   "@id": `${site.url}/#business`,
   name: site.name,
+  description:
+    "Family-owned pressure washing serving Macomb, Washington Township, and Metro Detroit.",
   image: `${site.url}/logo-web.png`,
   logo: `${site.url}/logo-web.png`,
   url: site.url,
-  telephone: site.phone,
+  telephone: "+1-586-238-0784",
   email: site.email,
   priceRange: "$$",
   address: {
@@ -107,14 +109,9 @@ const jsonLd = {
     opens: "08:00",
     closes: "20:00",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: trust.angiRating,
-    reviewCount: trust.angiReviewCount,
-    bestRating: "5",
-    worstRating: "1",
-  },
+  // aggregateRating intentionally omitted until on-page reviews are marked up with verified numbers.
   sameAs: [
+    site.instagram,
     "https://www.angi.com/companylist/us/mi/macomb/are-you-washed-pressure-washing-llc-reviews-1.htm",
     "https://www.homeadvisor.com/rated.AreYouWashedPressure.136540417.html",
   ],

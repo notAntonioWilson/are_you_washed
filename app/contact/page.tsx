@@ -24,8 +24,8 @@ export default function ContactPage() {
       <Reveal />
       <PageHero
         eyebrow="Free · No Obligation"
-        title="Submit a"
-        accent="Quote"
+        title="Get Your"
+        accent="Free Quote"
         sub="Tell us about your property and what needs cleaning, and a real member of our family will send a free quote back fast. No pressure."
       />
 

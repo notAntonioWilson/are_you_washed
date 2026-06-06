@@ -9,7 +9,7 @@ type Pair = { before: string; after: string; label: string };
 const housePair: Pair = {
   before: "/images/house-before.jpg",
   after: "/images/house-after.jpg",
-  label: "House Wash - Siding",
+  label: "House Wash, Siding",
 };
 
 function Slider({ pair }: { pair: Pair }) {
@@ -36,12 +36,12 @@ function Slider({ pair }: { pair: Pair }) {
       onTouchStart={(e) => move(e.touches[0].clientX)}
       onTouchMove={(e) => move(e.touches[0].clientX)}
     >
-      <Image src={pair.after} alt={`${pair.label} after`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
+      <Image src={pair.after} alt={`${pair.label}, after pressure washing in Macomb, MI`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
       <span className="ba-tag ba-tag-after">After</span>
 
       <div className="ba-before" style={{ width: `${pos}%` }}>
         <div className="ba-before-inner">
-          <Image src={pair.before} alt={`${pair.label} before`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
+          <Image src={pair.before} alt={`${pair.label}, before pressure washing`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
           <span className="ba-tag ba-tag-before">Before</span>
         </div>
       </div>

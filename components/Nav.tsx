@@ -49,7 +49,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "11px", flexWrap: "nowrap" }}
           >
-            <Image src="/logo-web.png" alt={site.name} width={42} height={42} priority style={{ flexShrink: 0 }} />
+            <Image src="/logo-web.png" alt="Are You Washed Pressure Washing logo" width={42} height={42} priority style={{ flexShrink: 0 }} />
             <span className="nav-logo-text">
               Are You <span className="nav-logo-accent">Washed</span>
             </span>

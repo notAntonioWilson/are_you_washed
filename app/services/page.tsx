@@ -20,8 +20,8 @@ export default function ServicesPage() {
       <Reveal />
       <PageHero
         eyebrow="What We Offer"
-        title="Complete Exterior"
-        accent="Cleaning Services"
+        title="Pressure Washing Services in"
+        accent="Macomb & Metro Detroit"
         sub="We clean homes and businesses, and it's the same local Macomb family on every job. Tell us what needs cleaning and we'll get you a free quote."
       />
 
@@ -34,7 +34,7 @@ export default function ServicesPage() {
               <div key={s.slug} id={s.slug} className={`svc-detail ${flip ? "flip" : ""} reveal`}>
                 <div className="svc-detail-media">
                   {s.image ? (
-                    <Image src={s.image} alt={s.name} width={620} height={460} className="svc-detail-img" />
+                    <Image src={s.image} alt={s.alt || s.name} width={620} height={460} className="svc-detail-img" />
                   ) : (
                     <div className="svc-detail-iconbox"><Ic className="svc-detail-bigicon" /></div>
                   )}

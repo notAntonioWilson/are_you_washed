@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-brand">
           <Link href="/" className="footer-logo">
-            <Image src="/logo-web.png" alt={site.name} width={40} height={40} />
+            <Image src="/logo-web.png" alt="Are You Washed Pressure Washing logo" width={40} height={40} />
             <span>Are You <span className="footer-logo-accent">Washed</span></span>
           </Link>
           <p className="footer-tagline">&ldquo;{site.tagline}&rdquo;</p>

@@ -19,7 +19,7 @@ export default function ResultsPage() {
       <Reveal />
       <PageHero
         eyebrow="Our Work"
-        title="Finished"
+        title="Our Pressure Washing"
         accent="Results"
         sub="Every one of these is a real home we cleaned here in Metro Detroit. Get a free quote and we'll get you on the schedule too."
       />
@@ -31,7 +31,7 @@ export default function ResultsPage() {
               <figure key={`${r.image}-${i}`} className="result-item reveal">
                 {/* Plain img keeps each photo at its own natural aspect ratio for the masonry flow */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={r.image} alt={r.label} loading="lazy" />
+                <img src={r.image} alt={r.alt || r.label} loading="lazy" />
                 <figcaption className="result-tag">{r.label}</figcaption>
               </figure>
             ))}

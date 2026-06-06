@@ -11,7 +11,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
       <div className="svc-banner">
         <Image
           src={img}
-          alt={service.name}
+          alt={service.alt || service.name}
           fill
           sizes="(max-width: 520px) 100vw, (max-width: 1100px) 33vw, 25vw"
           style={{ objectFit: "cover" }}

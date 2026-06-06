@@ -55,6 +55,7 @@ export type Service = {
   features: string[];
   icon: string; // key mapped in components/Icons.tsx
   image?: string;
+  alt?: string;
   featured?: boolean;
 };
 
@@ -73,6 +74,7 @@ export const services: Service[] = [
     ],
     icon: "house",
     image: "/images/house-after.jpg",
+    alt: "Freshly pressure washed home exterior in Macomb, MI",
     featured: true,
   },
   {
@@ -89,6 +91,7 @@ export const services: Service[] = [
     ],
     icon: "window",
     image: "/images/commercial-door.jpg",
+    alt: "Streak-free window cleaning by Are You Washed in Metro Detroit",
     featured: true,
   },
   {
@@ -105,6 +108,7 @@ export const services: Service[] = [
     ],
     icon: "droplet",
     image: "/images/balustrade-after.jpg",
+    alt: "Soft washed porch and balustrade in Macomb, MI",
   },
   {
     slug: "concrete-cleaning",
@@ -120,6 +124,7 @@ export const services: Service[] = [
     ],
     icon: "concrete",
     image: "/images/driveway-clean.jpg",
+    alt: "Clean concrete after pressure washing in Metro Detroit",
   },
   {
     slug: "driveway-cleaning",
@@ -135,6 +140,7 @@ export const services: Service[] = [
     ],
     icon: "driveway",
     image: "/images/driveway-house.jpg",
+    alt: "Driveway pressure washed clean in Macomb, MI",
   },
   {
     slug: "patio-deck-cleaning",
@@ -150,6 +156,7 @@ export const services: Service[] = [
     ],
     icon: "patio",
     image: "/images/patio-after.jpg",
+    alt: "Patio and deck restored by pressure washing in Metro Detroit",
   },
   {
     slug: "roof-washing",
@@ -165,6 +172,7 @@ export const services: Service[] = [
     ],
     icon: "roof",
     image: "/images/commercial-2.jpg",
+    alt: "Roof soft washing to remove algae streaks in Macomb, MI",
   },
   {
     slug: "gutter-cleaning",
@@ -180,6 +188,7 @@ export const services: Service[] = [
     ],
     icon: "gutter",
     image: "/images/walkway-after.jpg",
+    alt: "Gutters cleaned and brightened on a Metro Detroit home",
   },
 ];
 
@@ -944,15 +953,15 @@ export const externalLinks = {
 };
 
 // Finished results gallery (afters only). Add more by appending here.
-export type Result = { image: string; label: string };
+export type Result = { image: string; label: string; alt?: string };
 export const results: Result[] = [
-  { image: "/images/house-after.jpg", label: "House Washing" },
-  { image: "/images/driveway-clean.jpg", label: "Driveway Cleaning" },
-  { image: "/images/patio-after.jpg", label: "Patio & Deck" },
-  { image: "/images/walkway-after.jpg", label: "Paver Walkway" },
-  { image: "/images/balustrade-after.jpg", label: "Porch & Balustrade" },
-  { image: "/images/driveway-house.jpg", label: "Driveway & Entry" },
-  { image: "/images/commercial-1.jpg", label: "Commercial Exterior" },
-  { image: "/images/commercial-door.jpg", label: "Storefront" },
-  { image: "/images/commercial-2.jpg", label: "Commercial" },
+  { image: "/images/house-after.jpg", label: "House Washing", alt: "Freshly pressure washed home exterior in Macomb, MI" },
+  { image: "/images/driveway-clean.jpg", label: "Driveway Cleaning", alt: "Clean driveway after pressure washing in Metro Detroit" },
+  { image: "/images/patio-after.jpg", label: "Patio & Deck", alt: "Patio and deck restored by pressure washing in Macomb, MI" },
+  { image: "/images/walkway-after.jpg", label: "Paver Walkway", alt: "Clean paver walkway after pressure washing in Metro Detroit" },
+  { image: "/images/balustrade-after.jpg", label: "Porch & Balustrade", alt: "Soft washed porch and balustrade in Macomb, MI" },
+  { image: "/images/driveway-house.jpg", label: "Driveway & Entry", alt: "Pressure washed driveway and home entry in Metro Detroit" },
+  { image: "/images/commercial-1.jpg", label: "Commercial Exterior", alt: "Commercial building exterior pressure washed in Macomb, MI" },
+  { image: "/images/commercial-door.jpg", label: "Storefront", alt: "Clean storefront entrance after pressure washing in Metro Detroit" },
+  { image: "/images/commercial-2.jpg", label: "Commercial", alt: "Commercial property pressure washed in Macomb, MI" },
 ];

@@ -19,8 +19,8 @@ export default function AboutPage() {
       <Reveal />
       <PageHero
         eyebrow="Our Story"
-        title="Family Owned."
-        accent="Locally Trusted."
+        title="Family-Owned Pressure Washing in"
+        accent="Macomb"
         sub="Four years, over a thousand properties, and a perfect 5.0 rating, all from one local family in Macomb."
       />
 

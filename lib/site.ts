@@ -191,6 +191,22 @@ export const services: Service[] = [
     image: "/images/walkway-after.jpg",
     alt: "Gutters cleaned and brightened on a Metro Detroit home",
   },
+  {
+    slug: "rust-removal",
+    name: "Rust Removal",
+    short: "Lift rust stains off concrete and siding.",
+    description:
+      "Rust stains from sprinklers, fertilizer, and metal furniture do not come off with regular washing. We use a rust remover that pulls the stain out of concrete, brick, and siding without scrubbing or damage. Send us a photo and we'll quote it for free.",
+    features: [
+      "Removes sprinkler & fertilizer rust",
+      "Safe on concrete, brick & siding",
+      "No scrubbing or surface damage",
+      "Treats battery acid & metal stains",
+    ],
+    icon: "spray",
+    image: "/images/driveway-clean.jpg",
+    alt: "Concrete cleaned of rust stains after pressure washing in Macomb, MI",
+  },
 ];
 
 export const featuredServices = services.filter((s) => s.featured);

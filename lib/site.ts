@@ -15,6 +15,7 @@ export const site = {
   email: "Areyouwashed35@gmail.com",
   emailHref: "mailto:Areyouwashed35@gmail.com",
   instagram: "https://www.instagram.com/areyouwashed.pressurewash",
+  facebook: "https://www.facebook.com/profile.php?id=100092849695895&mibextid=wwXIfr",
   hours: "8:00 AM to 8:00 PM, 7 days a week",
   hoursShort: "Mon to Sun · 8am to 8pm",
   homeBaseZip: "48042",
@@ -41,7 +42,7 @@ export const stats = [
   { value: "1,000+", label: "Properties Transformed" },
   { value: "5.0★", label: "Google & Angi Rating" },
   { value: "A+", label: "BBB Accredited" },
-  { value: "4 Yrs", label: "Family Owned & Operated" },
+  { value: "4+ Years", label: "Family Owned & Operated" },
 ];
 
 // ============================================================

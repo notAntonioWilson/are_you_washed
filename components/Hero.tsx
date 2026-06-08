@@ -40,7 +40,8 @@ export default function Hero() {
           </div>
 
           <div className="hero-trust-row">
-            <span><Icons.check className="ht-ic" /> Licensed &amp; Insured</span>
+            <span><Icons.check className="ht-ic" /> Licensed</span>
+            <span><Icons.check className="ht-ic" /> Insured</span>
             <span><Icons.check className="ht-ic" /> 1,000+ Properties</span>
             <span><Icons.check className="ht-ic" /> Free Quotes</span>
           </div>

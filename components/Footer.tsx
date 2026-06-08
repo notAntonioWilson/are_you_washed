@@ -36,6 +36,15 @@ export default function Footer() {
             >
               <Icons.instagram className="footer-ig-ic" />
             </a>
+            <a
+              href={site.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-ig"
+              aria-label="Follow Are You Washed on Facebook"
+            >
+              <Icons.facebook className="footer-ig-ic" />
+            </a>
           </div>
         </div>
 

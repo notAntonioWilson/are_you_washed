@@ -94,7 +94,7 @@ export default function Hero() {
           text-shadow: 0 2px 22px rgba(0,0,0,0.4);
         }
         .hero-title-accent {
-          background: linear-gradient(120deg, var(--maize), #ffd873);
+          background: linear-gradient(120deg, var(--maize), #94D96F);
           -webkit-background-clip: text; background-clip: text;
           -webkit-text-fill-color: transparent;
         }

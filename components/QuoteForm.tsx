@@ -194,7 +194,7 @@ const successStyles = `
     width: 64px; height: 64px;
     display: grid; place-items: center;
     background: linear-gradient(120deg, var(--maize-deep), var(--maize));
-    color: #2a1c00;
+    color: #ffffff;
     border-radius: var(--r-pill);
     margin-bottom: 6px;
   }

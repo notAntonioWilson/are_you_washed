@@ -4,12 +4,12 @@
    ============================================================ */
 
 :root {
-  /* Brand palette - MAIZE is the primary color */
-  --maize: #ecb431;
-  --maize-deep: #d89a18;
-  --maize-light: #f7d684;
-  --maize-pale: #fdf3da;
-  --maize-glow: rgba(236, 180, 49, 0.4);
+  /* Brand palette - GREEN is the primary color */
+  --maize: #68A444;
+  --maize-deep: #4A8529;
+  --maize-light: #94D96F;
+  --maize-pale: #eaf6e1;
+  --maize-glow: rgba(104, 164, 68, 0.4);
 
   /* Blues - brighter, lighter, "watery" (not murky navy) */
   --sky: #38b0e8;          /* bright azure */
@@ -41,7 +41,7 @@
   --shadow-sm: 0 2px 12px rgba(22, 39, 58, 0.06);
   --shadow-md: 0 10px 34px rgba(22, 39, 58, 0.10);
   --shadow-lg: 0 20px 58px rgba(22, 39, 58, 0.14);
-  --shadow-maize: 0 10px 32px rgba(236, 180, 49, 0.34);
+  --shadow-maize: 0 10px 32px rgba(104, 164, 68, 0.34);
 
   /* Radii - rounded, no hard angles */
   --r-sm: 12px;
@@ -97,9 +97,9 @@ body::before {
   z-index: -2;
   pointer-events: none;
   background:
-    radial-gradient(900px 720px at 12% 6%, rgba(236,180,49,0.20), transparent 60%),
+    radial-gradient(900px 720px at 12% 6%, rgba(104, 164, 68,0.20), transparent 60%),
     radial-gradient(840px 700px at 90% 16%, rgba(56,176,232,0.16), transparent 62%),
-    radial-gradient(900px 780px at 84% 92%, rgba(236,180,49,0.16), transparent 60%),
+    radial-gradient(900px 780px at 84% 92%, rgba(104, 164, 68,0.16), transparent 60%),
     radial-gradient(760px 720px at 4% 72%, rgba(56,176,232,0.13), transparent 62%);
 }
 /* Slow diagonal light sheen: low opacity, long pauses, transform/opacity only. */
@@ -214,10 +214,10 @@ ul { list-style: none; }
 }
 .btn-primary {
   background: linear-gradient(120deg, var(--maize-deep), var(--maize));
-  color: #2a1c00;
-  box-shadow: 0 6px 18px rgba(216,154,24,0.26);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(74,133,41,0.26);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(216,154,24,0.34); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(74,133,41,0.34); }
 .btn-dark {
   background: var(--ink);
   color: var(--white);

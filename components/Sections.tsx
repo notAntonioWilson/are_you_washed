@@ -23,7 +23,7 @@ export function StatsBar() {
           content: "";
           position: absolute; inset: 0;
           background:
-            radial-gradient(620px 320px at 82% 50%, rgba(236,180,49,0.30), transparent 60%),
+            radial-gradient(620px 320px at 82% 50%, rgba(104, 164, 68,0.30), transparent 60%),
             radial-gradient(520px 300px at 8% 40%, rgba(56,176,232,0.34), transparent 60%);
         }
         .statsbar-grid {

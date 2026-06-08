@@ -122,7 +122,7 @@ export default function Footer() {
           border: 1px solid rgba(255,255,255,0.18);
           transition: background 0.2s, transform 0.2s, color 0.2s;
         }
-        .footer-ig:hover { background: linear-gradient(120deg, var(--maize-deep), var(--maize)); color: #2a1c00; transform: translateY(-2px); }
+        .footer-ig:hover { background: linear-gradient(120deg, var(--maize-deep), var(--maize)); color: #ffffff; transform: translateY(-2px); }
         .footer-ig-ic { width: 18px; height: 18px; }
         .footer-nav {
           display: flex; gap: 22px; flex-wrap: wrap;

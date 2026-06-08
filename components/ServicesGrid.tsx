@@ -49,7 +49,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
           width: 44px; height: 44px;
           display: grid; place-items: center;
           background: linear-gradient(135deg, var(--maize), var(--maize-deep));
-          color: #2a1c00;
+          color: #ffffff;
           border-radius: 12px;
           box-shadow: 0 6px 16px rgba(22,39,58,0.22);
         }

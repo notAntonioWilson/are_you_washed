@@ -59,7 +59,7 @@ function ReviewCard({ r }: { r: Review }) {
           width: 40px; height: 40px;
           display: grid; place-items: center;
           background: linear-gradient(135deg, var(--maize), var(--maize-deep));
-          color: #2a1c00;
+          color: #ffffff;
           font-family: var(--font-display);
           font-weight: 800; font-size: 1rem;
           border-radius: 50%;

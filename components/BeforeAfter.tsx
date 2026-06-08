@@ -87,7 +87,7 @@ function Slider({ pair }: { pair: Pair }) {
           z-index: 3;
         }
         .ba-tag-before { left: 14px; background: rgba(20,32,44,0.78); color: #fff; }
-        .ba-tag-after { right: 14px; background: var(--maize); color: #2a1c00; }
+        .ba-tag-after { right: 14px; background: var(--maize); color: #ffffff; }
         .ba-handle {
           position: absolute; top: 0; bottom: 0;
           width: 3px;

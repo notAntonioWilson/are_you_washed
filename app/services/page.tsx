@@ -86,7 +86,7 @@ export default function ServicesPage() {
             width: 60px; height: 60px;
             display: grid; place-items: center;
             background: linear-gradient(135deg, var(--maize), var(--maize-deep));
-            color: #2a1c00;
+            color: #ffffff;
             border-radius: var(--r-md);
             margin-bottom: 18px;
           }

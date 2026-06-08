@@ -48,9 +48,14 @@ export default function ServicesPage() {
                       <li key={f}><Icons.check className="svc-feat-check" /> {f}</li>
                     ))}
                   </ul>
-                  <Link href="/contact" className="btn btn-primary">
-                    Get a Free Quote <Icons.arrow />
-                  </Link>
+                  <div className="svc-detail-actions">
+                    <Link href={`/services/${s.slug}`} className="btn btn-primary">
+                      More Info <Icons.arrow />
+                    </Link>
+                    <Link href="/contact" className="btn btn-ghost">
+                      Get a Free Quote
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
@@ -95,6 +100,7 @@ export default function ServicesPage() {
           .svc-detail-desc { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px; }
           .svc-detail-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 30px; }
           .svc-detail-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.96rem; color: var(--ink-soft); }
+          .svc-detail-actions { display: flex; flex-wrap: wrap; gap: 12px; }
           .svc-feat-check { width: 20px; height: 20px; color: #fff; background: var(--aqua); border-radius: 50%; padding: 3.5px; flex-shrink: 0; margin-top: 2px; }
           @media (max-width: 860px) {
             .svc-detail { grid-template-columns: 1fr; }

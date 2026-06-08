@@ -53,6 +53,9 @@ export type Service = {
   name: string;
   short: string;
   description: string;
+  longDescription?: string[];
+  metaTitle?: string;
+  metaDescription?: string;
   features: string[];
   icon: string; // key mapped in components/Icons.tsx
   image?: string;
@@ -63,6 +66,13 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "house-washing",
+    metaTitle: "House Washing in Macomb, MI | Are You Washed",
+    metaDescription: "Soft wash house washing in Macomb and Metro Detroit. Safely removes mold, mildew, and algae from siding, brick, and stone. Free quotes, 586-238-0784.",
+    longDescription: [
+      "House washing is a gentle, low-pressure wash for the outside of your home. Over time siding, brick, and stone build up a layer of dirt, mold, mildew, and algae that you often do not notice until it is washed off and you see the difference side by side.",
+      "We use a soft wash, which means low pressure and a cleaning solution that does the work instead of blasting the surface. High pressure can crack siding, force water behind it, and strip paint, so we keep it gentle and let the solution break down the growth at the root. We rinse from the top down and watch your landscaping while we work.",
+      "A clean exterior is the fastest way to make a home look cared for, and it protects your investment. Mold and algae hold moisture against your siding and can shorten its life, so washing it off is about upkeep, not just looks. If you want to see what your home would look like clean, send us a few photos and we will give you a free quote.",
+    ],
     name: "House Washing",
     short: "Restore your home's exterior to like-new.",
     description:
@@ -80,6 +90,13 @@ export const services: Service[] = [
   },
   {
     slug: "window-cleaning",
+    metaTitle: "Window Cleaning in Macomb, MI | Are You Washed",
+    metaDescription: "Streak-free window cleaning in Macomb and Metro Detroit. Glass, frames, sills, and tracks. Free quotes from a local family. 586-238-0784.",
+    longDescription: [
+      "Window cleaning gets your glass clear and streak-free, inside and out. We do not just wipe the glass, we clean the frames, sills, and tracks too, since that is where the dirt and dead bugs collect and what makes windows look dingy even after a quick wipe.",
+      "We work pane by pane with the right tools so you are not left with streaks in the afternoon sun. On the outside we reach the higher windows safely, and on the inside we are careful around your sills and floors. If you want your screens cleaned while we are there, just ask.",
+      "Clean windows let more light in and make the whole room feel brighter, and they are one of those things you notice every single day. Tell us how many windows you have, roughly, and we will send you a free quote.",
+    ],
     name: "Window Cleaning",
     short: "Streak-free glass, inside and out.",
     description:
@@ -97,6 +114,13 @@ export const services: Service[] = [
   },
   {
     slug: "soft-washing",
+    metaTitle: "Soft Washing in Macomb, MI | Are You Washed",
+    metaDescription: "Soft washing in Macomb and Metro Detroit. Low-pressure cleaning that safely removes mold and algae from delicate surfaces. Free quotes, 586-238-0784.",
+    longDescription: [
+      "Soft washing is a low-pressure way to clean surfaces that cannot take the force of a standard pressure washer. Instead of relying on pressure, we use a cleaning solution that breaks down mold, mildew, and algae, then rinse it away gently.",
+      "It is the right call for siding, roofs, screens, and older or more delicate surfaces where high pressure would do more harm than good. The solution does the cleaning, so we can lift growth off the surface without cracking, denting, or forcing water where it should not go. We protect your plants and rinse everything down when we are done.",
+      "The result lasts longer than a pressure-only wash because we are killing the growth at the root, not just knocking the top layer off. If you are not sure whether your surface needs soft washing or standard pressure, send us a photo and we will tell you straight and give you a free quote.",
+    ],
     name: "Soft Washing",
     short: "Low-pressure cleaning for delicate surfaces.",
     description:
@@ -113,6 +137,13 @@ export const services: Service[] = [
   },
   {
     slug: "concrete-cleaning",
+    metaTitle: "Concrete Cleaning in Macomb, MI | Are You Washed",
+    metaDescription: "Concrete cleaning in Macomb and Metro Detroit. Removes dirt, oil, algae, and stains from driveways, walkways, and patios. Free quotes, 586-238-0784.",
+    longDescription: [
+      "Concrete cleaning pulls the dirt, oil, algae, and grime out of the surface of your driveway, walkway, or patio. Concrete is porous, so stains and growth settle into it and a garden hose will not touch them.",
+      "We use a surface cleaner that spins high-pressure water evenly across the concrete, so you get a consistent clean without the zebra striping you get from waving a wand back and forth. For oil spots and stubborn stains we pre-treat the area first so it lifts properly instead of just lightening.",
+      "Clean concrete makes your whole property look sharper and it is safer too, since algae and mildew get slick when they are wet. It is one of the most satisfying jobs to see finished. Give us a call and we will quote your concrete for free.",
+    ],
     name: "Concrete Cleaning",
     short: "Lift years of grime from hard surfaces.",
     description:
@@ -129,6 +160,13 @@ export const services: Service[] = [
   },
   {
     slug: "driveway-cleaning",
+    metaTitle: "Driveway Cleaning in Macomb, MI | Are You Washed",
+    metaDescription: "Driveway cleaning in Macomb and Metro Detroit. Removes oil, dirt, and tire marks from concrete and pavers. Free quotes from a local family. 586-238-0784.",
+    longDescription: [
+      "Driveway cleaning takes the built-up dirt, oil, tire marks, and growth off your driveway and brings the surface back. Your driveway is one of the first things people see, and it picks up more grime than almost anything else on your property.",
+      "We use a surface cleaner for an even finish across the whole driveway, and we pre-treat oil stains and tire marks so they actually lift instead of just fading. Whether you have poured concrete or pavers, we adjust how we clean it so the surface is not damaged.",
+      "A clean driveway makes the entire front of your home look maintained, and clearing off algae and mildew keeps it from getting slippery. Send us a photo of your driveway and we will give you a free quote.",
+    ],
     name: "Driveway Cleaning",
     short: "A clean entrance makes the whole home shine.",
     description:
@@ -145,6 +183,13 @@ export const services: Service[] = [
   },
   {
     slug: "patio-deck-cleaning",
+    metaTitle: "Patio & Deck Cleaning in Macomb, MI | Are You Washed",
+    metaDescription: "Patio and deck cleaning in Macomb and Metro Detroit. Safely cleans wood, composite, pavers, and stone. Free quotes from a local family. 586-238-0784.",
+    longDescription: [
+      "Patio and deck cleaning gets your outdoor space ready to actually use again. Decks and patios sit out in the weather all year and build up dirt, mildew, algae, and that gray, weathered look, especially in shady spots that stay damp.",
+      "We match the method to the surface. Wood and composite decks get a soft wash so we do not splinter or gouge the boards, while paver and stone patios can take more pressure for a deeper clean. Either way we clean evenly so you are not left with patches, and we are careful around the surrounding landscaping.",
+      "A clean patio or deck is the difference between wanting to be out there and avoiding it, and on wood it is also part of keeping the boards in good shape before sealing or staining. When you are ready to enjoy your backyard again, reach out for a free quote.",
+    ],
     name: "Patio & Deck Cleaning",
     short: "Bring outdoor living spaces back to life.",
     description:
@@ -161,6 +206,13 @@ export const services: Service[] = [
   },
   {
     slug: "roof-washing",
+    metaTitle: "Roof Washing in Macomb, MI | Are You Washed",
+    metaDescription: "Roof washing in Macomb and Metro Detroit. Low-pressure soft wash that removes black streaks and algae from shingles. Free quotes, 586-238-0784.",
+    longDescription: [
+      "Roof washing removes the black streaks, algae, and moss that show up on shingles over time. Those dark streaks are actually a living algae that feeds on the shingles, and it spreads if it is left alone.",
+      "We never use high pressure on a roof, that would tear up your shingles and void most warranties. Instead we use a low-pressure soft wash with a solution that kills the algae and moss at the root, then let it rinse clean. It is the same approach roofing manufacturers recommend for cleaning, so your roof is treated the right way.",
+      "Beyond looking better, a clean roof can last longer because the algae is no longer eating away at the shingles and holding moisture against them. It is upkeep that protects one of the most expensive parts of your home. If your roof has streaks, send us a photo for a free quote.",
+    ],
     name: "Roof Washing",
     short: "Remove black streaks & extend roof life.",
     description:
@@ -177,6 +229,13 @@ export const services: Service[] = [
   },
   {
     slug: "gutter-cleaning",
+    metaTitle: "Gutter Cleaning in Macomb, MI | Are You Washed",
+    metaDescription: "Gutter cleaning in Macomb and Metro Detroit. Clears debris, flushes downspouts, and brightens exteriors. Free quotes from a local family. 586-238-0784.",
+    longDescription: [
+      "Gutter cleaning clears the leaves, sticks, and debris out of your gutters so water can actually flow where it is supposed to. When gutters clog, water backs up and spills over, and that water has to go somewhere.",
+      "We remove the debris by hand, bag it, and then flush the downspouts to make sure they are running clear and not blocked further down. While we are up there we can also brighten the outside face of the gutters, which is where those black streaks and grime collect. We handle one and two story homes.",
+      "Clogged gutters are one of the most common causes of water damage to a roof, fascia, foundation, and basement, so keeping them clear is real protection for your home, not just a chore. Give us a call and we will quote your home for free.",
+    ],
     name: "Gutter Cleaning",
     short: "Protect your home from water damage.",
     description:
@@ -193,6 +252,13 @@ export const services: Service[] = [
   },
   {
     slug: "rust-removal",
+    metaTitle: "Rust Removal in Macomb, MI | Are You Washed",
+    metaDescription: "Rust removal in Macomb and Metro Detroit. Lifts sprinkler, fertilizer, and metal stains from concrete, brick, and siding. Free quotes, 586-238-0784.",
+    longDescription: [
+      "Rust removal takes out the orange and brown rust stains that regular washing leaves behind. These come from sprinkler systems hitting the house, fertilizer with iron in it, metal furniture, and well water, and once they set into a surface, pressure washing alone will not move them.",
+      "We use a rust remover made for the job that pulls the stain out of the surface through a chemical reaction, so there is no scrubbing and no damage to your concrete, brick, or siding. We apply it, let it do the work, and rinse it clean. It also handles tougher stains like battery acid and other metal marks.",
+      "Rust stains make a well-kept home look neglected even when everything else is clean, so clearing them makes a real difference in how the property looks. If you have rust showing up on your concrete or siding, send us a photo and we will give you a free quote.",
+    ],
     name: "Rust Removal",
     short: "Lift rust stains off concrete and siding.",
     description:

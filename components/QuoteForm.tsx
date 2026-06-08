@@ -77,11 +77,6 @@ export default function QuoteForm({ variant = "page" }: { variant?: Variant }) {
         </select>
       </div>
 
-      <div className="qf-field">
-        <label htmlFor="address">Property Address</label>
-        <input id="address" name="address" type="text" required placeholder="Street, City, ZIP" />
-      </div>
-
       {showWindows && (
         <div className="qf-field qf-conditional">
           <label htmlFor="windows">Approx. number of windows</label>

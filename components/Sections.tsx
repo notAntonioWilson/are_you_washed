@@ -29,7 +29,7 @@ export function StatsBar() {
         .statsbar-grid {
           position: relative; z-index: 1;
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(5, 1fr);
           gap: 24px;
           padding: clamp(22px, 3.4vw, 40px) clamp(20px,5vw,48px);
         }
@@ -50,8 +50,12 @@ export function StatsBar() {
           font-size: clamp(0.8rem, 1.4vw, 0.94rem);
           color: rgba(255,255,255,0.82);
         }
+        @media (max-width: 980px) {
+          .statsbar-grid { grid-template-columns: repeat(3, 1fr); gap: 30px 16px; }
+        }
         @media (max-width: 680px) {
           .statsbar-grid { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+          .stat:last-child:nth-child(odd) { grid-column: 1 / -1; }
         }
       `}</style>
     </section>

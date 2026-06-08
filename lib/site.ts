@@ -42,6 +42,7 @@ export const stats = [
   { value: "1,000+", label: "Properties Transformed" },
   { value: "5.0★", label: "Google & Angi Rating" },
   { value: "A+", label: "BBB Accredited" },
+  { value: "100%", label: "Licensed & Insured" },
   { value: "4+ Years", label: "Family Owned & Operated" },
 ];
 

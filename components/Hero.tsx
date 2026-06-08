@@ -69,13 +69,13 @@ export default function Hero() {
         }
         .hero-photo { object-fit: cover; object-position: 50% 50%; }
         .hero-photo-mobile { display: none; }
-        /* Dim the photo so it does not pull attention: heavier on the left behind the
-           headline, lighter toward Juan on the right, with a soft top/bottom falloff. */
+        /* Dim the photo so the headline stays readable: heavier on the left behind the
+           text, lighter toward the right, with a soft top/bottom falloff. */
         .hero-dim {
           position: absolute; inset: 0;
           background:
-            linear-gradient(90deg, rgba(11,22,34,0.72) 0%, rgba(11,22,34,0.54) 30%, rgba(11,22,34,0.32) 55%, rgba(11,22,34,0.22) 80%, rgba(11,22,34,0.34) 100%),
-            linear-gradient(180deg, rgba(11,22,34,0.12) 0%, transparent 28%, transparent 70%, rgba(11,22,34,0.22) 100%);
+            linear-gradient(90deg, rgba(11,22,34,0.8) 0%, rgba(11,22,34,0.64) 30%, rgba(11,22,34,0.42) 58%, rgba(11,22,34,0.3) 80%, rgba(11,22,34,0.4) 100%),
+            linear-gradient(180deg, rgba(11,22,34,0.18) 0%, transparent 30%, transparent 68%, rgba(11,22,34,0.28) 100%);
         }
         .hero-grid {
           position: relative; z-index: 2;

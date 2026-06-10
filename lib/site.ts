@@ -92,20 +92,20 @@ export const services: Service[] = [
   {
     slug: "window-cleaning",
     metaTitle: "Window Cleaning in Macomb, MI | Are You Washed",
-    metaDescription: "Streak-free window cleaning in Macomb and Metro Detroit. Glass, frames, sills, and tracks. Free quotes from a local family. 586-238-0784.",
+    metaDescription: "Streak-free window cleaning in Macomb and Metro Detroit. Interior and exterior glass, with sills and frames as an add-on. Free quotes. 586-238-0784.",
     longDescription: [
-      "Window cleaning gets your glass clear and streak-free, inside and out. We do not just wipe the glass, we clean the frames, sills, and tracks too, since that is where the dirt and dead bugs collect and what makes windows look dingy even after a quick wipe.",
-      "We work pane by pane with the right tools so you are not left with streaks in the afternoon sun. On the outside we reach the higher windows safely, and on the inside we are careful around your sills and floors. If you want your screens cleaned while we are there, just ask.",
+      "Window cleaning gets your glass clear and streak-free, inside and out. We hand clean each pane so there is no film or haze left behind, the kind you only notice once the afternoon sun hits the window.",
+      "We work pane by pane with the right tools so you are not left with streaks. On the outside we reach the higher windows safely, and on the inside we are careful around your sills and floors. Frames, sills, and tracks are not part of the standard glass cleaning, but we are happy to do them for an added cost, so just let us know and we will fold it into your quote. Screens can be cleaned on request too.",
       "Clean windows let more light in and make the whole room feel brighter, and they are one of those things you notice every single day. Tell us how many windows you have, roughly, and we will send you a free quote.",
     ],
     name: "Window Cleaning",
     short: "Streak-free glass, inside and out.",
     description:
-      "We clean the glass inside and out, along with the frames, sills, and tracks, so nothing is left streaky. Tell us how many windows you have and we'll send a free quote.",
+      "We get your glass clear and streak-free, inside and out. Sills, frames, and tracks can be added for an extra cost. Tell us how many windows you have and we'll send a free quote.",
     features: [
       "Interior & exterior glass",
       "Streak-free, spot-free finish",
-      "Frames, tracks & sills included",
+      "Sills, frames & tracks available as add-on",
       "Screens cleaned on request",
     ],
     icon: "window",

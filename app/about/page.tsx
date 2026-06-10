@@ -28,7 +28,14 @@ export default function AboutPage() {
       <section className="section">
         <div className="container about-grid">
           <div className="about-media reveal">
-            <Image src="/images/juan-owner.jpg" alt="Juan, the owner of Are You Washed Pressure Washing" width={620} height={775} sizes="(max-width: 900px) 100vw, 520px" className="about-img" />
+            <figure className="about-fig">
+              <Image src="/images/juan-owner-2.jpg" alt="Juan, owner of Are You Washed, pressure washing a driveway in Macomb, MI" width={899} height={1600} sizes="(max-width: 900px) 100vw, 520px" className="about-img" />
+              <figcaption className="about-cap">Juan, out on a driveway job</figcaption>
+            </figure>
+            <figure className="about-fig">
+              <Image src="/images/juan-son.jpg" alt="Juan's son cleaning a second-story window on a home in Metro Detroit" width={1200} height={1600} sizes="(max-width: 900px) 100vw, 520px" className="about-img" />
+              <figcaption className="about-cap">Juan&apos;s son on window duty</figcaption>
+            </figure>
           </div>
           <div className="about-content reveal d1">
             <span className="eyebrow">Why We Do This</span>
@@ -53,8 +60,11 @@ export default function AboutPage() {
           </div>
         </div>
         <style>{`
-          .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px,4.5vw,60px); align-items: center; }
+          .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px,4.5vw,60px); align-items: start; }
+          .about-media { display: flex; flex-direction: column; gap: 18px; }
+          .about-fig { margin: 0; }
           .about-img { width: 100%; height: auto; border-radius: var(--r-xl); box-shadow: var(--shadow-lg); object-fit: cover; }
+          .about-cap { font-family: var(--font-display); font-weight: 500; font-size: 0.86rem; color: var(--ink-muted); text-align: center; margin-top: 9px; }
           .about-text { color: var(--ink-soft); font-size: 1.0rem; line-height: 1.6; margin-bottom: 15px; }
           .about-sign { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.05rem; color: var(--maize-deep); margin-top: 6px; }
           .about-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }

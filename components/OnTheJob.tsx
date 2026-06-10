@@ -41,10 +41,10 @@ export default function OnTheJob() {
           </p>
         </div>
       </div>
-      <div className="otj-scroll" aria-label="Photos of the crew on the job">
+      <div className="otj-marquee" aria-label="Photos of the crew on the job">
         <div className="otj-track">
-          {shots.map((s) => (
-            <figure className="otj-item" key={s.image}>
+          {[...shots, ...shots].map((s, i) => (
+            <figure className="otj-item" key={`${s.image}-${i}`} aria-hidden={i >= shots.length}>
               <Image src={s.image} alt={s.alt} width={600} height={800} sizes="(max-width: 700px) 70vw, 320px" className="otj-img" loading="lazy" />
             </figure>
           ))}
@@ -53,11 +53,16 @@ export default function OnTheJob() {
       <style>{`
         .otj { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px); }
         .otj .section-head { margin-bottom: clamp(24px, 3.5vw, 36px); }
-        .otj-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 4px 0 16px; }
-        .otj-track { display: flex; gap: 14px; padding: 0 clamp(16px, 5vw, 48px); width: max-content; }
-        .otj-item { margin: 0; flex: 0 0 auto; width: clamp(220px, 70vw, 300px); border-radius: 14px; overflow: hidden; scroll-snap-align: start; box-shadow: 0 6px 20px rgba(0,0,0,0.12); background: var(--surface, #f3f4f2); }
+        .otj-marquee { overflow: hidden; padding: 4px 0 16px; -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+        .otj-track { display: flex; gap: 14px; width: max-content; animation: otj-scroll 90s linear infinite; }
+        .otj-marquee:hover .otj-track { animation-play-state: paused; }
+        .otj-item { margin: 0; flex: 0 0 auto; width: clamp(220px, 70vw, 300px); border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.12); background: var(--surface, #f3f4f2); }
         .otj-img { width: 100%; height: 380px; object-fit: cover; display: block; }
-        @media (prefers-reduced-motion: reduce) { .otj-scroll { scroll-behavior: auto; } }
+        @keyframes otj-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 7px)); } }
+        @media (prefers-reduced-motion: reduce) {
+          .otj-marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+          .otj-track { animation: none; }
+        }
       `}</style>
     </section>
   );

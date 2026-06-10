@@ -8,28 +8,8 @@ type Pair = { before: string; after: string; label: string };
 
 const pairs: Pair[] = [
   {
-    before: "/images/house-before.jpg",
-    after: "/images/house-after.jpg",
-    label: "House Wash, Siding",
-  },
-  {
-    before: "/images/proof/gutter-cleaning-before-01.jpg",
-    after: "/images/proof/gutter-cleaning-after-01.jpg",
-    label: "Gutter Cleaning, Packed Leaves",
-  },
-  {
-    before: "/images/proof/gutter-cleaning-before-02.jpg",
-    after: "/images/proof/gutter-cleaning-after-02.jpg",
-    label: "Gutter Cleaning, Front Entry",
-  },
-  {
-    before: "/images/proof/gutter-cleaning-before-03.jpg",
-    after: "/images/proof/gutter-cleaning-after-03.jpg",
-    label: "Gutter Cleaning, Roof Valley",
-  },
-  {
-    before: "/images/proof/gutter-cleaning-before-04.jpg",
-    after: "/images/proof/gutter-cleaning-after-04.jpg",
+    before: "/images/proof/gutter-guard-before-05.jpg",
+    after: "/images/proof/gutter-guard-after-05.jpg",
     label: "Gutter Cleaning, Gutter Guards",
   },
 ];
@@ -158,6 +138,7 @@ export default function BeforeAfter() {
 
         <div className="ba-stage reveal">
           <Slider key={idx} pair={pairs[idx]} />
+          {pairs.length > 1 && (
           <div className="ba-nav">
             <button type="button" className="ba-arrow" onClick={prev} aria-label="Previous before and after photo">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
@@ -167,6 +148,7 @@ export default function BeforeAfter() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6"/></svg>
             </button>
           </div>
+          )}
         </div>
 
         <div className="ba-cta">

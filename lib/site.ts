@@ -1055,6 +1055,23 @@ export const results: Result[] = [
 // ============================================================
 export type ProofShot = { image: string; alt: string; tag: string; service: string };
 export const proof: ProofShot[] = [
+  { image: "/images/proof/roof-washing-01.jpg", tag: "Roof Washing", service: "roof-washing", alt: "Roof and exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/house-roof-01.jpg", tag: "House Washing", service: "house-washing", alt: "Home exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/house-roof-01.jpg", tag: "Roof Washing", service: "roof-washing", alt: "Roof and exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/gutter-clean-new-01.jpg", tag: "Gutters", service: "gutter-cleaning", alt: "Gutters cleaned out in Metro Detroit" },
+  { image: "/images/proof/house-driveway-new-01.jpg", tag: "House Washing", service: "house-washing", alt: "Home exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/house-driveway-new-01.jpg", tag: "Driveways", service: "driveway-cleaning", alt: "Driveway pressure washed in Metro Detroit" },
+  { image: "/images/proof/house-driveway-new-02.jpg", tag: "House Washing", service: "house-washing", alt: "Home exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/house-driveway-new-02.jpg", tag: "Driveways", service: "driveway-cleaning", alt: "Driveway pressure washed in Metro Detroit" },
+  { image: "/images/proof/house-driveway-new-03.jpg", tag: "House Washing", service: "house-washing", alt: "Home exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/house-driveway-new-03.jpg", tag: "Driveways", service: "driveway-cleaning", alt: "Driveway pressure washed in Metro Detroit" },
+  { image: "/images/proof/house-new-01.jpg", tag: "House Washing", service: "house-washing", alt: "Home exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/patio-new-01.jpg", tag: "Patios & Decks", service: "patio-deck-cleaning", alt: "Patio surface cleaned in Macomb County" },
+  { image: "/images/proof/patio-new-02.jpg", tag: "Patios & Decks", service: "patio-deck-cleaning", alt: "Patio surface cleaned in Macomb County" },
+  { image: "/images/proof/patio-new-03.jpg", tag: "Patios & Decks", service: "patio-deck-cleaning", alt: "Patio surface cleaned in Macomb County" },
+  { image: "/images/proof/patio-new-04.jpg", tag: "Patios & Decks", service: "patio-deck-cleaning", alt: "Patio surface cleaned in Macomb County" },
+  { image: "/images/proof/driveway-before-after-01.jpg", tag: "Driveways", service: "driveway-cleaning", alt: "Driveway before and after pressure washing in Metro Detroit" },
+  { image: "/images/proof/commercial-glass-day-05.jpg", tag: "Windows", service: "window-cleaning", alt: "Commercial storefront glass cleaned in Metro Detroit" },
   { image: "/images/proof/window-batch-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Windows cleaned clear in Metro Detroit" },
   { image: "/images/proof/house-batch-01.jpg", tag: "House Washing", service: "house-washing", alt: "Home exterior washed clean in Metro Detroit" },
   { image: "/images/proof/house-batch-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Windows cleaned clear in Metro Detroit" },

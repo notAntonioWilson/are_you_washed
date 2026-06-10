@@ -4,11 +4,12 @@ type Shot = { image: string; alt: string };
 
 // Owner-selected highlight shots for the homepage. No service labels, just the work.
 const featured: Shot[] = [
-  { image: "/images/proof/house-modern-lakeside-02.jpg", alt: "Lakeside home exterior washed clean in Metro Detroit" },
   { image: "/images/proof/house-tudor-front-01.jpg", alt: "Brick Tudor home front cleaned in Macomb County" },
-  { image: "/images/proof/paver-driveway-02.jpg", alt: "Brick paver driveway pressure washed in Metro Detroit" },
   { image: "/images/proof/window-redbrick-arch-01.jpg", alt: "Arched windows cleaned clear on a red brick home in Macomb, MI" },
-  { image: "/images/proof/house-batch-02.jpg", alt: "Home exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/paver-driveway-02.jpg", alt: "Brick paver driveway pressure washed in Metro Detroit" },
+  { image: "/images/proof/window-tudor-gable-01.jpg", alt: "Patio and surrounds cleaned on a brick Tudor home in Macomb County" },
+  { image: "/images/proof/roof-washing-01.jpg", alt: "Metal roof and exterior washed clean in Metro Detroit" },
+  { image: "/images/proof/house-modern-lakeside-02.jpg", alt: "Lakeside home exterior washed clean in Metro Detroit" },
 ];
 
 export default function FeaturedWork() {

@@ -57,6 +57,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   if (!s) notFound();
 
   const shots = proof.filter((p) => p.service === s.slug);
+  const hasPhotos = shots.length > 0;
   const paras = (s.longDescription && s.longDescription.length >= 3
     ? s.longDescription
     : [s.description, s.description, s.description]
@@ -97,7 +98,13 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           {paras.map((p, i) => (
             <div key={i} className={`sdx-row reveal ${i % 2 === 1 ? "flip" : ""}`}>
               <div className="sdx-media">
-                <Image src={sectionImgs[i].src} alt={sectionImgs[i].alt} width={620} height={465} />
+                {hasPhotos ? (
+                  <Image src={sectionImgs[i].src} alt={sectionImgs[i].alt} width={620} height={465} />
+                ) : (
+                  <div className="sdx-media-soon" role="img" aria-label={`${s.name} photos coming soon`}>
+                    <span>Photos coming soon</span>
+                  </div>
+                )}
               </div>
               <div className="sdx-text">
                 <span className="sdx-kicker">{SECTION_HEADS[i]}</span>
@@ -176,6 +183,23 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             border-radius: var(--r-lg);
             box-shadow: var(--shadow-md);
             display: block;
+          }
+          .sdx-media-soon {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--aqua-soft, #eef3f1);
+            border: 1.5px dashed var(--line, #d4ddd8);
+          }
+          .sdx-media-soon span {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--ink-muted, #6b7a74);
           }
           .sdx-kicker {
             display: inline-block;

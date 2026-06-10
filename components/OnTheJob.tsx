@@ -26,6 +26,7 @@ const shots: Shot[] = [
   { image: "/images/proof/house-brick-bay-front-01.jpg", alt: "Brick home exterior and copper bay roof cleaned in Macomb County" },
   { image: "/images/proof/house-brick-mansion-01.jpg", alt: "Large brick home exterior cleaned in Metro Detroit" },
   { image: "/images/proof/house-brick-side-01.jpg", alt: "Brick home side elevation washed clean in Macomb County" },
+  { image: "/images/proof/action-paver-washdown-01.jpg", alt: "Crew member rinsing a paver patio under a pergola on a wash day in Metro Detroit" },
 ];
 
 export default function OnTheJob() {

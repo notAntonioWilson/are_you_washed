@@ -50,8 +50,6 @@ export default function HomePage() {
 
       <Reviews />
 
-      <OnTheJob />
-
       {/* Meet the Owner (About teaser) */}
       <section className="section whyus">
         <div className="container whyus-grid">
@@ -116,6 +114,8 @@ export default function HomePage() {
           }
         `}</style>
       </section>
+
+      <OnTheJob />
 
       {/* Combined quote CTA with service-area coverage merged in */}
       <section className="cta-merge">

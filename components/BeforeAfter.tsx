@@ -15,7 +15,22 @@ const pairs: Pair[] = [
   {
     before: "/images/proof/gutter-cleaning-before-01.jpg",
     after: "/images/proof/gutter-cleaning-after-01.jpg",
-    label: "Gutter Cleaning",
+    label: "Gutter Cleaning, Packed Leaves",
+  },
+  {
+    before: "/images/proof/gutter-cleaning-before-02.jpg",
+    after: "/images/proof/gutter-cleaning-after-02.jpg",
+    label: "Gutter Cleaning, Front Entry",
+  },
+  {
+    before: "/images/proof/gutter-cleaning-before-03.jpg",
+    after: "/images/proof/gutter-cleaning-after-03.jpg",
+    label: "Gutter Cleaning, Roof Valley",
+  },
+  {
+    before: "/images/proof/gutter-cleaning-before-04.jpg",
+    after: "/images/proof/gutter-cleaning-after-04.jpg",
+    label: "Gutter Cleaning, Gutter Guards",
   },
 ];
 
@@ -128,19 +143,30 @@ function Slider({ pair }: { pair: Pair }) {
 }
 
 export default function BeforeAfter() {
+  const [idx, setIdx] = useState(0);
+  const prev = () => setIdx((i) => (i - 1 + pairs.length) % pairs.length);
+  const next = () => setIdx((i) => (i + 1) % pairs.length);
+
   return (
     <section className="section section-tint ba-section">
       <div className="container">
         <div className="section-head center">
           <span className="eyebrow">See The Difference</span>
           <h2 className="section-title">Real <span className="accent">Before &amp; After</span></h2>
-          <p className="section-sub">Drag the slider on each photo to see the before and after. These are real jobs we did here in Metro Detroit, and we&apos;ll give you a free quote for yours.</p>
+          <p className="section-sub">Drag the slider to see the before and after, and use the arrows to flip through more jobs. These are real jobs we did here in Metro Detroit, and we&apos;ll give you a free quote for yours.</p>
         </div>
 
         <div className="ba-stage reveal">
-          {pairs.map((pair) => (
-            <Slider key={pair.label} pair={pair} />
-          ))}
+          <Slider key={idx} pair={pairs[idx]} />
+          <div className="ba-nav">
+            <button type="button" className="ba-arrow" onClick={prev} aria-label="Previous before and after photo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <span className="ba-count">{idx + 1} / {pairs.length}</span>
+            <button type="button" className="ba-arrow" onClick={next} aria-label="Next before and after photo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
         </div>
 
         <div className="ba-cta">
@@ -153,15 +179,28 @@ export default function BeforeAfter() {
         </div>
       </div>
       <style>{`
-        .ba-stage {
-          max-width: 1080px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 22px;
+        .ba-stage { max-width: 820px; margin: 0 auto; }
+        .ba-nav {
+          display: flex; align-items: center; justify-content: center;
+          gap: 18px; margin-top: 16px;
         }
-        @media (max-width: 900px) {
-          .ba-stage { grid-template-columns: 1fr; max-width: 560px; }
+        .ba-arrow {
+          width: 44px; height: 44px;
+          border-radius: 50%;
+          border: 1.5px solid rgba(20,32,44,0.15);
+          background: #fff;
+          color: var(--ink);
+          display: grid; place-items: center;
+          cursor: pointer;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+          transition: background 0.15s ease, color 0.15s ease;
+        }
+        .ba-arrow:hover { background: var(--maize); color: #fff; }
+        .ba-count {
+          font-family: var(--font-display);
+          font-weight: 600; font-size: 14px;
+          color: var(--ink);
+          min-width: 52px; text-align: center;
         }
         .ba-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
       `}</style>

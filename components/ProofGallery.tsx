@@ -1,36 +1,11 @@
-"use client";
-
-import { useMemo, useState } from "react";
 import { proof } from "@/lib/site";
 
-const TAG_ORDER = ["All", "Commercial", "Driveways", "Patios & Decks", "Concrete", "Porch & Balustrade", "House Washing", "Windows", "Gutters"];
-
 export function ProofGallery() {
-  const [active, setActive] = useState("All");
-
-  const tags = useMemo(() => {
-    const present = new Set(proof.map((p) => p.tag));
-    return TAG_ORDER.filter((t) => t === "All" || present.has(t));
-  }, []);
-
-  const shots = active === "All" ? proof : proof.filter((p) => p.tag === active);
+  const shots = proof;
 
   return (
     <div className="pg">
-      <div className="pg-chips" role="tablist" aria-label="Filter results by service">
-        {tags.map((t) => (
-          <button
-            key={t}
-            role="tab"
-            aria-selected={active === t}
-            className={`pg-chip ${active === t ? "on" : ""}`}
-            onClick={() => setActive(t)}
-          >
-            {t}
-          </button>
-        ))}
-      </div>
-      <p className="pg-count">{shots.length} photo{shots.length === 1 ? "" : "s"}{active !== "All" ? ` in ${active}` : " of finished work"}</p>
+      <p className="pg-count">{shots.length} photo{shots.length === 1 ? "" : "s"} of finished work</p>
 
       <div className="pg-grid">
         {shots.map((p) => (
@@ -44,19 +19,6 @@ export function ProofGallery() {
       </div>
 
       <style>{`
-        .pg-chips { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-bottom: 14px; }
-        .pg-chip {
-          font-family: var(--font-display);
-          font-weight: 600; font-size: 13.5px;
-          color: var(--ink);
-          background: var(--white);
-          border: 1.5px solid var(--line);
-          border-radius: var(--r-pill);
-          padding: 8px 16px;
-          transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-        .pg-chip:hover { border-color: var(--maize); }
-        .pg-chip.on { background: var(--maize); border-color: var(--maize); color: #fff; }
         .pg-count { text-align: center; color: var(--ink-muted); font-size: 0.92rem; margin-bottom: 24px; }
 
         .pg-grid { column-count: 3; column-gap: 18px; }

@@ -8,6 +8,7 @@ const featured: Shot[] = [
   { image: "/images/proof/house-tudor-front-01.jpg", alt: "Brick Tudor home front cleaned in Macomb County" },
   { image: "/images/proof/paver-driveway-02.jpg", alt: "Brick paver driveway pressure washed in Metro Detroit" },
   { image: "/images/proof/window-redbrick-arch-01.jpg", alt: "Arched windows cleaned clear on a red brick home in Macomb, MI" },
+  { image: "/images/proof/house-batch-02.jpg", alt: "Home exterior washed clean in Metro Detroit" },
 ];
 
 export default function FeaturedWork() {
@@ -32,7 +33,7 @@ export default function FeaturedWork() {
       <style>{`
         .featured { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px); }
         .featured .section-head { margin-bottom: clamp(24px, 3.5vw, 36px); }
-        .featured-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
         .featured-item { margin: 0; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--surface, #f3f4f2); aspect-ratio: 4 / 3; }
         .featured-img { width: 100%; height: 100%; object-fit: cover; display: block; }
         @media (max-width: 700px) {

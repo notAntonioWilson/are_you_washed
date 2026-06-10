@@ -14,6 +14,8 @@ const shots: Shot[] = [
   { image: "/images/proof/action-gutter-team-01.jpg", alt: "Clearing gutters from the roofline at a Metro Detroit home" },
   { image: "/images/proof/action-gutter-team-02.jpg", alt: "Blowing leaves and debris out of the gutters on a wash day" },
   { image: "/images/proof/action-gutter-team-03.jpg", alt: "Crew finishing a gutter cleanout in Macomb County" },
+  { image: "/images/proof/gutter-guard-needles-01.jpg", alt: "Gutter guard packed with pine needles before a cleanout in Metro Detroit" },
+  { image: "/images/proof/gutter-guard-debris-01.jpg", alt: "Debris built up along a gutter guard before cleaning in Macomb County" },
   { image: "/images/proof/action-window-wipe-01.jpg", alt: "Wiping down glass during an interior window cleaning in Metro Detroit" },
   { image: "/images/proof/action-window-squeegee-05.jpg", alt: "Squeegee pass on a window cleaning job in Macomb, MI" },
   { image: "/images/proof/action-window-squeegee-06.jpg", alt: "Pulling water off the glass on a window cleaning job" },

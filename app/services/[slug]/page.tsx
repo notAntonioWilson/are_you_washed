@@ -5,7 +5,8 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { CTABand } from "@/components/Sections";
 import { Icons } from "@/components/Icons";
-import { services, site } from "@/lib/site";
+import Image from "next/image";
+import { services, site, proof } from "@/lib/site";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -26,6 +27,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   if (!s) notFound();
 
   const Ic = Icons[s.icon];
+  const shots = proof.filter((p) => p.service === s.slug);
   const paras = s.longDescription && s.longDescription.length ? s.longDescription : [s.description];
 
   return (
@@ -66,14 +68,20 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             </div>
           </div>
 
-          {/* Proof gallery: intentionally empty for now, structured to drop photos in later. */}
+          {/* Proof gallery: shows this service's finished work; placeholder until photos exist. */}
           <div className="sd-proof reveal">
             <h2 className="sd-proof-head">{s.name} Results in Macomb &amp; Metro Detroit</h2>
-            <p className="sd-proof-sub">Real jobs from local homes. Fresh photos are on the way.</p>
-            <div className="sd-gallery" data-gallery={s.slug} aria-label={`${s.name} before and after photos`}>
-              {/* Drop result images here later, e.g.:
-                  <figure className="sd-shot"><Image src="/images/..." alt="..." width={520} height={390} /></figure> */}
-              <div className="sd-gallery-empty">Photos coming soon.</div>
+            <p className="sd-proof-sub">Real jobs from local homes and businesses.</p>
+            <div className="sd-gallery" data-gallery={s.slug} aria-label={`${s.name} finished work photos`}>
+              {shots.length > 0 ? (
+                shots.map((p) => (
+                  <figure key={p.image} className="sd-shot">
+                    <Image src={p.image} alt={p.alt} width={520} height={390} />
+                  </figure>
+                ))
+              ) : (
+                <div className="sd-gallery-empty">Photos coming soon.</div>
+              )}
             </div>
           </div>
 

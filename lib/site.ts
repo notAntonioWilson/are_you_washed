@@ -1118,4 +1118,8 @@ export const proof: ProofShot[] = [
   { image: "/images/proof/window-exterior-brick-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Exterior windows cleaned on a brick home in Macomb, MI" },
   { image: "/images/proof/window-exterior-brick-02.jpg", tag: "Windows", service: "window-cleaning", alt: "Streak-free exterior glass after window cleaning in Metro Detroit" },
   { image: "/images/proof/window-interior-trio-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Interior windows cleaned clear with a tree-line view in Metro Detroit" },
+  { image: "/images/proof/window-graybrick-tall-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Tall grid window cleaned clear on a painted brick home in Metro Detroit" },
+  { image: "/images/proof/window-graybrick-grid-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Grid window cleaned streak-free on a lakeside home in Macomb County" },
+  { image: "/images/proof/window-graybrick-lakeside-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Large picture window cleaned clear with a lake view in Metro Detroit" },
+  { image: "/images/proof/window-graybrick-shutter-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Shuttered window cleaned spotless on a gray brick home in Macomb, MI" },
 ];

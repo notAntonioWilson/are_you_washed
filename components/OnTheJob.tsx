@@ -20,6 +20,10 @@ const shots: Shot[] = [
   { image: "/images/proof/action-window-pole-driveway-01.jpg", alt: "Reaching a second story window from the driveway with a pole in Metro Detroit" },
   { image: "/images/proof/action-window-pole-driveway-02.jpg", alt: "Pole work on upper windows during a wash in Macomb County" },
   { image: "/images/proof/action-roof-mansion-01.jpg", alt: "Working the roofline on a large home in Metro Detroit" },
+  { image: "/images/proof/house-brick-bay-wide-01.jpg", alt: "Clean brick home with a bay window after a wash in Metro Detroit" },
+  { image: "/images/proof/house-brick-bay-front-01.jpg", alt: "Brick home exterior and copper bay roof cleaned in Macomb County" },
+  { image: "/images/proof/house-brick-mansion-01.jpg", alt: "Large brick home exterior cleaned in Metro Detroit" },
+  { image: "/images/proof/house-brick-side-01.jpg", alt: "Brick home side elevation washed clean in Macomb County" },
 ];
 
 export default function OnTheJob() {

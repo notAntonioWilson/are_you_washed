@@ -3,12 +3,12 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import { StatsBar } from "@/components/Sections";
-import { ServicesGrid } from "@/components/ServicesGrid";
+import { ServicesCarousel } from "@/components/ServicesCarousel";
 import BeforeAfter from "@/components/BeforeAfter";
 import Reviews from "@/components/Reviews";
 import QuoteForm from "@/components/QuoteForm";
 import { Icons } from "@/components/Icons";
-import { site, serviceAreas } from "@/lib/site";
+import { site, serviceAreas, services } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -18,21 +18,31 @@ export default function HomePage() {
       <StatsBar />
 
       {/* Services */}
-      <section className="section" id="services">
+      <section className="section svc-section" id="services">
         <div className="container">
           <div className="section-head center">
             <span className="eyebrow">What We Do</span>
-            <h2 className="section-title">One local family, <span className="accent">every surface outside your home</span></h2>
+            <h2 className="section-title">
+              Our Cleaning Services<br />
+              <span className="accent">For Every Surface Outside Your Home</span>
+            </h2>
             <p className="section-sub">
-              We handle it all ourselves: house washing, concrete, driveways, decks, patios, roofs, windows, and gutters. Tell us what your home needs and we&apos;ll send a free quote.
+              We handle it all ourselves: house washing, concrete, driveways, decks, patios, roofs, windows, gutters, and rust removal. Tell us what your home needs and we&apos;ll send a free quote.
             </p>
           </div>
-          <ServicesGrid />
+          <ServicesCarousel />
+          <p className="svc-count">{services.length} total services. Swipe or use the arrows to see them all.</p>
           <div className="section-actions">
             <Link href="/contact" className="btn btn-primary btn-lg">Get a Free Quote <Icons.arrow /></Link>
             <Link href="/services" className="btn btn-ghost btn-lg">All Services</Link>
           </div>
         </div>
+        <style>{`
+          .svc-section { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px); }
+          .svc-section .section-head { margin-bottom: clamp(28px, 4vw, 40px); }
+          .svc-count { text-align: center; color: var(--ink-muted); font-size: 0.95rem; margin-top: 24px; }
+          .svc-section .section-actions { margin-top: 20px; }
+        `}</style>
       </section>
 
       <BeforeAfter />

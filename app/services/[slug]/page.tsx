@@ -66,6 +66,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   // Pick 3 distinct images for the side-by-side sections: this service's proof first,
   // then its card image, then tasteful generic result shots.
   const pool = [
+    ...((s.bodyImages || []).map((src) => ({ src, alt: `${s.name} by Are You Washed in Metro Detroit` }))),
     ...shots.map((p) => ({ src: p.image, alt: p.alt })),
     ...(s.image ? [{ src: s.image, alt: s.alt || `${s.name} by Are You Washed` }] : []),
     ...FALLBACK_IMGS.map((f) => ({ src: f, alt: `${s.name} service by Are You Washed in Metro Detroit` })),

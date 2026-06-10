@@ -8,6 +8,7 @@ type Shot = { image: string; alt: string };
 // Action, branding, and work-in-progress shots. Real crew, real jobs around
 // Metro Detroit. These are credibility shots, not before/after results.
 const shots: Shot[] = [
+  { image: "/images/proof/window-tudor-gable-01.jpg", alt: "Are You Washed crew member washing a paver patio from a ladder in Metro Detroit" },
   { image: "/images/proof/action-commercial-balcony-01.jpg", alt: "Are You Washed crew on the job in Metro Detroit" },
   { image: "/images/proof/action-commercial-lift-01.jpg", alt: "Boom lift staged for a commercial wash near the lake in Metro Detroit" },
   { image: "/images/proof/action-commercial-storefront-01.jpg", alt: "Are You Washed crew on the job in Metro Detroit" },

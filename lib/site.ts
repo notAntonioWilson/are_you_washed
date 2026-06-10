@@ -61,6 +61,7 @@ export type Service = {
   icon: string; // key mapped in components/Icons.tsx
   image?: string;
   alt?: string;
+  bodyImages?: string[];
   featured?: boolean;
 };
 
@@ -85,7 +86,7 @@ export const services: Service[] = [
       "Gentle on landscaping & windows",
     ],
     icon: "house",
-    image: "/images/house-after.jpg",
+    image: "/images/proof/house-tudor-front-01.jpg",
     alt: "Freshly pressure washed home exterior in Macomb, MI",
     featured: true,
   },
@@ -133,7 +134,7 @@ export const services: Service[] = [
       "Longer-lasting than pressure alone",
     ],
     icon: "droplet",
-    image: "/images/balustrade-after.jpg",
+    image: "/images/proof/balustrade-porch-01.jpg",
     alt: "Soft washed porch and balustrade in Macomb, MI",
   },
   {
@@ -156,8 +157,13 @@ export const services: Service[] = [
       "Sealing available on request",
     ],
     icon: "concrete",
-    image: "/images/driveway-clean.jpg",
-    alt: "Clean concrete after pressure washing in Metro Detroit",
+    image: "/images/proof/commercial-att-night-01.jpg",
+    alt: "Commercial concrete lot cleaned overnight in Metro Detroit",
+    bodyImages: [
+      "/images/proof/commercial-att-night-01.jpg",
+      "/images/proof/commercial-walk-day-01.jpg",
+      "/images/proof/concrete-breezeway-01.jpg",
+    ],
   },
   {
     slug: "driveway-cleaning",
@@ -179,7 +185,7 @@ export const services: Service[] = [
       "Pairs perfectly with house washing",
     ],
     icon: "driveway",
-    image: "/images/driveway-house.jpg",
+    image: "/images/proof/paver-driveway-02.jpg",
     alt: "Driveway pressure washed clean in Macomb, MI",
   },
   {
@@ -202,7 +208,7 @@ export const services: Service[] = [
       "Re-sanding & sealing on request",
     ],
     icon: "patio",
-    image: "/images/patio-after.jpg",
+    image: "/images/proof/stamped-patio-01.jpg",
     alt: "Patio and deck restored by pressure washing in Metro Detroit",
   },
   {
@@ -271,8 +277,8 @@ export const services: Service[] = [
       "Treats battery acid & metal stains",
     ],
     icon: "spray",
-    image: "/images/proof/concrete-breezeway-01.jpg",
-    alt: "Concrete cleaned of rust stains after pressure washing in Macomb, MI",
+    image: "/images/proof/driveway-before-after-01.jpg",
+    alt: "Concrete cleaned of staining, before and after in Metro Detroit",
   },
 ];
 
@@ -1209,5 +1215,4 @@ export const proof: ProofShot[] = [
   { image: "/images/proof/window-interior-trio-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Interior windows cleaned clear with a tree-line view in Metro Detroit" },
   { image: "/images/proof/window-redbrick-arch-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Arched transom window cleaned clear on a red brick home in Macomb, MI" },
   { image: "/images/proof/window-tudor-bay-01.jpg", tag: "House Washing", service: "house-washing", alt: "Tall bay window tower cleaned clear on a brick Tudor home in Metro Detroit" },
-  { image: "/images/proof/window-tudor-gable-01.jpg", tag: "Patios & Decks", service: "patio-deck-cleaning", alt: "Tall gable window wall cleaned streak-free on a brick Tudor home in Macomb County" },
 ];

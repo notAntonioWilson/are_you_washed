@@ -19,6 +19,8 @@ export default function HomePage() {
       <Hero />
       <StatsBar />
 
+      <FeaturedWork />
+
       {/* Services */}
       <section className="section svc-section" id="services">
         <div className="container">
@@ -50,8 +52,6 @@ export default function HomePage() {
       <BeforeAfter />
 
       <Reviews />
-
-      <FeaturedWork />
 
       {/* Meet the Owner (About teaser) */}
       <section className="section whyus">

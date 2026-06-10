@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { proof } from "@/lib/site";
 
-const TAG_ORDER = ["All", "Commercial", "Driveways", "Patios & Decks", "Concrete", "Porch & Balustrade", "House Washing", "Gutters"];
+const TAG_ORDER = ["All", "Commercial", "Driveways", "Patios & Decks", "Concrete", "Porch & Balustrade", "House Washing", "Windows", "Gutters"];
 
 export function ProofGallery() {
   const [active, setActive] = useState("All");

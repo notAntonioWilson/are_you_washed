@@ -1112,4 +1112,10 @@ export const proof: ProofShot[] = [
   { image: "/images/proof/gutter-cleaning-after-03.jpg", tag: "Gutters", service: "gutter-cleaning", alt: "Roof valley and gutters cleaned out at a Macomb County home" },
   { image: "/images/proof/gutter-cleaning-before-04.jpg", tag: "Gutters", service: "gutter-cleaning", alt: "Gutter guard covered in pine needles before cleaning in Macomb, MI" },
   { image: "/images/proof/gutter-cleaning-after-04.jpg", tag: "Gutters", service: "gutter-cleaning", alt: "Gutter guard blown clear of pine needles after cleaning" },
+  { image: "/images/proof/house-modern-lakeside-01.jpg", tag: "House Washing", service: "house-washing", alt: "Modern lakeside home with washed siding and metal roof in Metro Detroit" },
+  { image: "/images/proof/house-modern-lakeside-02.jpg", tag: "House Washing", service: "house-washing", alt: "Lakeside home exterior cleaned down to the waterline in Metro Detroit" },
+  { image: "/images/proof/house-modern-side-01.jpg", tag: "House Washing", service: "house-washing", alt: "Painted brick and siding washed clean on a modern home in Macomb, MI" },
+  { image: "/images/proof/window-exterior-brick-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Exterior windows cleaned on a brick home in Macomb, MI" },
+  { image: "/images/proof/window-exterior-brick-02.jpg", tag: "Windows", service: "window-cleaning", alt: "Streak-free exterior glass after window cleaning in Metro Detroit" },
+  { image: "/images/proof/window-interior-trio-01.jpg", tag: "Windows", service: "window-cleaning", alt: "Interior windows cleaned clear with a tree-line view in Metro Detroit" },
 ];

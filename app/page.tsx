@@ -7,6 +7,7 @@ import { ServicesCarousel } from "@/components/ServicesCarousel";
 import BeforeAfter from "@/components/BeforeAfter";
 import Reviews from "@/components/Reviews";
 import OnTheJob from "@/components/OnTheJob";
+import FeaturedWork from "@/components/FeaturedWork";
 import QuoteForm from "@/components/QuoteForm";
 import { Icons } from "@/components/Icons";
 import { site, serviceAreas, services } from "@/lib/site";
@@ -49,6 +50,8 @@ export default function HomePage() {
       <BeforeAfter />
 
       <Reviews />
+
+      <FeaturedWork />
 
       {/* Meet the Owner (About teaser) */}
       <section className="section whyus">

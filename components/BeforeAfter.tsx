@@ -6,11 +6,18 @@ import { Icons } from "./Icons";
 
 type Pair = { before: string; after: string; label: string };
 
-const housePair: Pair = {
-  before: "/images/house-before.jpg",
-  after: "/images/house-after.jpg",
-  label: "House Wash, Siding",
-};
+const pairs: Pair[] = [
+  {
+    before: "/images/house-before.jpg",
+    after: "/images/house-after.jpg",
+    label: "House Wash, Siding",
+  },
+  {
+    before: "/images/proof/gutter-cleaning-before-01.jpg",
+    after: "/images/proof/gutter-cleaning-after-01.jpg",
+    label: "Gutter Cleaning",
+  },
+];
 
 function Slider({ pair }: { pair: Pair }) {
   const [pos, setPos] = useState(50);
@@ -39,11 +46,9 @@ function Slider({ pair }: { pair: Pair }) {
       <Image src={pair.after} alt={`${pair.label}, after pressure washing in Macomb, MI`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
       <span className="ba-tag ba-tag-after">After</span>
 
-      <div className="ba-before" style={{ width: `${pos}%` }}>
-        <div className="ba-before-inner">
-          <Image src={pair.before} alt={`${pair.label}, before pressure washing`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
-          <span className="ba-tag ba-tag-before">Before</span>
-        </div>
+      <div className="ba-before" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
+        <Image src={pair.before} alt={`${pair.label}, before pressure washing`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
+        <span className="ba-tag ba-tag-before">Before</span>
       </div>
 
       <div className="ba-handle" style={{ left: `${pos}%` }}>
@@ -73,8 +78,6 @@ function Slider({ pair }: { pair: Pair }) {
           position: absolute; inset: 0;
           overflow: hidden;
         }
-        .ba-before-inner { position: absolute; inset: 0; width: 100vw; max-width: none; }
-        .ba :global(.ba-before-inner .ba-img) { object-position: left center; }
         .ba-tag {
           position: absolute; top: 14px;
           font-family: var(--font-display);
@@ -131,11 +134,13 @@ export default function BeforeAfter() {
         <div className="section-head center">
           <span className="eyebrow">See The Difference</span>
           <h2 className="section-title">Real <span className="accent">Before &amp; After</span></h2>
-          <p className="section-sub">Drag the slider to see the before and after. This is a real house we washed here in Metro Detroit, and we&apos;ll give you a free quote for yours.</p>
+          <p className="section-sub">Drag the slider on each photo to see the before and after. These are real jobs we did here in Metro Detroit, and we&apos;ll give you a free quote for yours.</p>
         </div>
 
         <div className="ba-stage reveal">
-          <Slider pair={housePair} />
+          {pairs.map((pair) => (
+            <Slider key={pair.label} pair={pair} />
+          ))}
         </div>
 
         <div className="ba-cta">
@@ -148,7 +153,16 @@ export default function BeforeAfter() {
         </div>
       </div>
       <style>{`
-        .ba-stage { max-width: 820px; margin: 0 auto; }
+        .ba-stage {
+          max-width: 1080px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 22px;
+        }
+        @media (max-width: 900px) {
+          .ba-stage { grid-template-columns: 1fr; max-width: 560px; }
+        }
         .ba-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
       `}</style>
     </section>

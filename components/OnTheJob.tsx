@@ -15,7 +15,6 @@ const shots: Shot[] = [
   { image: "/images/proof/action-deck-wash-01.jpg", alt: "Are You Washed crew on the job in Metro Detroit" },
   { image: "/images/proof/action-driveway-truck-01.jpg", alt: "Are You Washed truck and rig set up for a driveway wash in Macomb, MI" },
   { image: "/images/proof/action-fence-wash-01.jpg", alt: "Wood fence being washed clean board by board in Macomb County" },
-  { image: "/images/proof/action-gutter-blower-01.jpg", alt: "Are You Washed crew on the job in Metro Detroit" },
   { image: "/images/proof/action-gutter-team-01.jpg", alt: "Clearing gutters from the roofline at a Metro Detroit home" },
   { image: "/images/proof/action-gutter-team-02.jpg", alt: "Blowing leaves and debris out of the gutters on a wash day" },
   { image: "/images/proof/action-gutter-team-03.jpg", alt: "Crew finishing a gutter cleanout in Macomb County" },

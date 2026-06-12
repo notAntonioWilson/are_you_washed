@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { services } from "@/lib/site";
+import { services, proof } from "@/lib/site";
 import { Icons } from "./Icons";
 
 const AUTOPLAY_MS = 4500;
@@ -115,12 +115,19 @@ export function ServicesCarousel() {
         >
           {loop.map((s, i) => {
             const Ic = Icons[s.icon];
+            const hasPhotos = !!s.image || proof.some((p) => p.service === s.slug);
             const img = s.image || "/images/house-after.jpg";
             return (
               <div className="svcx-slide" key={`${s.slug}-${i}`}>
                 <Link href={`/services/${s.slug}`} className="svcx-card" draggable={false}>
                   <div className="svcx-banner">
-                    <Image src={img} alt={s.alt || s.name} fill sizes="(max-width: 700px) 85vw, 33vw" style={{ objectFit: "cover" }} draggable={false} />
+                    {hasPhotos ? (
+                      <Image src={img} alt={s.alt || s.name} fill sizes="(max-width: 700px) 85vw, 33vw" style={{ objectFit: "cover" }} draggable={false} />
+                    ) : (
+                      <div className="svcx-soon" role="img" aria-label={`${s.name} photos coming soon`}>
+                        <span>Photos coming soon</span>
+                      </div>
+                    )}
                     <div className="svcx-ic"><Ic className="svcx-ic-svg" /></div>
                   </div>
                   <div className="svcx-body">
@@ -165,6 +172,8 @@ export function ServicesCarousel() {
         }
         .svcx-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--maize-light); }
         .svcx-banner { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--aqua-soft); }
+        .svcx-soon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--aqua-soft); border: 1px dashed var(--maize); }
+        .svcx-soon span { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--maize-deep); }
         .svcx-banner :global(img) { transition: transform 0.5s cubic-bezier(.16,1,.3,1); }
         .svcx-card:hover .svcx-banner :global(img) { transform: scale(1.06); }
         .svcx-ic {

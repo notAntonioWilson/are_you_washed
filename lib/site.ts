@@ -312,8 +312,6 @@ export const services: Service[] = [
       "Treats battery acid & metal stains",
     ],
     icon: "spray",
-    image: "/images/proof/driveway-before-after-01.jpg",
-    alt: "Concrete cleaned of staining, before and after in Metro Detroit",
   },
 ];
 

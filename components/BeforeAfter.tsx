@@ -4,18 +4,37 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icons } from "./Icons";
 
-type Pair = { before: string; after: string; label: string };
+type Pair = { kind: "pair"; before: string; after: string; label: string };
+type Solo = { kind: "solo"; image: string; label: string };
+type Item = Pair | Solo;
 
-const pairs: Pair[] = [
+const items: Item[] = [
   {
+    kind: "solo",
+    image: "/images/proof/patio-deck-skirting-01.jpg",
+    label: "Deck Cleaning, Macomb",
+  },
+  {
+    kind: "pair",
     before: "/images/proof/rust-removal-before-01.jpg",
     after: "/images/proof/rust-removal-after-01.jpg",
     label: "Rust Removal, Block Wall",
   },
   {
+    kind: "solo",
+    image: "/images/proof/patio-deck-wash-action-01.jpg",
+    label: "Deck Cleaning, Metro Detroit",
+  },
+  {
+    kind: "pair",
     before: "/images/proof/gutter-guard-before-05.jpg",
     after: "/images/proof/gutter-guard-after-05.jpg",
     label: "Gutter Cleaning, Gutter Guards",
+  },
+  {
+    kind: "solo",
+    image: "/images/proof/driveway-half-clean-01.jpg",
+    label: "Driveway Cleaning, Half Done",
   },
 ];
 
@@ -127,10 +146,46 @@ function Slider({ pair }: { pair: Pair }) {
   );
 }
 
+function Solo({ solo }: { solo: Solo }) {
+  return (
+    <div className="ba ba-solo">
+      <Image src={solo.image} alt={`${solo.label}, pressure washing result in Macomb, MI`} fill sizes="(max-width:900px) 100vw, 50vw" className="ba-img" />
+      <div className="ba-label">{solo.label}</div>
+      <style jsx>{`
+        .ba {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          border-radius: var(--r-lg);
+          overflow: hidden;
+          user-select: none;
+          box-shadow: var(--shadow-md);
+          background: var(--ink);
+        }
+        .ba :global(.ba-img) { object-fit: cover; }
+        .ba-label {
+          position: absolute; bottom: 14px; left: 50%;
+          transform: translateX(-50%);
+          font-family: var(--font-display);
+          font-weight: 600; font-size: 13px;
+          color: #fff;
+          background: rgba(20,32,44,0.7);
+          backdrop-filter: blur(8px);
+          padding: 7px 16px;
+          border-radius: var(--r-pill);
+          z-index: 3;
+          white-space: nowrap;
+        }
+      `}</style>
+    </div>
+  );
+}
+
 export default function BeforeAfter() {
   const [idx, setIdx] = useState(0);
-  const prev = () => setIdx((i) => (i - 1 + pairs.length) % pairs.length);
-  const next = () => setIdx((i) => (i + 1) % pairs.length);
+  const prev = () => setIdx((i) => (i - 1 + items.length) % items.length);
+  const next = () => setIdx((i) => (i + 1) % items.length);
+  const current = items[idx];
 
   return (
     <section className="section section-tint ba-section">
@@ -138,17 +193,17 @@ export default function BeforeAfter() {
         <div className="section-head center">
           <span className="eyebrow">See The Difference</span>
           <h2 className="section-title">Real <span className="accent">Before &amp; After</span></h2>
-          <p className="section-sub">Drag the slider to see the before and after, and use the arrows to flip through more jobs. These are real jobs we did here in Metro Detroit, and we&apos;ll give you a free quote for yours.</p>
+          <p className="section-sub">Drag the slider on the before and after jobs to see the change, and use the arrows to flip through more of our work. These are real jobs we did here in Metro Detroit, and we&apos;ll give you a free quote for yours.</p>
         </div>
 
         <div className="ba-stage reveal">
-          <Slider key={idx} pair={pairs[idx]} />
-          {pairs.length > 1 && (
+          {current.kind === "pair" ? <Slider key={idx} pair={current} /> : <Solo key={idx} solo={current} />}
+          {items.length > 1 && (
           <div className="ba-nav">
             <button type="button" className="ba-arrow" onClick={prev} aria-label="Previous before and after photo">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
             </button>
-            <span className="ba-count">{idx + 1} / {pairs.length}</span>
+            <span className="ba-count">{idx + 1} / {items.length}</span>
             <button type="button" className="ba-arrow" onClick={next} aria-label="Next before and after photo">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6"/></svg>
             </button>

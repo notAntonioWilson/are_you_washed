@@ -312,6 +312,13 @@ export const services: Service[] = [
       "Treats battery acid & metal stains",
     ],
     icon: "spray",
+    image: "/images/proof/rust-removal-after-01.jpg",
+    alt: "Rust stain removed from block wall in Metro Detroit",
+    bodyImages: [
+      "/images/proof/rust-removal-after-01.jpg",
+      "/images/proof/rust-removal-action-01.jpg",
+      "/images/proof/rust-removal-after-02.jpg",
+    ],
   },
 ];
 
@@ -1094,6 +1101,10 @@ export const results: Result[] = [
 // ============================================================
 export type ProofShot = { image: string; alt: string; tag: string; service: string };
 export const proof: ProofShot[] = [
+  { image: "/images/proof/rust-removal-before-01.jpg", tag: "Rust Removal", service: "rust-removal", alt: "Rust stain on block wall before removal in Metro Detroit" },
+  { image: "/images/proof/rust-removal-after-01.jpg", tag: "Rust Removal", service: "rust-removal", alt: "Block wall after rust stain removed in Metro Detroit" },
+  { image: "/images/proof/rust-removal-action-01.jpg", tag: "Rust Removal", service: "rust-removal", alt: "Treating a rust stain on block wall in Metro Detroit" },
+  { image: "/images/proof/rust-removal-after-02.jpg", tag: "Rust Removal", service: "rust-removal", alt: "Doorway block wall after rust removal in Metro Detroit" },
   { image: "/images/proof/gutter-clean-new-01.jpg", tag: "Gutters", service: "gutter-cleaning", alt: "Gutters cleaned out in Metro Detroit" },
   { image: "/images/proof/house-driveway-new-01.jpg", tag: "House Washing", service: "house-washing", alt: "Home exterior washed clean in Metro Detroit" },
   { image: "/images/proof/house-driveway-new-01.jpg", tag: "Driveways", service: "driveway-cleaning", alt: "Driveway pressure washed in Metro Detroit" },

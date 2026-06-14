@@ -8,6 +8,11 @@ type Pair = { before: string; after: string; label: string };
 
 const pairs: Pair[] = [
   {
+    before: "/images/proof/rust-removal-before-01.jpg",
+    after: "/images/proof/rust-removal-after-01.jpg",
+    label: "Rust Removal, Block Wall",
+  },
+  {
     before: "/images/proof/gutter-guard-before-05.jpg",
     after: "/images/proof/gutter-guard-after-05.jpg",
     label: "Gutter Cleaning, Gutter Guards",

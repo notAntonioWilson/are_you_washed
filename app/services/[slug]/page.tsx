@@ -25,33 +25,6 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 const SECTION_HEADS = ["What it is", "How we do it", "Why it matters"];
 const FALLBACK_IMGS = ["/images/house-after.jpg", "/images/driveway-house.jpg", "/images/patio-after.jpg"];
 
-function MarqueeRow({ items, reverse }: { items: ProofShot[]; reverse?: boolean }) {
-  const seq: ProofShot[] = [];
-  while (seq.length < 8) seq.push(...items);
-  const duration = 18 + seq.length * 4;
-  return (
-    <div className={`pm-row ${reverse ? "pm-rev" : ""}`}>
-      <div className="pm-track" style={{ animationDuration: `${duration}s` }}>
-        {[0, 1].map((d) =>
-          seq.map((p, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={`${d}-${i}`}
-              src={p.image}
-              alt={d === 0 ? p.alt : ""}
-              aria-hidden={d === 1}
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-              className="pm-img"
-            />
-          ))
-        )}
-      </div>
-    </div>
-  );
-}
-
 export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
   const s = services.find((x) => x.slug === params.slug);
   if (!s) notFound();
@@ -78,11 +51,8 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   }
   while (sectionImgs.length < 3) sectionImgs.push(sectionImgs[0]);
 
-  // Endless proof rows: scale with content. 12+ shots = 3 rows, 6+ = 2, 4+ = 1,
-  // 1-3 = simple grid, 0 = coming soon.
-  const rowCount = shots.length >= 12 ? 3 : shots.length >= 6 ? 2 : shots.length >= 4 ? 1 : 0;
-  const rows: ProofShot[][] = Array.from({ length: rowCount }, () => []);
-  if (rowCount > 0) shots.forEach((p, i) => rows[i % rowCount].push(p));
+  // Static proof grid: each shot shown exactly once, larger tiles, no repeats.
+  const gallery: ProofShot[] = shots;
 
   return (
     <>
@@ -137,18 +107,12 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </div>
         </div>
 
-        {rowCount > 0 ? (
-          <div className="sdx-rows" aria-label={`${s.name} finished work photos`}>
-            {rows.map((r, i) => (
-              <MarqueeRow key={i} items={r} reverse={i % 2 === 1} />
-            ))}
-          </div>
-        ) : shots.length > 0 ? (
+        {gallery.length > 0 ? (
           <div className="container">
-            <div className="sdx-grid">
-              {shots.map((p) => (
+            <div className="sdx-grid" aria-label={`${s.name} finished work photos`}>
+              {gallery.map((p) => (
                 <figure key={p.image} className="sdx-shot">
-                  <Image src={p.image} alt={p.alt} width={520} height={390} />
+                  <Image src={p.image} alt={p.alt} width={760} height={570} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw" />
                 </figure>
               ))}
             </div>
@@ -233,39 +197,11 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           .sdx-proof-head { font-size: clamp(1.35rem, 3vw, 1.9rem); margin-bottom: 8px; }
           .sdx-proof-sub { color: var(--ink-muted); font-size: 0.98rem; }
 
-          .sdx-rows { display: flex; flex-direction: column; gap: 14px; margin: 6px 0 30px; }
-          .pm-row { overflow: hidden; padding: 4px 0; }
-          .pm-track {
-            display: flex;
-            width: max-content;
-            will-change: transform;
-            animation-name: pm-scroll;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-          }
-          .pm-rev .pm-track { animation-direction: reverse; }
-          .pm-row:hover .pm-track { animation-play-state: paused; }
-          .pm-img {
-            height: 200px; width: auto;
-            border-radius: var(--r-md);
-            box-shadow: var(--shadow-sm);
-            margin-right: 14px;
-            user-select: none;
-          }
-          @keyframes pm-scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .pm-track { animation: none !important; }
-            .pm-row { overflow-x: auto; }
-          }
-
           .sdx-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 22px;
+            margin: 8px 0 30px;
           }
           .sdx-shot { margin: 0; }
           .sdx-shot img {
@@ -294,11 +230,16 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           }
           .sd-back-ic { width: 18px; height: 18px; transform: rotate(180deg); }
 
+          @media (max-width: 980px) {
+            .sdx-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+          }
           @media (max-width: 860px) {
             .sdx-row { grid-template-columns: 1fr; gap: 18px; }
             .sdx-row.flip .sdx-media { order: 0; }
             .sdx-features { grid-template-columns: 1fr; }
-            .pm-img { height: 150px; }
+          }
+          @media (max-width: 640px) {
+            .sdx-grid { grid-template-columns: 1fr; }
           }
         `}</style>
       </section>

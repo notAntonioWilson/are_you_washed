@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Lightbox from "@/components/Lightbox";
 
 type Shot = { image: string; alt: string };
 
@@ -22,13 +22,16 @@ export default function FeaturedWork() {
             <span className="accent">Our Beautiful Work</span>
           </h2>
         </div>
-        <div className="featured-row">
-          {featured.map((s) => (
-            <figure className="featured-item" key={s.image}>
-              <Image src={s.image} alt={s.alt} width={700} height={525} sizes="(max-width: 700px) 60vw, 20vw" className="featured-img" loading="lazy" />
-            </figure>
-          ))}
-        </div>
+        <Lightbox
+          items={featured.map((s) => ({ src: s.image, alt: s.alt }))}
+          gridClassName="featured-row"
+          tileClassName="featured-item"
+          ariaLabel="A sneak peek of our finished work"
+          variant="cover"
+          sizes="(max-width: 700px) 60vw, 20vw"
+          tileWidth={700}
+          tileHeight={525}
+        />
       </div>
       <style>{`
         .featured { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px); }
@@ -51,6 +54,7 @@ export default function FeaturedWork() {
           box-shadow: 0 0 0 1px rgba(104,164,68,0.55), 0 12px 38px rgba(104,164,68,0.65);
           transform: translateY(-3px);
         }
+        .featured-item :global(.lb-trigger) { height: 100%; border-radius: 0; }
         .featured-img { width: 100%; height: 100%; object-fit: cover; display: block; }
         @media (max-width: 900px) {
           .featured-row {

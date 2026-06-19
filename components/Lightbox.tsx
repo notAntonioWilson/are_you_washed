@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
-export type LightboxItem = { src: string; alt: string };
+export type LightboxItem = { src: string; alt: string; tag?: string };
 
 type Props = {
   items: LightboxItem[];
@@ -16,6 +16,14 @@ type Props = {
   tileWidth?: number;
   tileHeight?: number;
   ariaLabel?: string;
+  /**
+   * Tile rendering style (chosen declaratively so this client component can be
+   * used from server components without passing function props):
+   *  - "default": next/image, fixed 4:3 crop (service pages)
+   *  - "cover":   next/image, fills a parent-defined aspect box (homepage sneak peek)
+   *  - "masonry": plain img at natural ratio with optional tag caption (results page)
+   */
+  variant?: "default" | "cover" | "masonry";
 };
 
 export default function Lightbox({
@@ -26,6 +34,7 @@ export default function Lightbox({
   tileWidth = 760,
   tileHeight = 570,
   ariaLabel,
+  variant = "default",
 }: Props) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
@@ -57,14 +66,24 @@ export default function Lightbox({
     <>
       <div className={gridClassName} aria-label={ariaLabel}>
         {items.map((p, i) => (
-          <figure key={p.src} className={tileClassName}>
+          <figure key={`${p.src}-${i}`} className={tileClassName}>
             <button
               type="button"
               className="lb-trigger"
               onClick={() => show(i)}
               aria-label={`Enlarge photo: ${p.alt}`}
             >
-              <Image src={p.src} alt={p.alt} width={tileWidth} height={tileHeight} sizes={sizes} />
+              {variant === "masonry" ? (
+                <>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.src} alt={p.alt} loading="lazy" className="lb-masonry-img" />
+                  {p.tag ? <figcaption className="lb-tag">{p.tag}</figcaption> : null}
+                </>
+              ) : variant === "cover" ? (
+                <Image src={p.src} alt={p.alt} width={tileWidth} height={tileHeight} sizes={sizes} className="lb-cover-img" loading="lazy" />
+              ) : (
+                <Image className="lb-default-img" src={p.src} alt={p.alt} width={tileWidth} height={tileHeight} sizes={sizes} />
+              )}
               <span className="lb-zoom" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3M11 8v6M8 11h6" />
@@ -115,7 +134,7 @@ export default function Lightbox({
           border-radius: var(--r-lg);
           overflow: hidden;
         }
-        .lb-trigger :global(img) {
+        .lb-trigger :global(.lb-default-img) {
           width: 100%;
           height: auto;
           aspect-ratio: 4 / 3;
@@ -125,7 +144,35 @@ export default function Lightbox({
           box-shadow: var(--shadow-md);
           transition: transform 0.4s ease;
         }
-        .lb-trigger:hover :global(img) { transform: scale(1.04); }
+        .lb-trigger:hover :global(.lb-default-img) { transform: scale(1.04); }
+
+        /* cover variant: fill a parent-defined aspect box (e.g. homepage sneak peek) */
+        .lb-trigger :global(.lb-cover-img) {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        /* masonry variant: natural aspect ratio (e.g. results page) */
+        .lb-trigger :global(.lb-masonry-img) {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .lb-trigger :global(.lb-tag) {
+          position: absolute;
+          top: 12px; left: 12px;
+          font-family: var(--font-display);
+          font-weight: 700; font-size: 12.5px;
+          color: #fff;
+          background: rgba(19,58,94,0.82);
+          backdrop-filter: blur(6px);
+          padding: 6px 13px;
+          border-radius: var(--r-pill);
+          letter-spacing: 0.02em;
+          pointer-events: none;
+          z-index: 2;
+        }
         .lb-zoom {
           position: absolute;
           right: 12px; bottom: 12px;

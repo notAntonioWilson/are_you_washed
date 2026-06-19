@@ -1,4 +1,6 @@
+"use client";
 import { proof } from "@/lib/site";
+import Lightbox from "@/components/Lightbox";
 
 export function ProofGallery() {
   const shots = proof;
@@ -7,16 +9,13 @@ export function ProofGallery() {
     <div className="pg">
       <p className="pg-count">{shots.length} photo{shots.length === 1 ? "" : "s"} of finished work</p>
 
-      <div className="pg-grid">
-        {shots.map((p) => (
-          <figure key={p.image} className="pg-item">
-            {/* Plain img keeps each photo at its natural aspect ratio for the masonry flow */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.image} alt={p.alt} loading="lazy" />
-            <figcaption className="pg-tag">{p.tag}</figcaption>
-          </figure>
-        ))}
-      </div>
+      <Lightbox
+        items={shots.map((p) => ({ src: p.image, alt: p.alt, tag: p.tag }))}
+        gridClassName="pg-grid"
+        tileClassName="pg-item"
+        ariaLabel="Finished pressure washing work"
+        variant="masonry"
+      />
 
       <style>{`
         .pg-count { text-align: center; color: var(--ink-muted); font-size: 0.92rem; margin-bottom: 24px; }
@@ -31,6 +30,7 @@ export function ProofGallery() {
           box-shadow: var(--shadow-sm);
           background: var(--aqua-soft);
         }
+        .pg-item :global(.lb-trigger) { border-radius: 0; cursor: zoom-in; }
         .pg-item img { display: block; width: 100%; height: auto; }
         .pg-tag {
           position: absolute;
@@ -43,6 +43,8 @@ export function ProofGallery() {
           padding: 6px 13px;
           border-radius: var(--r-pill);
           letter-spacing: 0.02em;
+          pointer-events: none;
+          z-index: 2;
         }
         @media (max-width: 900px) { .pg-grid { column-count: 2; } }
         @media (max-width: 560px) { .pg-grid { column-count: 1; } }

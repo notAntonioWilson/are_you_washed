@@ -112,7 +112,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           <Lightbox
             items={gallery.map((p) => ({ src: p.image, alt: p.alt }))}
             arrangement="rows"
-            rows={gallery.length >= 12 ? 3 : 2}
+            rows={gallery.length >= 18 ? 3 : gallery.length >= 10 ? 2 : 1}
             ariaLabel={`${s.name} finished work photos`}
           />
         ) : (

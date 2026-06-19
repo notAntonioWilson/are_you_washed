@@ -45,9 +45,17 @@ function RowTrack({ items, reverse, onOpen }: RowTrackProps) {
   const drag = useRef<{ active: boolean; startX: number; startScroll: number; moved: boolean }>({
     active: false, startX: 0, startScroll: 0, moved: false,
   });
-  // duplicate the sequence once so the marquee can loop seamlessly
-  const loop = [...items, ...items];
-  const dur = 22 + items.length * 5;
+  // Build a seamless, gap-free endless track:
+  //  1. repeat the unique items until one "block" is wide enough to exceed any
+  //     viewport (so the -50% loop never reveals empty space on sparse rows)
+  //  2. duplicate that block once; the CSS animation translates by -50% so the
+  //     second copy seamlessly takes over as the first scrolls away.
+  const MIN_PER_BLOCK = 10;
+  const reps = items.length > 0 ? Math.max(1, Math.ceil(MIN_PER_BLOCK / items.length)) : 1;
+  const block: { item: LightboxItem; index: number }[] = [];
+  for (let r = 0; r < reps; r++) block.push(...items);
+  const loop = [...block, ...block];
+  const dur = 22 + block.length * 5;
 
   useEffect(() => {
     const onMove = (e: PointerEvent) => {

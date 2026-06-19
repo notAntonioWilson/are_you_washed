@@ -109,17 +109,12 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         </div>
 
         {gallery.length > 0 ? (
-          <div className="container">
-            <Lightbox
-              items={gallery.map((p) => ({ src: p.image, alt: p.alt }))}
-              gridClassName="sdx-grid"
-              tileClassName="sdx-shot"
-              sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw"
-              tileWidth={760}
-              tileHeight={570}
-              ariaLabel={`${s.name} finished work photos`}
-            />
-          </div>
+          <Lightbox
+            items={gallery.map((p) => ({ src: p.image, alt: p.alt }))}
+            arrangement="rows"
+            rows={gallery.length >= 12 ? 3 : 2}
+            ariaLabel={`${s.name} finished work photos`}
+          />
         ) : (
           <div className="container">
             <div className="sdx-empty">Photos coming soon.</div>

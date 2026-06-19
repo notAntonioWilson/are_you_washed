@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 export type LightboxItem = { src: string; alt: string; tag?: string };
@@ -24,7 +24,91 @@ type Props = {
    *  - "masonry": plain img at natural ratio with optional tag caption (results page)
    */
   variant?: "default" | "cover" | "masonry";
+  /**
+   * Layout arrangement:
+   *  - "grid" (default): items flow in the gridClassName container
+   *  - "rows": items split across auto-scrolling, hand-draggable horizontal rows
+   */
+  arrangement?: "grid" | "rows";
+  /** number of rows when arrangement="rows" (clamped to what the item count supports) */
+  rows?: number;
 };
+
+type RowTrackProps = {
+  items: { item: LightboxItem; index: number }[];
+  reverse?: boolean;
+  onOpen: (i: number) => void;
+};
+
+function RowTrack({ items, reverse, onOpen }: RowTrackProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ active: boolean; startX: number; startScroll: number; moved: boolean }>({
+    active: false, startX: 0, startScroll: 0, moved: false,
+  });
+  // duplicate the sequence once so the marquee can loop seamlessly
+  const loop = [...items, ...items];
+  const dur = 22 + items.length * 5;
+
+  useEffect(() => {
+    const onMove = (e: PointerEvent) => {
+      const el = ref.current;
+      if (!el || !drag.current.active) return;
+      const dx = e.clientX - drag.current.startX;
+      if (Math.abs(dx) > 4) drag.current.moved = true;
+      el.scrollLeft = drag.current.startScroll - dx;
+    };
+    const onUp = () => {
+      const el = ref.current;
+      if (el) el.classList.remove("dragging");
+      drag.current.active = false;
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+  }, []);
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    const el = ref.current;
+    if (!el) return;
+    drag.current = { active: true, startX: e.clientX, startScroll: el.scrollLeft, moved: false };
+    el.classList.add("dragging");
+  };
+
+  return (
+    <div
+      className={`lb-row ${reverse ? "lb-row-rev" : ""}`}
+      ref={ref}
+      onPointerDown={onPointerDown}
+    >
+      <div className="lb-track" style={{ animationDuration: `${dur}s` }}>
+        {loop.map(({ item, index }, k) => {
+          const clone = k >= items.length;
+          return (
+            <button
+              key={k}
+              type="button"
+              className="lb-rtile lb-trigger"
+              aria-hidden={clone}
+              tabIndex={clone ? -1 : 0}
+              aria-label={clone ? undefined : `Enlarge photo: ${item.alt}`}
+              onClick={() => { if (!drag.current.moved) onOpen(index); }}
+            >
+              <Image src={item.src} alt={clone ? "" : item.alt} width={420} height={315} className="lb-default-img" loading="lazy" sizes="320px" draggable={false} />
+              <span className="lb-zoom" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3M11 8v6M8 11h6" />
+                </svg>
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export default function Lightbox({
   items,
@@ -35,6 +119,8 @@ export default function Lightbox({
   tileHeight = 570,
   ariaLabel,
   variant = "default",
+  arrangement = "grid",
+  rows = 3,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
@@ -62,37 +148,53 @@ export default function Lightbox({
 
   const current = items[idx];
 
+  // Split items across N rows for the "rows" arrangement, preserving each item's
+  // global index so the lightbox opens the right photo. Each image appears once.
+  const rowCount = Math.max(1, Math.min(rows, Math.ceil(items.length / 2) || 1));
+  const rowBuckets: { item: LightboxItem; index: number }[][] = Array.from({ length: rowCount }, () => []);
+  if (arrangement === "rows") {
+    items.forEach((item, index) => rowBuckets[index % rowCount].push({ item, index }));
+  }
+
   return (
     <>
-      <div className={gridClassName} aria-label={ariaLabel}>
-        {items.map((p, i) => (
-          <figure key={`${p.src}-${i}`} className={tileClassName}>
-            <button
-              type="button"
-              className="lb-trigger"
-              onClick={() => show(i)}
-              aria-label={`Enlarge photo: ${p.alt}`}
-            >
-              {variant === "masonry" ? (
-                <>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.src} alt={p.alt} loading="lazy" className="lb-masonry-img" />
-                  {p.tag ? <figcaption className="lb-tag">{p.tag}</figcaption> : null}
-                </>
-              ) : variant === "cover" ? (
-                <Image src={p.src} alt={p.alt} width={tileWidth} height={tileHeight} sizes={sizes} className="lb-cover-img" loading="lazy" />
-              ) : (
-                <Image className="lb-default-img" src={p.src} alt={p.alt} width={tileWidth} height={tileHeight} sizes={sizes} />
-              )}
-              <span className="lb-zoom" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3M11 8v6M8 11h6" />
-                </svg>
-              </span>
-            </button>
-          </figure>
-        ))}
-      </div>
+      {arrangement === "rows" ? (
+        <div className="lb-rows" aria-label={ariaLabel}>
+          {rowBuckets.map((bucket, r) => (
+            <RowTrack key={r} items={bucket} reverse={r % 2 === 1} onOpen={show} />
+          ))}
+        </div>
+      ) : (
+        <div className={gridClassName} aria-label={ariaLabel}>
+          {items.map((p, i) => (
+            <figure key={`${p.src}-${i}`} className={tileClassName}>
+              <button
+                type="button"
+                className="lb-trigger"
+                onClick={() => show(i)}
+                aria-label={`Enlarge photo: ${p.alt}`}
+              >
+                {variant === "masonry" ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.src} alt={p.alt} loading="lazy" className="lb-masonry-img" />
+                    {p.tag ? <figcaption className="lb-tag">{p.tag}</figcaption> : null}
+                  </>
+                ) : variant === "cover" ? (
+                  <Image src={p.src} alt={p.alt} width={tileWidth} height={tileHeight} sizes={sizes} className="lb-cover-img" loading="lazy" />
+                ) : (
+                  <Image className="lb-default-img" src={p.src} alt={p.alt} width={tileWidth} height={tileHeight} sizes={sizes} />
+                )}
+                <span className="lb-zoom" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3M11 8v6M8 11h6" />
+                  </svg>
+                </span>
+              </button>
+            </figure>
+          ))}
+        </div>
+      )}
 
       {open && current && (
         <div className="lb-overlay" role="dialog" aria-modal="true" aria-label="Photo viewer" onClick={close}>
@@ -188,6 +290,77 @@ export default function Lightbox({
         }
         .lb-trigger:hover .lb-zoom,
         .lb-trigger:focus-visible .lb-zoom { opacity: 1; transform: translateY(0); }
+
+        /* rows arrangement: auto-scrolling, hand-draggable horizontal tracks.
+           Globalized because the row/track/tile nodes are rendered by the
+           RowTrack child component, outside this component's styled-jsx scope. */
+        :global(.lb-rows) { display: flex; flex-direction: column; gap: 14px; margin: 8px 0 30px; }
+        :global(.lb-row) {
+          overflow-x: hidden;
+          padding: 4px 0;
+          cursor: grab;
+          touch-action: pan-y;
+        }
+        :global(.lb-row:active) { cursor: grabbing; }
+        :global(.lb-track) {
+          display: flex;
+          width: max-content;
+          gap: 14px;
+          will-change: transform;
+          animation-name: lb-scroll;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        :global(.lb-row-rev .lb-track) { animation-direction: reverse; }
+        :global(.lb-row:hover .lb-track) { animation-play-state: paused; }
+        :global(.lb-row.dragging .lb-track) { animation-play-state: paused; }
+        :global(.lb-rtile) {
+          flex: 0 0 auto;
+          width: 320px;
+          border-radius: var(--r-md);
+          position: relative;
+          display: block;
+          padding: 0;
+          border: 0;
+          background: none;
+          cursor: zoom-in;
+          overflow: hidden;
+        }
+        :global(.lb-rtile .lb-default-img) {
+          width: 320px;
+          height: 240px;
+          aspect-ratio: auto;
+          border-radius: var(--r-md);
+          object-fit: cover;
+          display: block;
+          box-shadow: var(--shadow-sm);
+        }
+        :global(.lb-rtile .lb-zoom) {
+          position: absolute;
+          right: 10px; bottom: 10px;
+          width: 34px; height: 34px;
+          display: grid; place-items: center;
+          background: rgba(20, 32, 44, 0.62);
+          color: #fff;
+          border-radius: 50%;
+          backdrop-filter: blur(6px);
+          opacity: 0;
+          transition: opacity 0.25s ease;
+          pointer-events: none;
+        }
+        :global(.lb-rtile:hover .lb-zoom) { opacity: 1; }
+        @keyframes lb-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          :global(.lb-track) { animation: none !important; }
+          :global(.lb-row) { overflow-x: auto; }
+        }
+        @media (max-width: 640px) {
+          :global(.lb-rtile), :global(.lb-rtile .lb-default-img) { width: 240px; }
+          :global(.lb-rtile .lb-default-img) { height: 180px; }
+        }
 
         .lb-overlay {
           position: fixed; inset: 0;

@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { CTABand } from "@/components/Sections";
 import { Icons } from "@/components/Icons";
+import Lightbox from "@/components/Lightbox";
 import { services, site, proof, ProofShot } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -109,13 +110,15 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
         {gallery.length > 0 ? (
           <div className="container">
-            <div className="sdx-grid" aria-label={`${s.name} finished work photos`}>
-              {gallery.map((p) => (
-                <figure key={p.image} className="sdx-shot">
-                  <Image src={p.image} alt={p.alt} width={760} height={570} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw" />
-                </figure>
-              ))}
-            </div>
+            <Lightbox
+              items={gallery.map((p) => ({ src: p.image, alt: p.alt }))}
+              gridClassName="sdx-grid"
+              tileClassName="sdx-shot"
+              sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw"
+              tileWidth={760}
+              tileHeight={570}
+              ariaLabel={`${s.name} finished work photos`}
+            />
           </div>
         ) : (
           <div className="container">
@@ -204,14 +207,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             margin: 8px 0 30px;
           }
           .sdx-shot { margin: 0; }
-          .sdx-shot img {
-            width: 100%; height: auto;
-            border-radius: var(--r-lg);
-            box-shadow: var(--shadow-md);
-            object-fit: cover;
-            aspect-ratio: 4/3;
-            display: block;
-          }
           .sdx-empty {
             display: grid; place-items: center;
             min-height: 180px;

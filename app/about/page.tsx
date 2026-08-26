@@ -9,7 +9,7 @@ import { site, stats } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "About Us | Family-Owned Pressure Washing in Macomb" },
   description:
-    "Are You Washed is a family-owned pressure washing business in Macomb, MI. Local, trusted, 5.0★ rated. Meet the family and get your free quote.",
+    "Are You Washed is a family-owned pressure washing and soft washing business in Macomb, MI serving all of Metro Detroit. Local, trusted, 5.0★ rated. Meet the family and get your free quote.",
   alternates: { canonical: `${site.url}/about` },
 };
 

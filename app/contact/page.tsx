@@ -8,7 +8,7 @@ import { site, serviceAreas } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "Get a Free Quote | Pressure Washing in Macomb, MI" },
   description:
-    "Request a free, no-obligation pressure washing quote in Macomb & Metro Detroit. Fast response, family-owned. Call or text 586-238-0784.",
+    "Request a free, no-obligation quote for pressure washing, house washing, window cleaning, gutter cleaning, roof washing, or concrete cleaning in Macomb & Metro Detroit. Fast response, family-owned. Call or text 586-238-0784.",
   alternates: { canonical: `${site.url}/contact` },
 };
 

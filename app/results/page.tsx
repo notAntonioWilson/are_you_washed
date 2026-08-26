@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "Our Work | Pressure Washing Results in Macomb, MI" },
   description:
-    "See real pressure washing results from homes across Macomb and Metro Detroit. Family-owned, 5.0★ rated. Get your free quote today.",
+    "See real house washing, roof washing, window cleaning, gutter cleaning, concrete, and driveway results from homes and businesses across Macomb and Metro Detroit. Family-owned, 5.0★ rated. Free quotes.",
   alternates: { canonical: `${site.url}/results` },
 };
 

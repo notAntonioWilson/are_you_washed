@@ -24,8 +24,10 @@ export default function Hero() {
 
           <p className="hero-sub">
             Award-winning, 3x Angi Super Service Award winners in the top 5% of home service pros.
-            We&apos;re a family-owned crew that treats your home like our own. Families across Macomb
-            and Metro Detroit trust us for siding, concrete, windows, gutters and more, done right the first time.
+            We&apos;re a family-owned crew that treats your home like our own. Families across Macomb,
+            Washington Township, and Metro Detroit trust us for house washing, soft washing, roof
+            washing, window cleaning, gutter cleaning, concrete, driveway, patio and deck cleaning,
+            and rust removal, done right the first time.
           </p>
 
           <p className="hero-tag">&ldquo;{site.tagline}&rdquo;</p>

@@ -31,7 +31,7 @@ export default function HomePage() {
               <span className="accent">For Every Surface Outside Your Home</span>
             </h2>
             <p className="section-sub">
-              We handle it all ourselves: house washing, concrete, driveways, decks, patios, roofs, windows, gutters, and rust removal. Tell us what your home needs and we&apos;ll send a free quote.
+              We handle it all ourselves: house washing, soft washing, roof washing, concrete cleaning, driveway cleaning, patio and deck cleaning, window cleaning, gutter cleaning, and rust removal, for homes and businesses across Macomb and Metro Detroit. Tell us what your property needs and we&apos;ll send a free quote.
             </p>
           </div>
           <ServicesCarousel />
@@ -68,9 +68,9 @@ export default function HomePage() {
             <span className="eyebrow">Meet the Owner</span>
             <h2 className="section-title">Meet Juan and the family behind <span className="accent">every clean</span></h2>
             <p className="whyus-text">
-              Are You Washed is a family-owned business based in Macomb, and Juan has run it since day one in 2021.
-              What started as a local pressure washing service has grown into one of Metro Detroit&apos;s most trusted
-              names for exterior cleaning.
+              Are You Washed is a family-owned pressure washing business based in Macomb, and Juan has run it since day one in 2021.
+              What started as a local pressure washing and soft washing service has grown into one of Metro Detroit&apos;s most trusted
+              names for residential and commercial exterior cleaning.
             </p>
             <p className="whyus-text">
               The work has stayed personal the whole way. Juan is on the jobs himself, walking each property,
@@ -128,8 +128,9 @@ export default function HomePage() {
             <span className="eyebrow"><Icons.pin className="eyebrow-ic" /> Serving Metro Detroit</span>
             <h2 className="section-title">Get a free quote from a <span className="accent">local family</span></h2>
             <p className="cta-merge-text">
-              We&apos;re a family based in Macomb, and we travel up to {site.serviceRadiusMiles} miles to homes in
-              Washington Township, Shelby Township, Sterling Heights, Chesterfield, and across Metro Detroit.
+              We&apos;re a family-owned pressure washing company based in Macomb, and we travel up to {site.serviceRadiusMiles} miles for
+              house washing, roof washing, window cleaning, gutter cleaning, and more in Washington Township, Shelby Township,
+              Sterling Heights, Chesterfield, and across Metro Detroit.
             </p>
             <p className="cta-merge-text">
               The quote is free and there is no pressure to book. We usually get back to you within a few hours,
